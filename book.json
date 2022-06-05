@@ -1,0 +1,163 @@
+{
+  "title": "Gitbook Docs",
+  "author": "宗勋 - zongxun",
+  "description": "这是一本关于Git、Github、Gitlab、Gitbook、GitOps的书籍",
+  "language": "zh-hans",
+  "links": {
+     "sharing": {
+         "all": null,
+         "facebook": null,
+         "google": null,
+         "twitter": null,
+         "weibo": null
+     },
+     "sidebar": {
+        "zongxun's Blog": "https://smoothies.com.cn"
+     }
+  },
+  "plugins": [
+    "3-ba",
+    "accordion",
+    "advanced-emoji",
+    "anchor-navigation-ex",
+    "baidu-tongji",
+    "code",
+    "change_girls",
+    "custom-favicon",
+    "donate",
+    "chapter-fold",
+    "edit-link",
+    "flexible-alerts",
+    "github-buttons",
+    "github",
+    "insert-logo",
+    "musicxml",
+    "prism",
+    "pageview-count",
+    "-highlight",
+    "-search",
+    "-lunr",
+    "rss",
+    "search-plus",
+    "splitter",
+    "-sharing",
+    "sharing-plus",
+    "sidebar-style",
+    "theme-comscore",
+    "tbfed-pagefooter"
+  ],
+  "pluginsConfig": {
+
+    "github": {
+      "url": "https://github.com/Ghostwritten"
+    },
+
+    "github-buttons": {
+      "buttons": [
+        {
+          "user": "Ghostwritten",
+          "repo": "gitbook-docs", 
+          "type": "star",
+          "count": true,
+          "size": "small"
+        }
+      ]
+    },
+
+    "change_girls" : {
+      "time" : 10,
+      "urls" : [
+          "https://www.bizhishe.com/d/file/2019-08-26/1566827846505876.jpg", "https://www.bizhishe.com/d/file/2019-07-24/1563977671157231.jpg", "https://www.bizhishe.com/d/file/2019-07-14/1563116649970786.jpg"
+      ]
+    },
+
+    "chapter-fold":{},
+
+    "favicon": "assets/imgs/1_girl.ico",
+
+    "donate": {
+      "button": "打赏",
+      "alipayText": "支付宝打赏",
+      "wechatText": "微信打赏",
+      "alipay": "https://github.com/Ghostwritten/gitbook-docs/blob/gh-pages/assets/imgs/aplipay.png?raw=true",
+      "wechat": "https://github.com/Ghostwritten/gitbook-docs/blob/gh-pages/assets/imgs/wechat.png?raw=true"
+    },
+
+    "edit-link": {
+     "base": "https://github.com/Ghostwritten/gitbook-docs/edit/master/",
+     "label": "Edit"
+    },
+
+    "prism": {
+      "lang": {
+        "shell": "bash"
+      }
+    },
+    "tbfed-pagefooter": {
+      "copyright":"Copyright &copy ghostwritten 浙ICP备2020032454号 2022",
+      "modify_label": "该文件修订时间：",
+      "modify_format": "YYYY-MM-DD HH:mm:ss"
+    },
+    "baidu-tongji": {
+      "token": "55e7dfe47f4dc1c018d4042fdfa62565"
+    },
+    "anchor-navigation-ex": {
+      "showLevel": false
+    },
+
+    "sidebar-style": {
+       "title": "《Gitbook Docs》",
+       "author": "zongxun"
+    },
+
+    "flexible-alerts": {
+      "note": {
+        "label": "Note"
+      },
+      "tip": {
+        "label": "Tip"
+      },
+      "warning": {
+        "label": "Warning"
+      },
+      "danger": {
+        "label": "Danger"
+      }
+    },
+
+    "3-ba": {
+        "token": "9ffc0dce8d7079aceab6b0bc18eb626b"
+    },
+
+    "insert-logo": {
+      "url": "https://www.bizhishe.com/d/file/2019-07-14/1563116649268975.jpg",
+      "style": "background: none; max-height: 100px; min-height: 100px"
+    },
+
+    "rss": {
+      "title": "Gitbook Docs",
+      "description": "This is the best book ever.",
+      "author": "Zong Xun",
+      "site_url": "https://smoothies.com.cn/gitbook-docs/",
+      "managingEditor": "writer@smoothies.com.cn (Zong Xun)",
+      "webMaster": "webmaster@smoothies.com.cn (Zong Xun)",
+      "categories": [
+        "gitbook"
+      ]
+    },
+
+    "sharing": {
+      "douban": false,
+      "facebook": true,
+      "google": false,
+      "pocket": false,
+      "qq": false,
+      "qzone": false,
+      "twitter": true,
+      "weibo": false,
+    "all": [
+       "facebook", "google", "twitter"
+    ]
+   }
+  }
+}
