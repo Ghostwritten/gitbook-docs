@@ -21,8 +21,6 @@ GitBook 特性：
 
 ##  2. 官方 Gitbook
 
-{% videoplayer id="GitbookStartedvideo" width="640" height="480" posterExt="png" %}https://www.youtube.com/watch?v=-MdyiRH6OAc{% endvideoplayer %}
-
 在线编辑界面
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/f2cbe108d6f74d1faa556c808517e2a4.png#center)
 预览效果
