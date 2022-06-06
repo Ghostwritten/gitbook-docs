@@ -7,11 +7,12 @@ Gitbook 提供的书籍默认都会在左侧提供书籍目录索引导航的功
 
 对于侧边导航功能、UI、布局、效果等等有一些开源的插件可供选择，插件的核心功能与差异：
 
-chapter-fold 插件: 默认的侧边目录是全部展开的，该插件可以让文章按照层级目录折叠起来，同时只能展开一个目录。
-expandable-chapters 插件: 默认的侧边目录是全部展开的，该插件可以让文章按照层级目录折叠起来，展开后不会自动折叠。
-expandable-chapters-small 插件: 默认的侧边目录是全部展开的，该插件可以让文章按照层级目录折叠起来，展开后不会自动折叠，箭头相比 expandable-chapters 会细一些。
-sidebar-style 插件: 会替换掉 Published by GitBook，并在左侧最上面显示标题。
-splitter 插件: 提供侧边栏宽度可调节功能。
+ - [chapter-fold](https://www.npmjs.com/package/gitbook-plugin-chapter-fold) 插件: 默认的侧边目录是全部展开的，该插件可以让文章按照层级目录折叠起来，同时只能展开一个目录。
+ - [expandable-chapters](https://www.npmjs.com/package/gitbook-plugin-expandable-chapters) 插件: 默认的侧边目录是全部展开的，该插件可以让文章按照层级目录折叠起来，展开后不会自动折叠。
+ - [expandable-chapters-small](https://www.npmjs.com/package/gitbook-plugin-expandable-chapters-small) 插件: 默认的侧边目录是全部展开的，该插件可以让文章按照层级目录折叠起来，展开后不会自动折叠，箭头相比 `expandable-chapters` 会细一些。
+ - [sidebar-style](https://www.npmjs.com/package/gitbook-plugin-sidebar-style) 插件: 会替换掉 Published by GitBook，并在左侧最上面显示标题。
+ - [splitter](https://www.npmjs.com/package/gitbook-plugin-splitter) 插件:提供侧边栏宽度可调节功能。
+
 本站点使用：
 
  1. expandable-chapters-small 插件
