@@ -281,7 +281,7 @@ $ systemctl restart ssh
 $ ssh root@192.168.211.70（拒绝）
 ```
 安装Docker
-```c
+```bash
 ssh-copy-id youtube@server-IP
 apt-get install -y docker.io
 #当前用户授权

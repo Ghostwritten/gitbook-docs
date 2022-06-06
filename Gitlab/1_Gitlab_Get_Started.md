@@ -12,7 +12,7 @@ jenkins插件地址： [http://updates.jenkins-ci.org/download/plugins/](http://
 192.168.211.93   这个是单独的环境，用于测试jenkins和docker的
 
 
-```c
+```bash
 关闭防火墙
 # systemctl disable  firewalld.service 
 
@@ -50,14 +50,14 @@ GitHub 和  GitLab 都是基于 web 的 Git 仓库
 
 安装依赖：
 
-```c
+```bash
 # yum install curl policycoreutils openssh-server openssh-clients policycoreutils-python -y
 ```
 
 
 下载rpm包
 
-```c
+```bash
 # cd /usr/local/src/
 #wget https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/yum/el7/gitlab-ce-11.9.1-ce.0.el7.x86_64.rpm
 # rpm -ivh gitlab-ce-11.9.1-ce.0.el7.x86_64.rpm 
@@ -78,7 +78,7 @@ external_url 'http://192.168.211.90'
 ## 4. 启动gitlab
 重新配置执行成功后，就可以重新启动gitlab
 
-```c
+```bash
 # gitlab-ctl restart
 ok: run: alertmanager: (pid 5060) 1s
 ok: run: gitaly: (pid 5078) 0s
@@ -117,7 +117,7 @@ gitlab由以下服务构成，他们共同承担了gitlab的运作需要
 
 可以使用命令来查看各个服务的状态
 
-```c
+```bash
 # gitlab-ctl status
 run: alertmanager: (pid 5060) 53429s; run: log: (pid 4308) 53665s
 run: gitaly: (pid 5078) 53428s; run: log: (pid 3570) 53739s
@@ -167,7 +167,7 @@ Gitlab Shell有两个作用：**为Gitlab处理git命令、修改authorized keys
 ## 6. gitlab 命令
 启动所有的gitlab组件
 
-```c
+```bash
 # gitlab-ctl start
 停止所有gitlab组件
 # gitlab-ctl stop
@@ -312,7 +312,7 @@ gitlab是通过组（group）的概念来统一管理仓库(project)和用户（
 仓库的管理页面左侧为仓库操作的相关菜单栏、右侧空仓库下显示如何在命令行连接该仓库、非空时显示仓库内容
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/80f48a5df36448fbb07793d303469cb3.png)
 
-```c
+```bash
 Command line instructions
 
 Git global setup
@@ -356,7 +356,7 @@ Existing Git repository
 在192.168.211.90 ，gitlab的服务器上
 切换到运行gitlab的用户下，我这里直接使用的是服务器的root用户
 
-```c
+```bash
 # ssh-keygen -t rsa
 Generating public/private rsa key pair.
 Enter file in which to save the key (/root/.ssh/id_rsa): 
@@ -415,7 +415,7 @@ git --version
 
 设置本仓库的global级别信息
 
-```c
+```bash
 # git config --global user.name quntao
 # git config --global user.email xmlgrg@163.com
 # git config --list
@@ -425,7 +425,7 @@ user.email=xmlgrg@163.com
 
 创建一个空仓库
 
-```c
+```bash
 # pwd
 /data/git_test
 # git init
@@ -444,7 +444,7 @@ drwxr-xr-x 7 root root 119 5月   2 20:09 .git
 有了仓库，我们便可以在git_test文件夹下的工作区做文件的增删修改工作了，但很多时候，我们只在意开发过程中的源文件，并不需要管理自动产生的其它临时文件。这时候便需要一个过滤文件，在这个文件中设置过滤规则，让git能够自动过滤掉那些临时文件，这个文件便是.gitignore文件。
 在仓库目录下创建.gitignore文件
 
-```c
+```bash
 # pwd
 /data/git_test
 # touch .gitignore
@@ -467,7 +467,7 @@ test.txt
  - 以方括号”`[]`“包含单个字符的匹配列表
  - 以叹号“`！`”表示不忽略(跟踪)匹配到的文件或目录
 
-```c
+```bash
 # touch a
 # touch b
 # touch c
@@ -484,7 +484,7 @@ test.txt
 
 推送本地客户端仓库到gitlab中
 
-```c
+```bash
 # pwd
 /data/git_test
 # git remote add gitlab git@192.168.137.100:xmlgrg_test/xm.git
@@ -492,7 +492,7 @@ test.txt
 
 您在 `/var/spool/mail/root` 中有新邮件
 
-```c
+```bash
 # git remote
 gitlab
 # ll -a
@@ -542,7 +542,7 @@ To git@192.168.137.100:xmlgrg_test/xm.git
 
 下载最新的源码包
 
-```c
+```bash
 # cd /usr/local/src/
 # wget https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.19.2.tar.xz
 # tar xf git-2.19.2.tar.xz
@@ -595,7 +595,7 @@ NHe+X8YUYtpMfMngtLl5XL0yHRvMoPVaUPT9FlejfRtrj3Qh8+vKiN4q9c36tC8eoyEnKE656yboTNkY
 
 使用git clone命令克隆仓库到192.168.211.91服务器本地
 
-```c
+```bash
 [root@localhost data]# mkdir /101
 [root@localhost data]# cd /101
 [root@localhost 101]# git clone git@192.168.137.100:xmlgrg_test/xm.git
@@ -633,7 +633,7 @@ origin
 
 在192.168.137.101的xm上创建一个dev的分支，并将dev分支，推送到gitlab上
 
-```c
+```bash
 [root@localhost 101]# cd xm
 [root@localhost xm]# pwd
 /101/xm
@@ -690,7 +690,7 @@ To 192.168.137.100:xmlgrg_test/xm.git
 默认的备份文件目录为：/var/opt/gitlab/backups，如果自定义备份目录需要赋予目录git权限，具体操作如下：
 配置文件中加入：
 
-```c
+```bash
 #  vim /etc/gitlab/gitlab.rb
 ### Backup Settings
 ###! Docs: https://docs.gitlab.com/omnibus/settings/backups.html
@@ -714,7 +714,7 @@ gitlab_rails['backup_keep_time'] = 604800   #备份保留的时间(以秒为单�
 ### 16.1 手动备份
 在命令行执行：
 
-```c
+```bash
 # gitlab-rake gitlab:backup:create
 2019-05-18 21:26:25 +0800 -- Dumping database ... 
 Dumping PostgreSQL database gitlabhq_production ... [DONE]
@@ -762,7 +762,7 @@ Deleting old backups ... done. (0 removed)
 每天凌晨2点进行一次自动备份:通过crontab使用备份命令实现，需重启cron服务
 #输入命令crontab -e 
 
-```c
+```bash
 sudo crontab -e 
 #输入相应的任务  环境变量CRON=1的作用是如果没有任何错误发生时，抑制备份脚本的所有进度输出
 0 2 * * * /opt/gitlab/bin/gitlab-rake gitlab:backup:create CRON=1
@@ -789,7 +789,7 @@ m h dom mon dow user command
 ### 16.3 恢复实践
 Gitlab的恢复只能还原到与备份文件相同的gitlab版本的系统中，恢复时，停止连接到数据库的进程(也就是停止数据的写入服务)，但是保持gitlab是运行的。
 
-```c
+```bash
 # gitlab-ctl stop unicorn
 ok: down: unicorn: 1s, normally up
 # gitlab-ctl stop sideki
@@ -819,7 +819,7 @@ down: unicorn: 29s, normally up; run: log: (pid 1876) 5129s
 
 整个恢复执行过程中，可以看到基本是在删除表，创建表
 
-```c
+```bash
 2处需要输入yes
 Before restoring the database, we will remove all existing
 tables to avoid future upgrade problems. Be aware that if you have
