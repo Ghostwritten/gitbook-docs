@@ -93,3 +93,6 @@ delete_README
 add_README
 push_master
 push_gh-pages
+
+
+exit 0

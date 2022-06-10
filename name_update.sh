@@ -53,3 +53,5 @@ git push --force --quiet "https://${TOKEN}@${repo}" master:gh-pages
 
 push_master
 push_gh-pages
+
+exit 0

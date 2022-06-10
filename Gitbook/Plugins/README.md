@@ -66,7 +66,7 @@ npm install gitbook-plugin-xxx
 ##  5. 插件预览
 | 模块名称                                     | 功能描述                                    |
 |------------------------------------------|-----------------------------------------|
-| accordion                                | 手风琴折叠模块                                 |
+| [accordion](https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/17_Gitbook_Plugin_Text_Hiding.html)                                | 手风琴折叠模块                                 |
 | ace                                      | 代码 ACE 显示                               |
 | advanced-emoji                           | 显示 emoji 表情                             |
 | alerts                                   | 告警级别信息提示                                |
