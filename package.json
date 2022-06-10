@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Ghostwritten/gitbook-docs/issues"
   },
-  "homepage": "https://github.com/Ghostwritten/gitbook-docs#readme"
+  "homepage": "https://github.com/Ghostwritten/gitbook-docs#readme",
+  "dependencies": {
+    "gitbook-plugin-sitemap-general": "^0.1.1"
+  }
 }

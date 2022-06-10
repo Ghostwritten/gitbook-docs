@@ -43,6 +43,7 @@
     "-sharing",
     "sharing-plus",
     "sidebar-style",
+    "sitemap-general",
     "theme-comscore",
     "tbfed-pagefooter"
   ],
@@ -108,6 +109,10 @@
     "sidebar-style": {
        "title": "《Gitbook Docs》",
        "author": "zongxun"
+    },
+
+    "sitemap-general": {
+       "prefix": "https://smoothies.com.cn/gitbook-docs/"
     },
 
     "flexible-alerts": {

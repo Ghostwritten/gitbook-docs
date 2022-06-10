@@ -1,7 +1,4 @@
 # 提示与强调
-@[toc]
-
----
 
 ##  1. alerts 插件
 [alerts](https://www.npmjs.com/package/gitbook-plugin-alerts) 插件功能是告警级别信息提示。这个GitBook插件将块引用转换为漂亮的警报。
