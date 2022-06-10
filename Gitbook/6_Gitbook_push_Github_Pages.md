@@ -28,9 +28,6 @@ _book  README.md  SUMMARY.md
 $ git init
 $ echo "*~" > .gitignore
 $ echo "_book" >> .gitignore
-$ cp -r _book/* .
-$ ls
-_book  gitbook  index.html  README.md  search_index.json  SUMMARY.md
 $ git add --all
 $ git commit -m "Publish book"
 $ git remote add origin https://github.com/Ghostwritten/git-handbook.git
