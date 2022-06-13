@@ -99,7 +99,7 @@ The first thing is to get the GitBook API client.
 $ npm install gitbook-api
 \```
 
-\{% sample lang="go" %}
+{\% sample lang="go" %}
 \```bash
 $ go get github.com/GitbookIO/go-gitbook-api
 \```
