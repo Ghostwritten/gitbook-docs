@@ -103,7 +103,7 @@ $ npm install gitbook-api
 \```bash
 $ go get github.com/GitbookIO/go-gitbook-api
 \```
-{% endmethod %}
+{\% endmethod %}
 ```
 
 在每个包含示例块的页面上，右上角method会自动添加一个切换器，以轻松选择要显示的语言。
