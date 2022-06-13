@@ -238,3 +238,56 @@ What about an error message?
 ###  6.3 效果
 略
 
+##  7. codesnippet 插件
+[codesnippet](https://www.npmjs.com/package/gitbook-plugin-codesnippet) 插件可以轻松导入代码文件或在 GitBook 的代码块中使用变量。
+### 7.1 安装
+
+```bash
+npm i gitbook-plugin-codesnippet
+```
+
+### 7.2 配置
+
+```bash
+{
+    "plugins": ["codesnippet"]
+}
+```
+###  7.3 语法
+
+```bash
+添加代码内容:
+
+This is a code snippet:
+ 
+{% codesnippet "./myfile.js" %}{% endcodesnippet %}
+
+```
+指定语言类型:
+```bash
+
+
+This is a code snippet, display as HTML:
+ 
+{% codesnippet "./myfile.ejs", language="html" %}{% endcodesnippet %}
+```
+指定行范围：
+```bash
+This is a code snippet, display as HTML:
+ 
+{% codesnippet "./myfile.ejs", lines="2:5" %}{% endcodesnippet %}
+```
+带有模板语法的代码块
+```bash
+This is a code snippet, display as HTML:
+ 
+{% codesnippet %}
+curl {{ book.hostname|d("http://localhost") }}/myapi
+{% endcodesnippet %}
+```
+
+### 7.4 效果
+（略）
+### 7.5 评价
+很方便，但用处不太大，略感繁琐。
+综合指数：⭐️⭐️⭐️

@@ -1,6 +1,5 @@
 # gitlab 开始
 
-----------
 
 ## 1. 前提
 jenkins插件地址： [http://updates.jenkins-ci.org/download/plugins/](http://updates.jenkins-ci.org/download/plugins/)    

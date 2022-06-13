@@ -12,6 +12,9 @@
          "weibo": null
      },
      "sidebar": {
+        "Linux Command Docs": "https://smoothies.com.cn/linux-command-docs/"
+     },
+     "sidebar": {
         "zongxun's Blog": "https://smoothies.com.cn"
      }
   },
@@ -44,7 +47,7 @@
     "sharing-plus",
     "sidebar-style",
     "sitemap-general",
-    "theme-comscore",
+    "theme-default",
     "tbfed-pagefooter"
   ],
   "pluginsConfig": {
@@ -161,9 +164,9 @@
       "qzone": false,
       "twitter": true,
       "weibo": false,
-    "all": [
+      "all": [
        "facebook", "google", "twitter"
-    ]
+      ]
    }
   }
 }
