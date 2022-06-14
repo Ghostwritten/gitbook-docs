@@ -11,10 +11,9 @@
          "twitter": null,
          "weibo": null
      },
+
      "sidebar": {
-        "Linux Command Docs": "https://smoothies.com.cn/linux-command-docs/"
-     },
-     "sidebar": {
+        "Linux Command Docs": "https://smoothies.com.cn/linux-command-docs/",
         "zongxun's Blog": "https://smoothies.com.cn"
      }
   },
@@ -165,7 +164,8 @@
       "twitter": true,
       "weibo": false,
       "all": [
-       "facebook", "google", "twitter"
+        "facebook", "google", "twitter",
+        "weibo", "instapaper"
       ]
    }
   }

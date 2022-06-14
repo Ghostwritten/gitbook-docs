@@ -1,8 +1,6 @@
 #  Gtibook 插件 顶部导航
 
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/aedb97a6c33f433e99cb94d38f4fc5ff.gif#pic_center)
-
 
 ## 1. NavBar 插件
 ### 1.1 安装
