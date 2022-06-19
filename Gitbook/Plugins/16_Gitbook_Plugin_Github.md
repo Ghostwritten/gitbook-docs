@@ -25,5 +25,5 @@ npm i gitbook-plugin-github
 }
 ```
 ### 1.3 效果
-[!NOTE|style:flat|lable:Mylable|iconVisibility:hidden]
-请阅览右上角。
+> [!NOTE|style:flat|lable:Mylable|iconVisibility:hidden]
+> 请阅览右上角。

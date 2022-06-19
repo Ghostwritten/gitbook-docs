@@ -59,3 +59,42 @@ npm i gitbook-plugin-page-copyright
 运行以后有很多信息是原创作者的，这些配置都在你的插件安装目录 `**\node_modules\gitbook-plugin-page-copyright` 下的 `index.js` 中，自己可以修改。大部分信息都在 `defaultOption` 中。
 
 那个二维码可以在文件中找到 `QRcode` 改成自己的，或者直接把所有的 d`efaultOption.isShowQRCode` 改成`false`
+
+## 3. copyright 插件
+[gitbook-plugin-copyright](https://www.npmjs.com/package/gitbook-plugin-copyright) 是基于Gitbook实现的版权保护插件,用于复制内容时追加版权信息以及文章末尾添加版权小尾巴.
+
+###  3.1 安装
+
+```bash
+npm i gitbook-plugin-copyright
+```
+
+or
+
+```bash
+gitbook install
+```
+
+###  3.2 配置
+
+```bash
+{
+    "plugins": ["copyright"],
+    "pluginsConfig": {
+       "copyright": {
+         "site": "https://smoothies.com.cn/gitbook-demo/",
+         "author": "ghostwritten",
+         "website": "ghostwritten",
+         "image": "https://pic4.zhimg.com/80/v2-94401c2c3fa20c1d5525cf6c16742909_xl.jpg",
+         "copyProtect": false
+        }
+    }
+}
+```
+
+### 3.3 效果
+（略）
+
+### 3.4 评价
+此设置致使文章界面增加无用、复杂，污染简约。
+综合指数：综合指数：⭐️⭐️

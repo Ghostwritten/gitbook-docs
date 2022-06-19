@@ -13,8 +13,10 @@
      },
 
      "sidebar": {
-        "Linux Command Docs": "https://smoothies.com.cn/linux-command-docs/",
-        "zongxun's Blog": "https://smoothies.com.cn"
+        "Shell": "https://smoothies.com.cn/shell-docs/",
+        "Linux Command": "https://smoothies.com.cn/linux-command-docs/",
+        "Kubernetes Exam": "https://ghostwritten.gitbook.io/kubernetes-exam-in-action/",
+        "Blog": "https://smoothies.com.cn"
      }
   },
   "plugins": [
@@ -35,6 +37,7 @@
     "insert-logo",
     "musicxml",
     "prism",
+    "prism-themes",
     "pageview-count",
     "-highlight",
     "-search",
@@ -70,7 +73,7 @@
     "change_girls" : {
       "time" : 10,
       "urls" : [
-          "https://www.bizhishe.com/d/file/2019-08-26/1566827846505876.jpg", "https://www.bizhishe.com/d/file/2019-07-24/1563977671157231.jpg", "https://www.bizhishe.com/d/file/2019-07-14/1563116649970786.jpg"
+          "https://www.bizhishe.com/d/file/2019-08-26/1566827846505876.jpg","https://www.bizhishe.com/d/file/2020-03-02/1583150452601733.jpg", "https://www.bizhishe.com/d/file/2019-07-24/1563977671157231.jpg", "https://www.bizhishe.com/d/file/2019-07-14/1563116649970786.jpg", "https://www.bizhishe.com/d/file/2019-07-24/1563977671126392.jpg", "https://www.bizhishe.com/d/file/2019-07-14/1563116649584541.jpg"
       ]
     },
 
@@ -92,6 +95,9 @@
     },
 
     "prism": {
+      "css": [
+        "prism-themes/themes/prism-holi-theme.css"
+      ],
       "lang": {
         "shell": "bash"
       }

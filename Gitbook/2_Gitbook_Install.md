@@ -47,6 +47,7 @@ gitbook            node               node_modules/      npm                npx 
 #添加软连接
 $ ln -s /usr/local/node-v10.24.0-linux-x64/bin/gitbook /usr/local/bin/
 
+$npm install -g gitbook-summary #安装book命令
 $ ln -s /usr/local/node-v10.24.0-linux-x64/bin/book /usr/local/bin/
 
 $ gitbook -V

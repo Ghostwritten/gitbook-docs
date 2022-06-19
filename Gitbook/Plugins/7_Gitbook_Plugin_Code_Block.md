@@ -1,5 +1,7 @@
 #  代码块
 
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/28301dbce8fc446eb46091097440f9ec.gif#pic_center)
 ##  1. code 插件
 [code](https://www.npmjs.com/package/gitbook-plugin-code-pro) 代码添加行号&复制按钮
 
@@ -103,40 +105,127 @@ npm i gitbook-plugin-prism
     "plugins": [
         "prism",
         "-highlight"
-    ],
-    "pluginsConfig": {
-        "prism": {
-            "css": [
-                "prism-themes/themes/prism-base16-ateliersulphurpool.light.css"
-            ]
-        }
-    }
+    ]
 }
 ```
+####  4.2.1 css
+覆盖默认样式。所有css文件必须位于同一个文件夹中。
 
-如果需要修改背景色、字体大小等，可以在 `website.css` 定义 `pre[class*="language-"]` 类来修改，下面是一个示例：
 ```bash
-pre[class*="language-"] {
-    border: none;
-    background-color: #f7f7f7;
-    font-size: 1em;
-    line-height: 1.2em;
+"pluginsConfig": {
+  "prism": {
+    "css": [
+      "prismjs/themes/prism-solarizedlight.css"
+    ]
+  }
 }
 ```
+####  4.2.2 lang
+通过别名现有前缀来支持非标准语法前缀。
+
+```bash
+"pluginsConfig": {
+  "prism": {
+    "lang": {
+      "flow": "typescript"
+    }
+  }
+}
+```
+####  4.2.3 ignore
+由于其他插件使用代码块的概念来表示其他功能，你可以忽略某些语言。
+
+```bash
+"pluginsConfig": {
+  "prism": {
+    "ignore": [
+      "mermaid",
+      "eval-js"
+    ]
+  }
+}
+```
+
+
 ###  4.3 效果
-略
+#### 4.3.1 Prism Themes
+[https://github.com/PrismJS/prism](https://github.com/PrismJS/prism)
 
+```bash
+$ ls node_modules/prismjs/themes/
+prism-coy.css      prism.css       prism-dark.min.css  prism-funky.min.css  prism-okaidia.css      prism-solarizedlight.css      prism-tomorrow.css      prism-twilight.css
+prism-coy.min.css  prism-dark.css  prism-funky.css     prism.min.css        prism-okaidia.min.css  prism-solarizedlight.min.css  prism-tomorrow.min.css  prism-twilight.min.css
+```
 
-##  5. ACE 插件
-[ACE](https://www.npmjs.com/package/gitbook-plugin-ace)插件是使 `GitBook` 支持`ace` 。
+Okaidia `prismjs/themes/prism-okaidia.css`
+![在这里插入图片描述](https://img-blog.csdnimg.cn/4da072b057fc4ea8b42c012e90935fea.png)
+
+Solarized Light `prismjs/themes/prism-solarizedlight.css`
+![在这里插入图片描述](https://img-blog.csdnimg.cn/cf61554724bb4024a677227773a5de29.png)
+
+Tomorrow `prismjs/themes/prism-tomorrow.css`
+![在这里插入图片描述](https://img-blog.csdnimg.cn/8e494b61f15f4aa89f1dcee4cdd5689c.png)
+
+Dark `prismjs/themes/prism-dark.css`
+![在这里插入图片描述](https://img-blog.csdnimg.cn/7198b062396b4a76bedd168153150e47.png)
+
+Coy `prismjs/themes/prism-coy.css`
+![在这里插入图片描述](https://img-blog.csdnimg.cn/94cb31d8711944a6bae30923be834c08.png)
+
+#### 4.3.2 Atelierbram Themes
+[https://github.com/atelierbram/syntax-highlighting](https://github.com/atelierbram/syntax-highlighting)
+
+Base16 Ocean Dark `syntax-highlighting/assets/css/prism/prism-base16-ocean.dark.css`
+![在这里插入图片描述](https://img-blog.csdnimg.cn/1f3e7eb81dc94311b6db260eaa9fa3f3.png)
+
+Google Light `syntax-highlighting/assets/css/prism/prism-base16-google.light.css`
+![在这里插入图片描述](https://img-blog.csdnimg.cn/54b7c2489d5e4c32bb94bcda7f0862c4.png)
+
+Xonokai `syntax-highlighting/assets/css/prism/prism-xonokai.css`
+![在这里插入图片描述](https://img-blog.csdnimg.cn/5528b121ac9246818981ddd6db4d17b0.png)
+##  5. prism-themes 插件
+当使用gitbook-plugin-prism时，[prism-themes](https://github.com/PrismJS/prism-themes) 插件提供了额外的主题。
 
 ### 5.1 安装
+
+```bash
+npm i gitbook-plugin-prism-themes
+```
+或者
+
+```bash
+gitbook install
+```
+
+### 5.2 配置
+
+```bash
+{
+  "plugins": ["-highlight", "prism", "prism-themes"]
+}
+
+"pluginsConfig": {  
+  "prism": {
+    "css": [
+      "prism-themes/themes/prism-duotone-dark.css"
+    ]
+  }
+}
+```
+###  5.3 效果
+
+ - [Available themes](https://github.com/PrismJS/prism-themes)
+
+##  6. ACE 插件
+[ACE](https://www.npmjs.com/package/gitbook-plugin-ace)插件是使 `GitBook` 支持`ace` 。
+
+### 6.1 安装
 
 ```bash
 npm i gitbook-plugin-ace
 ```
 
-### 5.2 配置
+### 6.2 配置
 
 默认情况下，`line-height` 为 1，会使代码显得比较挤，而作者好像没提供修改行高的选项，如果需要修改行高，可以到 `node_modules -> github-plugin-ace -> assets -> ace.js` 中加入下面两行代码 (30 行左右的位置)：
 
@@ -170,18 +259,18 @@ int main(){
 }
 ```
 
-###  5.3 效果
+###  6.3 效果
 略
-##  6. Terminal 插件
+##  7. Terminal 插件
 [Terminal](https://www.npmjs.com/package/gitbook-plugin-terminal) 插件功能是模拟终端显示，主要用于显示命令以及多行输出，不过写起来有些麻烦。
 
-###  6.1 安装
+###  7.1 安装
 
 ```bash
 npm i gitbook-plugin-terminal
 ```
 
-###  6.2 配置
+###  7.2 配置
 
 `terminal` 支持下面 5 种样式，如果需要更换样式，在 `pluginsConfig` 里配置即可。
 
@@ -235,25 +324,25 @@ What about an error message?
 **[error [ERROR] This is not the error you are looking for]
 ```
 
-###  6.3 效果
+###  7.3 效果
 略
 
-##  7. codesnippet 插件
+##  8. codesnippet 插件
 [codesnippet](https://www.npmjs.com/package/gitbook-plugin-codesnippet) 插件可以轻松导入代码文件或在 GitBook 的代码块中使用变量。
-### 7.1 安装
+### 8.1 安装
 
 ```bash
 npm i gitbook-plugin-codesnippet
 ```
 
-### 7.2 配置
+### 8.2 配置
 
 ```bash
 {
     "plugins": ["codesnippet"]
 }
 ```
-###  7.3 语法
+###  8.3 语法
 
 ```bash
 添加代码内容:
@@ -286,8 +375,8 @@ curl {{ book.hostname|d("http://localhost") }}/myapi
 {% endcodesnippet %}
 ```
 
-### 7.4 效果
+### 8.4 效果
 （略）
-### 7.5 评价
+### 8.5 评价
 很方便，但用处不太大，略感繁琐。
 综合指数：⭐️⭐️⭐️
