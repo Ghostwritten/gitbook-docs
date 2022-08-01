@@ -13,10 +13,16 @@
      },
 
      "sidebar": {
+        "Blog": "https://smoothies.com.cn",
+        "Command": "https://smoothies.com.cn/linux-command-docs/",
+        "Linux": "https://smoothies.com.cn/linux-docs/",
+        "Gitbook": "https://smoothies.com.cn/gitbook-docs/",
+        "Prometheus": "https://smoothies.com.cn/prometheus-docs/",
+        "Kubernetes": "https://smoothies.com.cn/kubernetes-docs/",
         "Shell": "https://smoothies.com.cn/shell-docs/",
-        "Linux Command": "https://smoothies.com.cn/linux-command-docs/",
-        "Kubernetes Exam": "https://ghostwritten.gitbook.io/kubernetes-exam-in-action/",
-        "Blog": "https://smoothies.com.cn"
+        "Python": "https://smoothies.com.cn/python-docs/",
+        "Go": "https://smoothies.com.cn/go-docs/",
+        "Exam": "https://ghostwritten.gitbook.io/kubernetes-exam-in-action/"
      }
   },
   "plugins": [
@@ -49,7 +55,9 @@
     "sharing-plus",
     "sidebar-style",
     "sitemap-general",
+    "simple-mind-map",
     "theme-default",
+    "todo",
     "tbfed-pagefooter"
   ],
   "pluginsConfig": {
@@ -140,6 +148,10 @@
 
     "3-ba": {
         "token": "9ffc0dce8d7079aceab6b0bc18eb626b"
+    },
+
+    "theme-default": {
+        "showLevel": true
     },
 
     "insert-logo": {

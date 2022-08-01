@@ -23,4 +23,4 @@
 
 ## 公众号
 
-![爱 死 亡 机 器 人 ](https://github.com/Ghostwritten/gitbook-docs/blob/gh-pages/assets/imgs/public.jpg?raw=true) 
+<img src="https://github.com/Ghostwritten/gitbook-docs/blob/gh-pages/assets/imgs/public.jpg?raw=true" width = "400" height = "400" alt="爱死亡机器人" align=center />
