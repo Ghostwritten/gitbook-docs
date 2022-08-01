@@ -94,7 +94,7 @@ npm i gitbook-plugin-theme-api
 
 The first thing is to get the GitBook API client.
 
-{% sample lang="js" %}
+{\% sample lang="js" %}
 \```bash
 $ npm install gitbook-api
 \```
