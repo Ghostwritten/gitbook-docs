@@ -89,7 +89,7 @@ npm i gitbook-plugin-theme-api
 这些嵌套块记录在下面。
 
 ```bash
-{% method %}
+{\% method %}
 ## Install {#install}
 
 The first thing is to get the GitBook API client.
