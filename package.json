@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Ghostwritten/gitbook-docs#readme",
   "dependencies": {
-    "gitbook-plugin-sitemap-general": "^0.1.1"
+    "gitbook-plugin-sitemap-general": "^0.1.1",
+    "gitbook-plugin-youtube": "^2.0.0"
   }
 }
