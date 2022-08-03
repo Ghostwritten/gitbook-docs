@@ -1,5 +1,10 @@
 # Gitbook
 
+{% youtube %}
+https://www.youtube.com/watch?v=-MdyiRH6OAc&t
+{% endyoutube %}
+
+
 ## 1. 简介
 [Gitbook](https://www.gitbook.com/) 是一款优秀的开源文档管理工具, 具有丰富的开源插件，它的源码可以在 GitHub 上获取。
 

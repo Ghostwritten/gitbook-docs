@@ -75,3 +75,39 @@ gitbook install
 {% videoplayer id="myvideo" width="640" height="480" posterExt="png" %}https://s3.amazonaws.com/gitbooks/myvideo{% endvideoplayer %}
 ```
 放器将自动加载myvideo.mp4文件以显示 MP4 编码的视频。同样，它将默认myvideo.webm用于 WebM 编码的视频。
+
+
+##  4. youtube 插件
+
+[youtube](https://www.npmjs.com/package/gitbook-plugin-youtube) 插件是添加youtube视频。
+
+###  4.1 安装
+
+```bash
+gitbook install
+```
+or
+
+```bash
+npm i gitbook-plugin-youtube
+```
+###  4.2 配置
+
+```bash
+{
+    "plugins": ["youtube"]
+}
+```
+
+### 4.3 语法
+
+```bash
+{% youtube %}
+https://www.youtube.com/watch?v=-MdyiRH6OAc&t
+{% endyoutube %}
+```
+###  4.4 效果
+![在这里插入图片描述](https://img-blog.csdnimg.cn/3c1bdf9e6d0943b68430834f9f546a4c.png)
+### 4.5 评论
+完美
+综合指数：:star::star::star::star::star:
