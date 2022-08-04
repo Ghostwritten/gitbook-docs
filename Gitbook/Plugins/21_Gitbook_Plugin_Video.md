@@ -110,4 +110,4 @@ https://www.youtube.com/watch?v=-MdyiRH6OAc&t
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/3c1bdf9e6d0943b68430834f9f546a4c.png)
 ### 4.5 评论
 完美
-综合指数：:star::star::star::star::star:
+综合指数：:star: :star: :star: :star: :star:
