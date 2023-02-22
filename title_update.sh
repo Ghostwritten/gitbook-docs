@@ -28,8 +28,8 @@ repo="github.com/${user}/gitbook-docs.git"
 
 rm -rf About.md 
 book sm
-cp SUMMARY.md About.md
-sed -i 's/Gitbook Demo/目录/g' About.md
+cp SUMMARY.md Overview.md
+sed -i 's/Gitbook Demo/目录/g' Overview.md
 python3 gitbook-auto-summary.py  .
 
 delete_README() {
@@ -78,7 +78,7 @@ git push origin master
 
 }
 push_gh-pages(){
-cp About.md _book/README.md
+cp Overview.md _book/README.md
 cd _book
 git init
 git remote add origin https://${repo}

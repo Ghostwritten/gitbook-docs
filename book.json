@@ -1,7 +1,7 @@
 {
   "title": "Gitbook Docs",
   "author": "宗勋 - zongxun",
-  "description": "这是一本关于Git、Github、Gitlab、Gitbook、GitOps的书籍",
+  "description": "这是一本关于Git、Github、Gitlab、Gitbook的书籍",
   "language": "zh-hans",
   "links": {
      "sharing": {
@@ -14,14 +14,15 @@
 
      "sidebar": {
         "Blog": "https://smoothies.com.cn",
-        "Command": "https://smoothies.com.cn/linux-command-docs/",
+        "Command": "https://smoothies.com.cn/linux-command-docs/Overview.html",
         "Linux": "https://smoothies.com.cn/linux-docs/",
-        "Gitbook": "https://smoothies.com.cn/gitbook-docs/",
-        "Prometheus": "https://smoothies.com.cn/prometheus-docs/",
-        "Kubernetes": "https://smoothies.com.cn/kubernetes-docs/",
-        "Shell": "https://smoothies.com.cn/shell-docs/",
-        "Python": "https://smoothies.com.cn/python-docs/",
-        "Go": "https://smoothies.com.cn/go-docs/",
+        "Gitbook": "https://smoothies.com.cn/gitbook-docs/Overview.html",
+        "Prometheus": "https://smoothies.com.cn/prometheus-docs/Overview.html",
+        "Docker": "https://smoothies.com.cn/docker-docs/Overview.html",
+        "Kubernetes": "https://smoothies.com.cn/kubernetes-docs/Overview.html",
+        "Shell": "https://smoothies.com.cn/shell-docs/Overview.html",
+        "Python": "https://smoothies.com.cn/python-docs/Overview.html",
+        "Go": "https://smoothies.com.cn/go-docs/Overview.html",
         "Exam": "https://ghostwritten.gitbook.io/kubernetes-exam-in-action/"
      }
   },
