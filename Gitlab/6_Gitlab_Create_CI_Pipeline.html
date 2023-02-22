@@ -1,0 +1,1820 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>6 Gitlab Create CI Pipeline · Gitbook Docs</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="宗勋 - zongxun">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-accordion/accordion.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-change_girls/girls.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-flexible-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-holi-theme.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-sidebar-style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="7_Gitlab_CI_CD.html" />
+    
+    
+    <link rel="prev" href="5_Gitlab_Runner_Management.html" />
+    
+
+    <link href="http://smoothies.com.cn/rss" title="Gitbook Docs" rel="alternate" type="application/rss+xml" />
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"Ghostwritten","repo":"gitbook-docs","type":"star","count":true,"size":"small"}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://smoothies.com.cn/docker-docs/Overview.html" target="_blank" class="custom-link">Docker</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://smoothies.com.cn" target="_blank" class="custom-link">Blog</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://smoothies.com.cn/kubernetes-docs/Overview.html" target="_blank" class="custom-link">Kubernetes</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://smoothies.com.cn/go-docs/Overview.html" target="_blank" class="custom-link">Go</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://smoothies.com.cn/prometheus-docs/Overview.html" target="_blank" class="custom-link">Prometheus</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://smoothies.com.cn/linux-command-docs/Overview.html" target="_blank" class="custom-link">Command</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://smoothies.com.cn/shell-docs/Overview.html" target="_blank" class="custom-link">Shell</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://smoothies.com.cn/linux-docs/" target="_blank" class="custom-link">Linux</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://smoothies.com.cn/gitbook-docs/Overview.html" target="_blank" class="custom-link">Gitbook</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://smoothies.com.cn/python-docs/Overview.html" target="_blank" class="custom-link">Python</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://ghostwritten.gitbook.io/kubernetes-exam-in-action/" target="_blank" class="custom-link">Exam</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Git/">
+            
+                <a href="../Git/">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    Git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Git/1_Git_Install.html">
+            
+                <a href="../Git/1_Git_Install.html">
+            
+                    
+                        <b>1.2.1.</b>
+                    
+                    1 Git Install
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Git/10_Git_Skill.html">
+            
+                <a href="../Git/10_Git_Skill.html">
+            
+                    
+                        <b>1.2.2.</b>
+                    
+                    10 Git Skill
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../Git/11_Git_Practice.html">
+            
+                <a href="../Git/11_Git_Practice.html">
+            
+                    
+                        <b>1.2.3.</b>
+                    
+                    11 Git Practice
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../Git/12-Git_Set_upstream_branch.html">
+            
+                <a href="../Git/12-Git_Set_upstream_branch.html">
+            
+                    
+                        <b>1.2.4.</b>
+                    
+                    12 Git Set Upstream Branch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../Git/13_Git_fetch_and_pull_difference.html">
+            
+                <a href="../Git/13_Git_fetch_and_pull_difference.html">
+            
+                    
+                        <b>1.2.5.</b>
+                    
+                    13 Git Fetch And Pull Difference
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../Git/14_Git_fetch_prune.html">
+            
+                <a href="../Git/14_Git_fetch_prune.html">
+            
+                    
+                        <b>1.2.6.</b>
+                    
+                    14 Git Fetch Prune
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../Git/2_Git_Process.html">
+            
+                <a href="../Git/2_Git_Process.html">
+            
+                    
+                        <b>1.2.7.</b>
+                    
+                    2 Git Process
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../Git/3_Git_Concept.html">
+            
+                <a href="../Git/3_Git_Concept.html">
+            
+                    
+                        <b>1.2.8.</b>
+                    
+                    3 Git Concept
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../Git/4_Git_Branch_Management.html">
+            
+                <a href="../Git/4_Git_Branch_Management.html">
+            
+                    
+                        <b>1.2.9.</b>
+                    
+                    4 Git Branch Management
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../Git/5_Git_View_Commit_History.html">
+            
+                <a href="../Git/5_Git_View_Commit_History.html">
+            
+                    
+                        <b>1.2.10.</b>
+                    
+                    5 Git View Commit History
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../Git/6_Git_Tag.html">
+            
+                <a href="../Git/6_Git_Tag.html">
+            
+                    
+                        <b>1.2.11.</b>
+                    
+                    6 Git Tag
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="../Git/7_Git_Password-free_Login.html">
+            
+                <a href="../Git/7_Git_Password-free_Login.html">
+            
+                    
+                        <b>1.2.12.</b>
+                    
+                    7 Git Password Free Login
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="../Git/8_Git_Rollback.html">
+            
+                <a href="../Git/8_Git_Rollback.html">
+            
+                    
+                        <b>1.2.13.</b>
+                    
+                    8 Git Rollback
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="../Git/9_Git_Command.html">
+            
+                <a href="../Git/9_Git_Command.html">
+            
+                    
+                        <b>1.2.14.</b>
+                    
+                    9 Git Command
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Gitbook/">
+            
+                <a href="../Gitbook/">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    Gitbook
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Gitbook/Plugins/">
+            
+                <a href="../Gitbook/Plugins/">
+            
+                    
+                        <b>1.3.1.</b>
+                    
+                    Plugins
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../Gitbook/Plugins/1_Gitbook_Plugin_Summary.html">
+            
+                <a href="../Gitbook/Plugins/1_Gitbook_Plugin_Summary.html">
+            
+                    
+                        <b>1.3.1.1.</b>
+                    
+                    1 Gitbook Plugin Summary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../Gitbook/Plugins/10_Gitbook_Plugin_Search.html">
+            
+                <a href="../Gitbook/Plugins/10_Gitbook_Plugin_Search.html">
+            
+                    
+                        <b>1.3.1.2.</b>
+                    
+                    10 Gitbook Plugin Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../Gitbook/Plugins/11_Gitbook_Plugin_Commment.html">
+            
+                <a href="../Gitbook/Plugins/11_Gitbook_Plugin_Commment.html">
+            
+                    
+                        <b>1.3.1.3.</b>
+                    
+                    11 Gitbook Plugin Commment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.4" data-path="../Gitbook/Plugins/12_Gitbook_Plugin_Copyright_Notice.html">
+            
+                <a href="../Gitbook/Plugins/12_Gitbook_Plugin_Copyright_Notice.html">
+            
+                    
+                        <b>1.3.1.4.</b>
+                    
+                    12 Gitbook Plugin Copyright Notice
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.5" data-path="../Gitbook/Plugins/13_Gitbook_Plugin_Background.html">
+            
+                <a href="../Gitbook/Plugins/13_Gitbook_Plugin_Background.html">
+            
+                    
+                        <b>1.3.1.5.</b>
+                    
+                    13 Gitbook Plugin Background
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.6" data-path="../Gitbook/Plugins/14_Gitbook_Plugin_Image_View.html">
+            
+                <a href="../Gitbook/Plugins/14_Gitbook_Plugin_Image_View.html">
+            
+                    
+                        <b>1.3.1.6.</b>
+                    
+                    14 Gitbook Plugin Image View
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.7" data-path="../Gitbook/Plugins/15_Gitbook_Plugin_Icons_and_Logos.html">
+            
+                <a href="../Gitbook/Plugins/15_Gitbook_Plugin_Icons_and_Logos.html">
+            
+                    
+                        <b>1.3.1.7.</b>
+                    
+                    15 Gitbook Plugin Icons And Logos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.8" data-path="../Gitbook/Plugins/16_Gitbook_Plugin_Github.html">
+            
+                <a href="../Gitbook/Plugins/16_Gitbook_Plugin_Github.html">
+            
+                    
+                        <b>1.3.1.8.</b>
+                    
+                    16 Gitbook Plugin Github
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.9" data-path="../Gitbook/Plugins/17_Gitbook_Plugin_Emoji.html">
+            
+                <a href="../Gitbook/Plugins/17_Gitbook_Plugin_Emoji.html">
+            
+                    
+                        <b>1.3.1.9.</b>
+                    
+                    17 Gitbook Plugin Emoji
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.10" data-path="../Gitbook/Plugins/17_Gitbook_Plugin_Text_Hiding.html">
+            
+                <a href="../Gitbook/Plugins/17_Gitbook_Plugin_Text_Hiding.html">
+            
+                    
+                        <b>1.3.1.10.</b>
+                    
+                    17 Gitbook Plugin Text Hiding
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.11" data-path="../Gitbook/Plugins/18_Gitbook_Plugin_TODO.html">
+            
+                <a href="../Gitbook/Plugins/18_Gitbook_Plugin_TODO.html">
+            
+                    
+                        <b>1.3.1.11.</b>
+                    
+                    18 Gitbook Plugin TODO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.12" data-path="../Gitbook/Plugins/19_Gitbook_Plugin_Page_Editing.html">
+            
+                <a href="../Gitbook/Plugins/19_Gitbook_Plugin_Page_Editing.html">
+            
+                    
+                        <b>1.3.1.12.</b>
+                    
+                    19 Gitbook Plugin Page Editing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.13" data-path="../Gitbook/Plugins/2_Gitbook_Plugin_Title_Summary.html">
+            
+                <a href="../Gitbook/Plugins/2_Gitbook_Plugin_Title_Summary.html">
+            
+                    
+                        <b>1.3.1.13.</b>
+                    
+                    2 Gitbook Plugin Title Summary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.14" data-path="../Gitbook/Plugins/20_Gitbook_Plugin_RSS.html">
+            
+                <a href="../Gitbook/Plugins/20_Gitbook_Plugin_RSS.html">
+            
+                    
+                        <b>1.3.1.14.</b>
+                    
+                    20 Gitbook Plugin RSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.15" data-path="../Gitbook/Plugins/21_Gitbook_Plugin_Video.html">
+            
+                <a href="../Gitbook/Plugins/21_Gitbook_Plugin_Video.html">
+            
+                    
+                        <b>1.3.1.15.</b>
+                    
+                    21 Gitbook Plugin Video
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.16" data-path="../Gitbook/Plugins/22_Gitbook_Plugin_SEO.html">
+            
+                <a href="../Gitbook/Plugins/22_Gitbook_Plugin_SEO.html">
+            
+                    
+                        <b>1.3.1.16.</b>
+                    
+                    22 Gitbook Plugin SEO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.17" data-path="../Gitbook/Plugins/23_Gitbook_Plugin_Statistics.html">
+            
+                <a href="../Gitbook/Plugins/23_Gitbook_Plugin_Statistics.html">
+            
+                    
+                        <b>1.3.1.17.</b>
+                    
+                    23 Gitbook Plugin Statistics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.18" data-path="../Gitbook/Plugins/24_Gitbook_Plugin_navbor.html">
+            
+                <a href="../Gitbook/Plugins/24_Gitbook_Plugin_navbor.html">
+            
+                    
+                        <b>1.3.1.18.</b>
+                    
+                    24 Gitbook Plugin Navbor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.19" data-path="../Gitbook/Plugins/25_Gitbook_Plugin_Theme.html">
+            
+                <a href="../Gitbook/Plugins/25_Gitbook_Plugin_Theme.html">
+            
+                    
+                        <b>1.3.1.19.</b>
+                    
+                    25 Gitbook Plugin Theme
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.20" data-path="../Gitbook/Plugins/26_Gitbook_Plugin_Top_Navigation.html">
+            
+                <a href="../Gitbook/Plugins/26_Gitbook_Plugin_Top_Navigation.html">
+            
+                    
+                        <b>1.3.1.20.</b>
+                    
+                    26 Gitbook Plugin Top Navigation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.21" data-path="../Gitbook/Plugins/27_Gitbook_Plugin_Tags.html">
+            
+                <a href="../Gitbook/Plugins/27_Gitbook_Plugin_Tags.html">
+            
+                    
+                        <b>1.3.1.21.</b>
+                    
+                    27 Gitbook Plugin Tags
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.22" data-path="../Gitbook/Plugins/28_Gitbook_Plugin_pdf.html">
+            
+                <a href="../Gitbook/Plugins/28_Gitbook_Plugin_pdf.html">
+            
+                    
+                        <b>1.3.1.22.</b>
+                    
+                    28 Gitbook Plugin Pdf
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.23" data-path="../Gitbook/Plugins/29_Gitbook_Plugin_readmore.html">
+            
+                <a href="../Gitbook/Plugins/29_Gitbook_Plugin_readmore.html">
+            
+                    
+                        <b>1.3.1.23.</b>
+                    
+                    29 Gitbook Plugin Readmore
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.24" data-path="../Gitbook/Plugins/3_Gitbook_Plugin_Side_Navigation.html">
+            
+                <a href="../Gitbook/Plugins/3_Gitbook_Plugin_Side_Navigation.html">
+            
+                    
+                        <b>1.3.1.24.</b>
+                    
+                    3 Gitbook Plugin Side Navigation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.25" data-path="../Gitbook/Plugins/30_Gitbook_Plugin_music.html">
+            
+                <a href="../Gitbook/Plugins/30_Gitbook_Plugin_music.html">
+            
+                    
+                        <b>1.3.1.25.</b>
+                    
+                    30 Gitbook Plugin Music
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.26" data-path="../Gitbook/Plugins/4_Gitbook_Plugin_Directory_Navigation.html">
+            
+                <a href="../Gitbook/Plugins/4_Gitbook_Plugin_Directory_Navigation.html">
+            
+                    
+                        <b>1.3.1.26.</b>
+                    
+                    4 Gitbook Plugin Directory Navigation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.27" data-path="../Gitbook/Plugins/5_Gitbook_Plugin_Article_TOC.html">
+            
+                <a href="../Gitbook/Plugins/5_Gitbook_Plugin_Article_TOC.html">
+            
+                    
+                        <b>1.3.1.27.</b>
+                    
+                    5 Gitbook Plugin Article TOC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.28" data-path="../Gitbook/Plugins/6_Gitbook_Plugin_Tips_and_Emphasis.html">
+            
+                <a href="../Gitbook/Plugins/6_Gitbook_Plugin_Tips_and_Emphasis.html">
+            
+                    
+                        <b>1.3.1.28.</b>
+                    
+                    6 Gitbook Plugin Tips And Emphasis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.29" data-path="../Gitbook/Plugins/7_Gitbook_Plugin_Code_Block.html">
+            
+                <a href="../Gitbook/Plugins/7_Gitbook_Plugin_Code_Block.html">
+            
+                    
+                        <b>1.3.1.29.</b>
+                    
+                    7 Gitbook Plugin Code Block
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.30" data-path="../Gitbook/Plugins/8_Gitbook_Plugin_Sharing.html">
+            
+                <a href="../Gitbook/Plugins/8_Gitbook_Plugin_Sharing.html">
+            
+                    
+                        <b>1.3.1.30.</b>
+                    
+                    8 Gitbook Plugin Sharing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.31" data-path="../Gitbook/Plugins/9_Gitbook_Plugin_Appreciate.html">
+            
+                <a href="../Gitbook/Plugins/9_Gitbook_Plugin_Appreciate.html">
+            
+                    
+                        <b>1.3.1.31.</b>
+                    
+                    9 Gitbook Plugin Appreciate
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../Gitbook/1_Gitbook_Get_Started.html">
+            
+                <a href="../Gitbook/1_Gitbook_Get_Started.html">
+            
+                    
+                        <b>1.3.2.</b>
+                    
+                    1 Gitbook Get Started
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../Gitbook/2_Gitbook_Install.html">
+            
+                <a href="../Gitbook/2_Gitbook_Install.html">
+            
+                    
+                        <b>1.3.3.</b>
+                    
+                    2 Gitbook Install
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../Gitbook/3_Gitbook_README.html">
+            
+                <a href="../Gitbook/3_Gitbook_README.html">
+            
+                    
+                        <b>1.3.4.</b>
+                    
+                    3 Gitbook README
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../Gitbook/4_Gitbook_SUMMARY.html">
+            
+                <a href="../Gitbook/4_Gitbook_SUMMARY.html">
+            
+                    
+                        <b>1.3.5.</b>
+                    
+                    4 Gitbook SUMMARY
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../Gitbook/5_Gitbook_book.json.html">
+            
+                <a href="../Gitbook/5_Gitbook_book.json.html">
+            
+                    
+                        <b>1.3.6.</b>
+                    
+                    5_Gitbook_book.json
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../Gitbook/6_Gitbook_push_Github_Pages.html">
+            
+                <a href="../Gitbook/6_Gitbook_push_Github_Pages.html">
+            
+                    
+                        <b>1.3.7.</b>
+                    
+                    6 Gitbook Push Github Pages
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../Gitbook/7_Gitbook_Update_Github_Pages.html">
+            
+                <a href="../Gitbook/7_Gitbook_Update_Github_Pages.html">
+            
+                    
+                        <b>1.3.8.</b>
+                    
+                    7 Gitbook Update Github Pages
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../Github/">
+            
+                <a href="../Github/">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    Github
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../Github/1_Github_Create_Depository.html">
+            
+                <a href="../Github/1_Github_Create_Depository.html">
+            
+                    
+                        <b>1.4.1.</b>
+                    
+                    1 Github Create Depository
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../Github/2_Github_Local_Pull_Github.html">
+            
+                <a href="../Github/2_Github_Local_Pull_Github.html">
+            
+                    
+                        <b>1.4.2.</b>
+                    
+                    2 Github Local Pull Github
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../Github/3_Github_Manage_Remote_Repositories.html">
+            
+                <a href="../Github/3_Github_Manage_Remote_Repositories.html">
+            
+                    
+                        <b>1.4.3.</b>
+                    
+                    3 Github Manage Remote Repositories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../Github/4_Github_Delete_folders_remotely.html">
+            
+                <a href="../Github/4_Github_Delete_folders_remotely.html">
+            
+                    
+                        <b>1.4.4.</b>
+                    
+                    4 Github Delete Folders Remotely
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../Github/5_Github_Delete_local_and_remote_branches.html">
+            
+                <a href="../Github/5_Github_Delete_local_and_remote_branches.html">
+            
+                    
+                        <b>1.4.5.</b>
+                    
+                    5 Github Delete Local And Remote Branches
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../Github/6_Github_Custom_Home_Page.html">
+            
+                <a href="../Github/6_Github_Custom_Home_Page.html">
+            
+                    
+                        <b>1.4.6.</b>
+                    
+                    6 Github Custom Home Page
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../Github/7_Github_Action_Automatically_Build_Deploy.html">
+            
+                <a href="../Github/7_Github_Action_Automatically_Build_Deploy.html">
+            
+                    
+                        <b>1.4.7.</b>
+                    
+                    7 Github Action Automatically Build Deploy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../Github/8_Github_Open_source_merge_request.html">
+            
+                <a href="../Github/8_Github_Open_source_merge_request.html">
+            
+                    
+                        <b>1.4.8.</b>
+                    
+                    8 Github Open Source Merge Request
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="./">
+            
+                <a href="./">
+            
+                    
+                        <b>1.5.</b>
+                    
+                    Gitlab
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="1_Gitlab_Get_Started.html">
+            
+                <a href="1_Gitlab_Get_Started.html">
+            
+                    
+                        <b>1.5.1.</b>
+                    
+                    1 Gitlab Get Started
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="2_Gitlab_Install.html">
+            
+                <a href="2_Gitlab_Install.html">
+            
+                    
+                        <b>1.5.2.</b>
+                    
+                    2 Gitlab Install
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="3_gitlab_config.html">
+            
+                <a href="3_gitlab_config.html">
+            
+                    
+                        <b>1.5.3.</b>
+                    
+                    3 Gitlab Config
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="4_Gitlab_Runner_Install.html">
+            
+                <a href="4_Gitlab_Runner_Install.html">
+            
+                    
+                        <b>1.5.4.</b>
+                    
+                    4 Gitlab Runner Install
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="5_Gitlab_Runner_Management.html">
+            
+                <a href="5_Gitlab_Runner_Management.html">
+            
+                    
+                        <b>1.5.5.</b>
+                    
+                    5 Gitlab Runner Management
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.6" data-path="6_Gitlab_Create_CI_Pipeline.html">
+            
+                <a href="6_Gitlab_Create_CI_Pipeline.html">
+            
+                    
+                        <b>1.5.6.</b>
+                    
+                    6 Gitlab Create CI Pipeline
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="7_Gitlab_CI_CD.html">
+            
+                <a href="7_Gitlab_CI_CD.html">
+            
+                    
+                        <b>1.5.7.</b>
+                    
+                    7 Gitlab CI CD
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../Overview.html">
+            
+                <a href="../Overview.html">
+            
+                    
+                        <b>1.6.</b>
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >6 Gitlab Create CI Pipeline</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#gitlab-&#x521B;&#x5EFA;&#x6301;&#x7EED;&#x96C6;&#x6210;-ci-pipeline"><b></b>Gitlab &#x521B;&#x5EFA;&#x6301;&#x7EED;&#x96C6;&#x6210; (CI) Pipeline</a></li><ul><li><span class="title-icon "></span><a href="#1&#x7B80;&#x4ECB;"><b></b>1.&#x7B80;&#x4ECB;</a></li><li><span class="title-icon "></span><a href="#2ci-demo"><b></b>2.CI demo</a></li><ul><li><span class="title-icon "></span><a href="#21-python-demo"><b></b>2.1 python demo</a></li><li><span class="title-icon "></span><a href="#22-&#x90E8;&#x7F72;gitlab"><b></b>2.2 &#x90E8;&#x7F72;gitlab</a></li><li><span class="title-icon "></span><a href="#23-&#x9879;&#x76EE;&#x4E0A;&#x4F20;gitlab"><b></b>2.3 &#x9879;&#x76EE;&#x4E0A;&#x4F20;gitlab</a></li><li><span class="title-icon "></span><a href="#24-&#x7F16;&#x6392;gitlab-ciyaml"><b></b>2.4 &#x7F16;&#x6392;.gitlab-ci.yaml</a></li><li><span class="title-icon "></span><a href="#25-&#x90E8;&#x7F72;gitlab-runner"><b></b>2.5. &#x90E8;&#x7F72;gitlab-runner</a></li><li><span class="title-icon "></span><a href="#26-&#x6D4B;&#x8BD5;&#x8DD1;&#x8D77;&#x6765;"><b></b>2.6 &#x6D4B;&#x8BD5;&#x8DD1;&#x8D77;&#x6765;</a></li><li><span class="title-icon "></span><a href="#27-ci&#x53D8;&#x5F97;&#x66F4;&#x5B89;&#x5168;"><b></b>2.7 CI&#x53D8;&#x5F97;&#x66F4;&#x5B89;&#x5168;</a></li></ul></ul></ul></div><a href="#gitlab-&#x521B;&#x5EFA;&#x6301;&#x7EED;&#x96C6;&#x6210;-ci-pipeline" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="gitlab-&#x521B;&#x5EFA;&#x6301;&#x7EED;&#x96C6;&#x6210;-ci-pipeline"><a name="gitlab-&#x521B;&#x5EFA;&#x6301;&#x7EED;&#x96C6;&#x6210;-ci-pipeline" class="anchor-navigation-ex-anchor" href="#gitlab-&#x521B;&#x5EFA;&#x6301;&#x7EED;&#x96C6;&#x6210;-ci-pipeline"><i class="fa fa-link" aria-hidden="true"></i></a>Gitlab &#x521B;&#x5EFA;&#x6301;&#x7EED;&#x96C6;&#x6210; (CI) Pipeline</h1>
+<h2 id="1&#x7B80;&#x4ECB;"><a name="1&#x7B80;&#x4ECB;" class="anchor-navigation-ex-anchor" href="#1&#x7B80;&#x4ECB;"><i class="fa fa-link" aria-hidden="true"></i></a>1.&#x7B80;&#x4ECB;</h2>
+<p><img src="https://img-blog.csdnimg.cn/cfcc7940ded7470486bee77a1b8a96a8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAZ2hvc3R3cml0dGVu,size_20,color_FFFFFF,t_70,g_se,x_16" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;">
+<img src="https://img-blog.csdnimg.cn/011844e732354657a55b1ae97b463b20.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAZ2hvc3R3cml0dGVu,size_20,color_FFFFFF,t_70,g_se,x_16" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;">
+<img src="https://img-blog.csdnimg.cn/bf35723d90c243afa411f19c3cb13242.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAZ2hvc3R3cml0dGVu,size_20,color_FFFFFF,t_70,g_se,x_16" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;">
+<img src="https://img-blog.csdnimg.cn/f686fc2df7ec434c909000b5a56363d0.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAZ2hvc3R3cml0dGVu,size_20,color_FFFFFF,t_70,g_se,x_16" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;">
+<img src="https://img-blog.csdnimg.cn/9586c66a923d4b399ee4e2240b6d0f21.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAZ2hvc3R3cml0dGVu,size_20,color_FFFFFF,t_70,g_se,x_16" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;"></p>
+<h2 id="2ci-demo"><a name="2ci-demo" class="anchor-navigation-ex-anchor" href="#2ci-demo"><i class="fa fa-link" aria-hidden="true"></i></a>2.CI demo</h2>
+<h3 id="21-python-demo"><a name="21-python-demo" class="anchor-navigation-ex-anchor" href="#21-python-demo"><i class="fa fa-link" aria-hidden="true"></i></a>2.1 python demo</h3>
+<p>vscode&#x521B;&#x5EFA;&#x4E00;&#x4E0B;&#x76EE;&#x5F55;&#x548C;&#x6587;&#x4EF6;
+<img src="https://img-blog.csdnimg.cn/b2d247d7452a4735826a7848a7cbe194.png?shadow_50,text_Q1NETiBAZ2hvc3R3cml0dGVu,size_15,color_FFFFFF,t_70,g_se,x_16" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;">
+&#x5185;&#x5BB9;&#xFF1A;
+test_functions.py</p>
+<pre class="language-"><code class="lang-bash">from app.functions <span class="token function">import</span> <span class="token function">sum</span>
+
+def test_sum<span class="token punctuation">(</span><span class="token punctuation">)</span>:
+    assert add<span class="token punctuation">(</span><span class="token number">1</span>, <span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">11</span>
+</code></pre>
+<p>functions.py</p>
+<pre class="language-"><code class="lang-bash">def add<span class="token punctuation">(</span>a, b<span class="token punctuation">)</span>:
+    <span class="token builtin class-name">return</span> a + b
+</code></pre>
+<p>&#x5B89;&#x88C5;&#x6D4B;&#x8BD5;&#x5DE5;&#x5177;</p>
+<pre class="language-"><code class="lang-bash">$ pip3 <span class="token function">install</span> pipenv
+Installing collected packages: virtualenv
+  WARNING: Failed to <span class="token function">write</span> executable - trying to use .deleteme logic
+ERROR: Could not <span class="token function">install</span> packages due to an OSError: <span class="token punctuation">[</span>WinError <span class="token number">2</span><span class="token punctuation">]</span> &#x7CFB;&#x7EDF;&#x627E;&#x4E0D;&#x5230;&#x6307;&#x5B9A;&#x7684;&#x6587;&#x4EF6;&#x3002;: <span class="token string">&apos;C:\\Python310\\Scripts\\virtualenv.exe&apos;</span> -<span class="token operator">&gt;</span> <span class="token string">&apos;C:\\Python310\\Scripts\\virtualenv.exe.deleteme&apos;</span>
+
+<span class="token comment">#&#x5C1D;&#x8BD5; </span>
+pip3 <span class="token function">install</span> pipenv --user
+Requirement already satisfied: pipenv <span class="token keyword">in</span> c:<span class="token punctuation">\</span>python310<span class="token punctuation">\</span>lib<span class="token punctuation">\</span>site-packages <span class="token punctuation">(</span><span class="token number">2021.11</span>.23<span class="token punctuation">)</span>
+Requirement already satisfied: setuptools<span class="token operator">&gt;=</span><span class="token number">36.2</span>.1 <span class="token keyword">in</span> c:<span class="token punctuation">\</span>python310<span class="token punctuation">\</span>lib<span class="token punctuation">\</span>site-packages <span class="token punctuation">(</span>from pipenv<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token number">57.4</span>.0<span class="token punctuation">)</span>
+Requirement already satisfied: pip<span class="token operator">&gt;=</span><span class="token number">18.0</span> <span class="token keyword">in</span> c:<span class="token punctuation">\</span>users<span class="token punctuation">\</span>xh<span class="token punctuation">\</span>appdata<span class="token punctuation">\</span>roaming<span class="token punctuation">\</span>python<span class="token punctuation">\</span>python310<span class="token punctuation">\</span>site-packages <span class="token punctuation">(</span>from pipenv<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token number">21.3</span>.1<span class="token punctuation">)</span>
+Requirement already satisfied: virtualenv-clone<span class="token operator">&gt;=</span><span class="token number">0.2</span>.5 <span class="token keyword">in</span> c:<span class="token punctuation">\</span>python310<span class="token punctuation">\</span>lib<span class="token punctuation">\</span>site-packages <span class="token punctuation">(</span>from pipenv<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token number">0.5</span>.7<span class="token punctuation">)</span>  
+Requirement already satisfied: certifi <span class="token keyword">in</span> c:<span class="token punctuation">\</span>users<span class="token punctuation">\</span>xh<span class="token punctuation">\</span>appdata<span class="token punctuation">\</span>roaming<span class="token punctuation">\</span>python<span class="token punctuation">\</span>python310<span class="token punctuation">\</span>site-packages <span class="token punctuation">(</span>from pipenv<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token number">2021.10</span>.8<span class="token punctuation">)</span>
+Requirement already satisfied: virtualenv <span class="token keyword">in</span> c:<span class="token punctuation">\</span>python310<span class="token punctuation">\</span>lib<span class="token punctuation">\</span>site-packages <span class="token punctuation">(</span>from pipenv<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token number">20.10</span>.0<span class="token punctuation">)</span>
+Requirement already satisfied: six<span class="token operator">&lt;</span><span class="token number">2</span>,<span class="token operator">&gt;=</span><span class="token number">1.9</span>.0 <span class="token keyword">in</span> c:<span class="token punctuation">\</span>python310<span class="token punctuation">\</span>lib<span class="token punctuation">\</span>site-packages <span class="token punctuation">(</span>from virtualenv-<span class="token operator">&gt;</span>pipenv<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token number">1.16</span>.0<span class="token punctuation">)</span>
+Requirement already satisfied: distlib<span class="token operator">&lt;</span><span class="token number">1</span>,<span class="token operator">&gt;=</span><span class="token number">0.3</span>.1 <span class="token keyword">in</span> c:<span class="token punctuation">\</span>python310<span class="token punctuation">\</span>lib<span class="token punctuation">\</span>site-packages <span class="token punctuation">(</span>from virtualenv-<span class="token operator">&gt;</span>pipenv<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token number">0.3</span>.4<span class="token punctuation">)</span>
+Requirement already satisfied: backports.entry-points-selectable<span class="token operator">&gt;=</span><span class="token number">1.0</span>.4 <span class="token keyword">in</span> c:<span class="token punctuation">\</span>python310<span class="token punctuation">\</span>lib<span class="token punctuation">\</span>site-packages <span class="token punctuation">(</span>from 
+virtualenv-<span class="token operator">&gt;</span>pipenv<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token number">1.1</span>.1<span class="token punctuation">)</span>
+Requirement already satisfied: filelock<span class="token operator">&lt;</span><span class="token number">4</span>,<span class="token operator">&gt;=</span><span class="token number">3.2</span> <span class="token keyword">in</span> c:<span class="token punctuation">\</span>python310<span class="token punctuation">\</span>lib<span class="token punctuation">\</span>site-packages <span class="token punctuation">(</span>from virtualenv-<span class="token operator">&gt;</span>pipenv<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token number">3.4</span>.0<span class="token punctuation">)</span>
+Requirement already satisfied: platformdirs<span class="token operator">&lt;</span><span class="token number">3</span>,<span class="token operator">&gt;=</span><span class="token number">2</span> <span class="token keyword">in</span> c:<span class="token punctuation">\</span>python310<span class="token punctuation">\</span>lib<span class="token punctuation">\</span>site-packages <span class="token punctuation">(</span>from virtualenv-<span class="token operator">&gt;</span>pipenv<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token number">2.4</span>.0<span class="token punctuation">)</span>
+
+
+$ pipenv
+bash: pipenv: <span class="token builtin class-name">command</span> not found
+
+<span class="token comment">#&#x5C1D;&#x8BD5;</span>
+$ python -m pipenv
+
+<span class="token comment">#&#x5B89;&#x88C5;pytest</span>
+$ python -m pipenv <span class="token function">install</span> pytest
+Creating a virtualenv <span class="token keyword">for</span> this project<span class="token punctuation">..</span>.
+Pipfile: D:<span class="token punctuation">\</span>gitlab<span class="token punctuation">\</span>Pipfile
+Using C:/Python310/python.exe <span class="token punctuation">(</span><span class="token number">3.10</span>.0<span class="token punctuation">)</span> to create virtualenv<span class="token punctuation">..</span>.
+<span class="token punctuation">[</span>   <span class="token operator">=</span><span class="token punctuation">]</span> Creating virtual environment<span class="token punctuation">..</span>.created virtual environment CPython3.10.0.final.0-64 <span class="token keyword">in</span> 6580ms
+  creator CPython3Windows<span class="token punctuation">(</span>dest<span class="token operator">=</span>C:<span class="token punctuation">\</span>Users<span class="token punctuation">\</span>XH<span class="token punctuation">\</span>.virtualenvs<span class="token punctuation">\</span>gitlab-DBb610So, <span class="token assign-left variable">clear</span><span class="token operator">=</span>False, <span class="token assign-left variable">no_vcs_ignore</span><span class="token operator">=</span>False, <span class="token assign-left variable">global</span><span class="token operator">=</span>False<span class="token punctuation">)</span>
+  seeder FromAppData<span class="token punctuation">(</span>download<span class="token operator">=</span>False, <span class="token assign-left variable">pip</span><span class="token operator">=</span>bundle, <span class="token assign-left variable">setuptools</span><span class="token operator">=</span>bundle, <span class="token assign-left variable">wheel</span><span class="token operator">=</span>bundle, <span class="token assign-left variable">via</span><span class="token operator">=</span>copy, <span class="token assign-left variable">app_data_dir</span><span class="token operator">=</span>C:<span class="token punctuation">\</span>Users<span class="token punctuation">\</span>XH<span class="token punctuation">\</span>AppData<span class="token punctuation">\</span>Local<span class="token punctuation">\</span>pypa<span class="token punctuation">\</span>virtualenv<span class="token punctuation">)</span>
+    added seed packages: <span class="token assign-left variable">pip</span><span class="token operator">==</span><span class="token number">21.3</span>.1, <span class="token assign-left variable">setuptools</span><span class="token operator">==</span><span class="token number">58.3</span>.0, <span class="token assign-left variable">wheel</span><span class="token operator">==</span><span class="token number">0.37</span>.0
+  activators BashActivator,BatchActivator,FishActivator,NushellActivator,PowerShellActivator,PythonActivator    
+
+Successfully created virtual environment<span class="token operator">!</span>
+Virtualenv location: C:<span class="token punctuation">\</span>Users<span class="token punctuation">\</span>XH<span class="token punctuation">\</span>.virtualenvs<span class="token punctuation">\</span>gitlab-DBb610So
+Creating a Pipfile <span class="token keyword">for</span> this project<span class="token punctuation">..</span>.
+Installing pytest<span class="token punctuation">..</span>.
+Adding pytest to Pipfile<span class="token string">&apos;s [packages]...
+Installation Succeeded
+Pipfile.lock not found, creating...
+Locking [dev-packages] dependencies...
+Locking [packages] dependencies...
+           Building requirements...
+Resolving dependencies...
+Success!
+Updated Pipfile.lock (99a583)!
+Installing dependencies from Pipfile.lock (99a583)...
+  ================================ 0/0 - 00:00:00
+To activate this project&apos;</span>s virtualenv, run pipenv shell.
+Alternatively, run a <span class="token builtin class-name">command</span> inside the virtualenv with pipenv run.
+
+
+$ python -m pipenv shell
+Launching subshell <span class="token keyword">in</span> virtual environment<span class="token punctuation">..</span>.
+
+<span class="token function">clear</span>
+</code></pre>
+<p>&#x521B;&#x5EFA;&#x7ED3;&#x6784;&#x6587;&#x4EF6;<code>__init__.py</code>
+<img src="https://img-blog.csdnimg.cn/9cbd3383ff1b4bafbadce7e0667bfa43.png?shadow_50,text_Q1NETiBAZ2hvc3R3cml0dGVu,size_15,color_FFFFFF,t_70,g_se,x_16" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;">
+&#x6D4B;&#x8BD5;</p>
+<pre class="language-"><code class="lang-bash">$ python -m pytest
+<span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span> <span class="token builtin class-name">test</span> session starts <span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span>
+platform win32 -- Python <span class="token number">3.10</span>.0, pytest-6.2.5, py-1.11.0, pluggy-1.0.0
+rootdir: D:<span class="token punctuation">\</span>gitlab<span class="token punctuation">\</span>gitlab_example_en
+collected <span class="token number">0</span> items / <span class="token number">1</span> error
+
+<span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span> ERRORS <span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span>
+__________________________________ ERROR collecting tests/test_functions.py ___________________________________ 
+ImportError <span class="token keyword">while</span> importing <span class="token builtin class-name">test</span> module <span class="token string">&apos;D:\gitlab\gitlab_example_en\tests\test_functions.py&apos;</span><span class="token builtin class-name">.</span>
+Hint: <span class="token function">make</span> sure your <span class="token builtin class-name">test</span> modules/packages have valid Python names.
+Traceback:
+C:<span class="token punctuation">\</span>Python310<span class="token punctuation">\</span>lib<span class="token punctuation">\</span>importlib<span class="token punctuation">\</span>__init__.py:126: <span class="token keyword">in</span> import_module
+    <span class="token builtin class-name">return</span> _bootstrap._gcd_import<span class="token punctuation">(</span>name<span class="token punctuation">[</span>level:<span class="token punctuation">]</span>, package, level<span class="token punctuation">)</span>
+tests<span class="token punctuation">\</span>test_functions.py:1: <span class="token keyword">in</span> <span class="token operator">&lt;</span>module<span class="token operator">&gt;</span>
+    from app.functions <span class="token function">import</span> <span class="token function">sum</span>
+E   ImportError: cannot <span class="token function">import</span> name <span class="token string">&apos;sum&apos;</span> from <span class="token string">&apos;app.functions&apos;</span> <span class="token punctuation">(</span>D:<span class="token punctuation">\</span>gitlab<span class="token punctuation">\</span>gitlab_example_en<span class="token punctuation">\</span>app<span class="token punctuation">\</span>functions.py<span class="token punctuation">)</span>   
+<span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span> short <span class="token builtin class-name">test</span> summary info <span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span> 
+ERROR tests/test_functions.py
+<span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span> Interrupted: <span class="token number">1</span> error during collection <span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span> 
+<span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span> <span class="token number">1</span> error <span class="token keyword">in</span> <span class="token number">0</span>.14s <span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span>
+</code></pre>
+<p>&#x6CA1;&#x901A;&#x8FC7;</p>
+<p>&#x4FEE;&#x6539;&#x5185;&#x5BB9;
+test_functions.py</p>
+<pre class="language-"><code class="lang-bash">from app.functions <span class="token function">import</span> <span class="token function">add</span>
+
+def test_add<span class="token punctuation">(</span><span class="token punctuation">)</span>:
+    assert add<span class="token punctuation">(</span><span class="token number">1</span>, <span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">11</span>
+</code></pre>
+<p>&#x6D4B;&#x8BD5;</p>
+<pre class="language-"><code class="lang-bash">$ python -m pytest
+<span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span> <span class="token builtin class-name">test</span> session starts <span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span>
+platform win32 -- Python <span class="token number">3.10</span>.0, pytest-6.2.5, py-1.11.0, pluggy-1.0.0
+rootdir: D:<span class="token punctuation">\</span>gitlab<span class="token punctuation">\</span>gitlab_example_en
+collected <span class="token number">1</span> item                                                                                                
+
+tests<span class="token punctuation">\</span>test_functions.py <span class="token builtin class-name">.</span>                                                                                <span class="token punctuation">[</span><span class="token number">100</span>%<span class="token punctuation">]</span>
+
+<span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span> <span class="token number">1</span> passed <span class="token keyword">in</span> <span class="token number">0</span>.03s <span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span>
+</code></pre>
+<p>&#x6D4B;&#x8BD5;&#x901A;&#x8FC7;</p>
+<h3 id="22-&#x90E8;&#x7F72;gitlab"><a name="22-&#x90E8;&#x7F72;gitlab" class="anchor-navigation-ex-anchor" href="#22-&#x90E8;&#x7F72;gitlab"><i class="fa fa-link" aria-hidden="true"></i></a>2.2 &#x90E8;&#x7F72;gitlab</h3>
+<ul>
+<li><a href="https://ghostwritten.blog.csdn.net/article/details/121929582" target="_blank">docker&#x90E8;&#x7F72;gitlab</a></li>
+<li><a href="https://blog.csdn.net/xixihahalelehehe/article/details/105240194?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522163958422116780271511591%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fblog.%2522%257D&amp;request_id=163958422116780271511591&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~blog~first_rank_v2~rank_v29-2-105240194.pc_v2_rank_blog_default&amp;utm_term=gitlab&amp;spm=1018.2226.3001.4450" target="_blank">&#x914D;&#x7F6E;&#x672C;&#x5730;&#x4E0E;gitlab&#x4E92;&#x4FE1;</a></li>
+</ul>
+<p>&#x767B;&#x9646;gitlab&#xFF0C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7A7A;&#x9879;&#x76EE;<code>gitlab-example-demo</code>
+<img src="https://img-blog.csdnimg.cn/a1489577c38c4195a12f59809370efd1.png?shadow_50,text_Q1NETiBAZ2hvc3R3cml0dGVu,size_20,color_FFFFFF,t_70,g_se,x_16" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;"></p>
+<p>&#x5728;vscode&#x4E2D;&#x7684;&#x7EC8;&#x7AEF;<code>gitlab-example-en</code>&#x76EE;&#x5F55;&#x6267;&#x884C;&#xFF1A;</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">git</span> config --global user.name <span class="token string">&quot;Administrator&quot;</span>
+$ <span class="token function">git</span> config --global user.email <span class="token string">&quot;admin@example.com&quot;</span>
+$ ssh-keygen -t rsa -C <span class="token string">&quot;admin@example.com&quot;</span>
+$ <span class="token function">cat</span> /c/Users/XH/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCtv5pEPO+Esp14+bztwrq9dM4hD8rUF/Du/1tM6l2fKAgpmFoqM3OhMv9D/x7+94AL2+GUPJ5HPqbCDwzGRfUnLi02RnAHXij3+H/ZRzceCEBlCMvqx//+g/fmtYHdDxKlOcjfxlT4aAytKmRtpYPKIzzHd/lwMWtxpgHvnr+gOM6s67eVabOPlH6iyi7UyIoCy5Xg/wg5IDXFCSGfw3FSZS9EaDdWTTfntwGX7jnX3cEiY/kphKC7dvai3B/YUyx6ioZBgTeBN1aakMkaSiyRMEeQ4HmDI4QogiqHMgTNJCiUq5oiDf0JMwrW/m/IJnZemq4W1cheegaxvJKraJFWoIBp6/AOjisjZrMAbZbrpFDLzvsMJcqDgHSLjQd1hXMaLvR1K9JfYKwsjGzR8XaoKRW1742BbtqLq46qmzqW0pHpShGMmbeALAJMvjRqOG7MuTKcVe2CWyfX7QrIFxVucZ0tijlLMjuqZquUnVjsYm+SUujevm7h+IW09esL7j8<span class="token operator">=</span> admin@example.com
+</code></pre>
+<p>&#x8D4B;&#x503C;<code>/c/Users/XH/.ssh/id_rsa.pub</code>&#x5230;gitlab&#x7684;ssh_key,&#x5982;&#x56FE;
+<img src="https://img-blog.csdnimg.cn/9aaf21b857a14c0a95a87edd285f7d60.png?shadow_50,text_Q1NETiBAZ2hvc3R3cml0dGVu,size_11,color_FFFFFF,t_70,g_se,x_16" alt="/c/Users/XH/.ssh/id_rsa.pub">
+<img src="https://img-blog.csdnimg.cn/08dcd4b2662c4090b6e32ed783a4f70f.png?shadow_50,text_Q1NETiBAZ2hvc3R3cml0dGVu,size_20,color_FFFFFF,t_70,g_se,x_16" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;"></p>
+<h3 id="23-&#x9879;&#x76EE;&#x4E0A;&#x4F20;gitlab"><a name="23-&#x9879;&#x76EE;&#x4E0A;&#x4F20;gitlab" class="anchor-navigation-ex-anchor" href="#23-&#x9879;&#x76EE;&#x4E0A;&#x4F20;gitlab"><i class="fa fa-link" aria-hidden="true"></i></a>2.3 &#x9879;&#x76EE;&#x4E0A;&#x4F20;gitlab</h3>
+<p>&#x521D;&#x59CB;&#x5316;&#x672C;&#x5730;&#x9879;&#x76EE;&#xFF0C;&#x5F00;&#x59CB;&#x4E0A;&#x4F20;gitlab&#x4ED3;&#x5E93;</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">git</span> init
+$ <span class="token function">git</span> commit -m <span class="token string">&quot;add a new demo&quot;</span>
+<span class="token function">git</span> remote <span class="token function">add</span> origin http://192.168.211.70:8081/root/gitlab-example-demo.git
+$ <span class="token function">git</span> push -u origin master
+Username <span class="token keyword">for</span> <span class="token string">&apos;http://192.168.211.70:8081&apos;</span><span class="token builtin class-name">:</span> root
+Password <span class="token keyword">for</span> <span class="token string">&apos;http://root@192.168.211.70:8081&apos;</span><span class="token builtin class-name">:</span> 
+Enumerating objects: <span class="token number">7</span>, done.
+Counting objects: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">7</span>/7<span class="token punctuation">)</span>, done.
+Delta compression using up to <span class="token number">4</span> threads
+Compressing objects: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">5</span>/5<span class="token punctuation">)</span>, done.
+Writing objects: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">7</span>/7<span class="token punctuation">)</span>, <span class="token number">525</span> bytes <span class="token operator">|</span> <span class="token number">262.00</span> KiB/s, done.
+Total <span class="token number">7</span> <span class="token punctuation">(</span>delta <span class="token number">0</span><span class="token punctuation">)</span>, reused <span class="token number">0</span> <span class="token punctuation">(</span>delta <span class="token number">0</span><span class="token punctuation">)</span>
+To http://192.168.211.70:8081/root/gitlab-example-demo.git
+ * <span class="token punctuation">[</span>new branch<span class="token punctuation">]</span>      master -<span class="token operator">&gt;</span> master
+Branch <span class="token string">&apos;master&apos;</span> <span class="token builtin class-name">set</span> up to track remote branch <span class="token string">&apos;master&apos;</span> from <span class="token string">&apos;origin&apos;</span><span class="token builtin class-name">.</span>
+</code></pre>
+<p>&#x4E0A;&#x4F20;&#x6210;&#x529F;
+<img src="https://img-blog.csdnimg.cn/c9aedb6dd07d4e41b9a4574d6ba456d7.png?shadow_50,text_Q1NETiBAZ2hvc3R3cml0dGVu,size_20,color_FFFFFF,t_70,g_se,x_16" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;"></p>
+<h3 id="24-&#x7F16;&#x6392;gitlab-ciyaml"><a name="24-&#x7F16;&#x6392;gitlab-ciyaml" class="anchor-navigation-ex-anchor" href="#24-&#x7F16;&#x6392;gitlab-ciyaml"><i class="fa fa-link" aria-hidden="true"></i></a>2.4 &#x7F16;&#x6392;.gitlab-ci.yaml</h3>
+<p>&#x5982;&#x679C;&#x5728;gitlab&#x8FD0;&#x884C;&#x81EA;&#x52A8;&#x5316;&#x6D4B;&#x8BD5;&#xFF0C;&#x9700;&#x8981;&#x7528;&#x5230;<code>.gitlab-ci.yaml</code>&#xFF0C;&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x5F00;&#x59CB;&#x7F16;&#x5199;</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">cat</span> .gitlab-ci.yaml
+stages:
+  - <span class="token builtin class-name">test</span>
+
+python_tests:
+  image: python:3.9
+  stage: <span class="token builtin class-name">test</span>
+  script:
+    - pip3 <span class="token function">install</span> pipenv
+</code></pre>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span>
+$ <span class="token function">git</span> commit -m <span class="token string">&quot;add .gitlab-ci.yaml&quot;</span>
+$ <span class="token function">git</span> push
+</code></pre>
+<p>&#x5F53;&#x6211;&#x4EEC;&#x63A8;&#x9001;&#x5230;<code>gitlab</code>&#x53D1;&#x73B0;&#x9879;&#x76EE;&#x65E0;&#x6CD5;&#x8FD0;&#x884C;&#x81EA;&#x52A8;&#x6D4B;&#x8BD5;&#x3002;&#x6211;&#x4EEC;&#x67E5;&#x660E;&#x539F;&#x56E0;
+<img src="https://img-blog.csdnimg.cn/27431d3a8f4a4be6a1211209d32e3738.png?shadow_50,text_Q1NETiBAZ2hvc3R3cml0dGVu,size_20,color_FFFFFF,t_70,g_se,x_16" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;">
+<img src="https://img-blog.csdnimg.cn/38265afeb1ef4c23961f455543209ae5.png?shadow_50,text_Q1NETiBAZ2hvc3R3cml0dGVu,size_20,color_FFFFFF,t_70,g_se,x_16" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;">
+<img src="https://img-blog.csdnimg.cn/4148370c9dca4410a966d8601809ac4e.png?shadow_50,text_Q1NETiBAZ2hvc3R3cml0dGVu,size_20,color_FFFFFF,t_70,g_se,x_16" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;">
+<img src="https://img-blog.csdnimg.cn/aa7640bdf7a4401bac2f91b7293e073a.png?shadow_50,text_Q1NETiBAZ2hvc3R3cml0dGVu,size_20,color_FFFFFF,t_70,g_se,x_16" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;"></p>
+<h3 id="25-&#x90E8;&#x7F72;gitlab-runner"><a name="25-&#x90E8;&#x7F72;gitlab-runner" class="anchor-navigation-ex-anchor" href="#25-&#x90E8;&#x7F72;gitlab-runner"><i class="fa fa-link" aria-hidden="true"></i></a>2.5. &#x90E8;&#x7F72;gitlab-runner</h3>
+<p>&#x6211;&#x4EEC;&#x539F;&#x6765;&#x7F3A;&#x5C11;&#x4E00;&#x4E2A; action runners&#xFF0C;&#x4E5F;&#x5C31;&#x662F;<code>gitlab-runner</code>
+<a href="https://docs.gitlab.com/runner/install/docker.html" target="_blank">&#x5B98;&#x65B9;&#x5B89;&#x88C5;gitlab-runner</a></p>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7528;&#x4E00;&#x4E2A;&#x5C0F;&#x7684;&#x955C;&#x50CF;<code>gitlab/gitlab-runner:alpine-v14.4.2</code></p>
+<pre class="language-"><code class="lang-bash"> <span class="token function">docker</span> run -d --name gitlab-runner --restart always --net<span class="token operator">=</span>host <span class="token punctuation">\</span>
+     -v /srv/gitlab-runner/config:/etc/gitlab-runner <span class="token punctuation">\</span>
+     -v /var/run/docker.sock:/var/run/docker.sock <span class="token punctuation">\</span>
+     gitlab/gitlab-runner:alpine-v14.4.2
+</code></pre>
+<p><a href="https://docs.gitlab.com/runner/register/index.html#docker" target="_blank">&#x6CE8;&#x518C;runner</a></p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">docker</span> run --rm -it -v /srv/gitlab-runner/config:/etc/gitlab-runner gitlab/gitlab-runner:alpine-v14.4.2 register
+Runtime platform                                    <span class="token assign-left variable">arch</span><span class="token operator">=</span>amd64 <span class="token assign-left variable">os</span><span class="token operator">=</span>linux <span class="token assign-left variable">pid</span><span class="token operator">=</span><span class="token number">7</span> <span class="token assign-left variable">revision</span><span class="token operator">=</span>50fc80a6 <span class="token assign-left variable">version</span><span class="token operator">=</span><span class="token number">14.4</span>.2
+Running <span class="token keyword">in</span> system-mode.                            
+
+Enter the GitLab instance URL <span class="token punctuation">(</span>for example, https://gitlab.com/<span class="token punctuation">)</span>:
+http://192.168.211.70:8081
+Enter the registration token:
+6D5mo8iWCLBaVdqcaqjN
+Enter a description <span class="token keyword">for</span> the runner:
+<span class="token punctuation">[</span>329b671ffa00<span class="token punctuation">]</span>: gitlab-example
+Enter tags <span class="token keyword">for</span> the runner <span class="token punctuation">(</span>comma-separated<span class="token punctuation">)</span>:
+
+Registering runner<span class="token punctuation">..</span>. succeeded                     <span class="token assign-left variable">runner</span><span class="token operator">=</span>6D5mo8iW
+Enter an executor: ssh, virtualbox, docker+machine, shell, docker-ssh+machine, kubernetes, custom, docker, docker-ssh, parallels:
+<span class="token function">docker</span>
+Enter the default Docker image <span class="token punctuation">(</span>for example, ruby:2.6<span class="token punctuation">)</span>:
+ubuntu:20.04
+Runner registered successfully. Feel <span class="token function">free</span> to start it, but <span class="token keyword">if</span> it&apos;s running already the config should be automatically reloaded<span class="token operator">!</span>
+</code></pre>
+<p>&#x6CE8;&#x518C;&#x5B8C;&#x6210;&#x540E;&#xFF0C;gitlab&#x754C;&#x9762;&#x68C0;&#x67E5;<code>gitlab-runner</code>&#x662F;&#x5426;&#x6CE8;&#x518C;&#x6210;&#x529F;
+<img src="https://img-blog.csdnimg.cn/50cfdba4a3ba4da2b15979b81ee8de43.png?shadow_50,text_Q1NETiBAZ2hvc3R3cml0dGVu,size_20,color_FFFFFF,t_70,g_se,x_16" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;">
+<img src="https://img-blog.csdnimg.cn/e0f8e65c7633480faada8f9ab19be308.png?shadow_50,text_Q1NETiBAZ2hvc3R3cml0dGVu,size_20,color_FFFFFF,t_70,g_se,x_16" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;">
+&#x7EFF;&#x8272;&#x4EE3;&#x8868;&#x6210;&#x529F;&#xFF0C;&#x56DE;&#x5230;&#x9879;&#x76EE;&#x754C;&#x9762;&#xFF0C;&#x5DF2;&#x7ECF;&#x5F00;&#x59CB;&#x5728;&#x8DD1;&#x4E86;&#x3002;</p>
+<h3 id="26-&#x6D4B;&#x8BD5;&#x8DD1;&#x8D77;&#x6765;"><a name="26-&#x6D4B;&#x8BD5;&#x8DD1;&#x8D77;&#x6765;" class="anchor-navigation-ex-anchor" href="#26-&#x6D4B;&#x8BD5;&#x8DD1;&#x8D77;&#x6765;"><i class="fa fa-link" aria-hidden="true"></i></a>2.6 &#x6D4B;&#x8BD5;&#x8DD1;&#x8D77;&#x6765;</h3>
+<p><img src="https://img-blog.csdnimg.cn/4133c9b6a692403fa16977cd891829c6.png?shadow_50,text_Q1NETiBAZ2hvc3R3cml0dGVu,size_20,color_FFFFFF,t_70,g_se,x_16" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;">
+<img src="https://img-blog.csdnimg.cn/2ba5d5c0cf4641e6b67598fb4880c6d6.png?shadow_50,text_Q1NETiBAZ2hvc3R3cml0dGVu,size_20,color_FFFFFF,t_70,g_se,x_16" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;">
+<img src="https://img-blog.csdnimg.cn/4c877e2dcf244632b2aca060259b9930.png?shadow_50,text_Q1NETiBAZ2hvc3R3cml0dGVu,size_20,color_FFFFFF,t_70,g_se,x_16" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;">
+<img src="https://img-blog.csdnimg.cn/e758bd464bb94bb2ac478b29b7ede5c2.png?shadow_50,text_Q1NETiBAZ2hvc3R3cml0dGVu,size_20,color_FFFFFF,t_70,g_se,x_16" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;">
+<img src="https://img-blog.csdnimg.cn/96c65c75cceb4c768cb2d83d18e6f40e.png?shadow_50,text_Q1NETiBAZ2hvc3R3cml0dGVu,size_20,color_FFFFFF,t_70,g_se,x_16" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;"></p>
+<h3 id="27-ci&#x53D8;&#x5F97;&#x66F4;&#x5B89;&#x5168;"><a name="27-ci&#x53D8;&#x5F97;&#x66F4;&#x5B89;&#x5168;" class="anchor-navigation-ex-anchor" href="#27-ci&#x53D8;&#x5F97;&#x66F4;&#x5B89;&#x5168;"><i class="fa fa-link" aria-hidden="true"></i></a>2.7 CI&#x53D8;&#x5F97;&#x66F4;&#x5B89;&#x5168;</h3>
+<p><img src="https://img-blog.csdnimg.cn/7332937dee8143aab1231d7447adfaa3.png?shadow_50,text_Q1NETiBAZ2hvc3R3cml0dGVu,size_20,color_FFFFFF,t_70,g_se,x_16" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;"></p>
+<p>&#x521B;&#x5EFA;&#x666E;&#x901A;&#x7528;&#x6237;</p>
+<pre class="language-"><code class="lang-bash"><span class="token function">apt-get</span> update <span class="token operator">&amp;&amp;</span> <span class="token function">apt-get</span> upgrade
+<span class="token function">useradd</span> -m -s /bin/bash youtube
+<span class="token function">passwd</span> youtube
+<span class="token function">usermod</span> -aG <span class="token function">sudo</span> youtube
+</code></pre>
+<p>&#x7981;&#x7528;&#x5173;&#x4E8E;root&#x7528;&#x6237;ssh&#x7684;&#x6839;&#x8BBF;&#x95EE;</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">su</span> - youtube
+$ <span class="token function">vim</span> /etc/ssh/sshd_config
+PermitRootLogin no
+
+
+$ systemctl restart <span class="token function">ssh</span>
+$ <span class="token function">ssh</span> root@192.168.211.70&#xFF08;&#x62D2;&#x7EDD;&#xFF09;
+</code></pre>
+<p>&#x5B89;&#x88C5;Docker</p>
+<pre class="language-"><code class="lang-bash">ssh-copy-id youtube@server-IP
+<span class="token function">apt-get</span> <span class="token function">install</span> -y docker.io
+<span class="token comment">#&#x5F53;&#x524D;&#x7528;&#x6237;&#x6388;&#x6743;</span>
+<span class="token function">usermod</span> -aG <span class="token function">docker</span> <span class="token environment constant">$USER</span>
+<span class="token function">docker</span> <span class="token function">ps</span>
+<span class="token function">docker</span> run hello-world
+</code></pre>
+<p>&#x5728;youtube&#x7528;&#x6237;&#x4E0B;&#x91CD;&#x65B0;&#x8FD0;&#x884C;&#x90E8;&#x7F72;&#x65B0;&#x7684;<code>gitlab-runner</code>&#x5E76;&#x6CE8;&#x518C;&#xFF0C;&#x7EE7;&#x7EED;&#x6D4B;&#x8BD5;&#x3002;</p>
+<hr>
+<p><font color="#3CB371" size="4">&#x89C6;&#x9891;</font>&#xFF1A;<a href="https://mp.weixin.qq.com/s/NKgpZ1CCybkrNakZIlN-Ng" target="_blank">https://mp.weixin.qq.com/s/NKgpZ1CCybkrNakZIlN-Ng</a></p>
+<p><font color="#FF4500" size="4">&#x539F;&#x521B;</font>&#xFF1A;<a href="https://www.youtube.com/watch?v=6QtJDaycUwA" target="_blank">https://www.youtube.com/watch?v=6QtJDaycUwA</a></p>
+<p><font color="#000000" size="4">github</font>&#xFF1A;<a href="https://github.com/Ghostwritten/gitlab-example-demo.git" target="_blank">https://github.com/Ghostwritten/gitlab-example-demo.git</a></p>
+<p><font color="#1E90FF" size="4">&#x66F4;&#x591A;&#x9605;&#x8BFB;</font>&#xFF1A;</p>
+<ul>
+<li><a href="https://ghostwritten.blog.csdn.net/article/details/121929582" target="_blank">&#x90E8;&#x7F72;gitlab </a></li>
+<li><a href="https://ghostwritten.blog.csdn.net/article/details/107755143" target="_blank">gitlab-runner&#x90E8;&#x7F72;</a></li>
+<li><a href="https://ghostwritten.blog.csdn.net/article/details/121962870" target="_blank">Gitlab &#x57FA;&#x7840;&#x914D;&#x7F6E;</a></li>
+<li><a href="https://blog.csdn.net/xixihahalelehehe/article/details/121941628?spm=1001.2014.3001.5501" target="_blank">Create a Continuous Integration (CI) Pipeline in Gitlab</a></li>
+<li><a href="https://ghostwritten.blog.csdn.net/article/details/121107739" target="_blank">git&#x4E0E;gitlab&#x5FEB;&#x901F;&#x5B66;&#x4E60;&#x624B;&#x518C;</a></li>
+</ul>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; ghostwritten &#x6D59;ICP&#x5907;2020032454&#x53F7; 2022 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2022-06-06 07:25:08
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="5_Gitlab_Runner_Management.html" class="navigation navigation-prev " aria-label="Previous page: 5 Gitlab Runner Management">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="7_Gitlab_CI_CD.html" class="navigation navigation-next " aria-label="Next page: 7 Gitlab CI CD">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"6 Gitlab Create CI Pipeline","level":"1.5.6","depth":2,"next":{"title":"7 Gitlab CI CD","level":"1.5.7","depth":2,"path":"Gitlab/7_Gitlab_CI_CD.md","ref":"Gitlab/7_Gitlab_CI_CD.md","articles":[]},"previous":{"title":"5 Gitlab Runner Management","level":"1.5.5","depth":2,"path":"Gitlab/5_Gitlab_Runner_Management.md","ref":"Gitlab/5_Gitlab_Runner_Management.md","articles":[]},"dir":"ltr"},"config":{"plugins":["3-ba","accordion","advanced-emoji","anchor-navigation-ex","baidu-tongji","code","change_girls","custom-favicon","donate","chapter-fold","edit-link","flexible-alerts","github-buttons","github","insert-logo","musicxml","prism","prism-themes","pageview-count","-highlight","-search","-lunr","rss","search-plus","splitter","-sharing","sharing-plus","sidebar-style","sitemap-general","simple-mind-map","youtube","theme-default","todo","tbfed-pagefooter"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"sidebar-style":{"author":"zongxun","title":"《Gitbook Docs》"},"tbfed-pagefooter":{"copyright":"Copyright &copy ghostwritten 浙ICP备2020032454号 2022","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"prism":{"css":["prism-themes/themes/prism-holi-theme.css"],"lang":{"shell":"bash"}},"youtube":{},"github":{"url":"https://github.com/Ghostwritten"},"baidu-tongji":{"url":"https://hm.baidu.com/hm.js","token":"55e7dfe47f4dc1c018d4042fdfa62565"},"todo":{},"splitter":{},"change_girls":{"time":10,"urls":["https://www.bizhishe.com/d/file/2019-08-26/1566827846505876.jpg","https://www.bizhishe.com/d/file/2020-03-02/1583150452601733.jpg","https://www.bizhishe.com/d/file/2019-07-24/1563977671157231.jpg","https://www.bizhishe.com/d/file/2019-07-14/1563116649970786.jpg","https://www.bizhishe.com/d/file/2019-07-24/1563977671126392.jpg","https://www.bizhishe.com/d/file/2019-07-14/1563116649584541.jpg"]},"accordion":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://github.com/Ghostwritten/gitbook-docs/blob/gh-pages/assets/imgs/aplipay.png?raw=true","alipayText":"支付宝打赏","button":"打赏","title":"","wechat":"https://github.com/Ghostwritten/gitbook-docs/blob/gh-pages/assets/imgs/wechat.png?raw=true","wechatText":"微信打赏"},"sitemap-general":{"prefix":"https://smoothies.com.cn/gitbook-docs/"},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"Gitbook Docs","description":"This is the best book ever.","author":"Zong Xun","feed_url":"http://smoothies.com.cn/rss","site_url":"https://smoothies.com.cn/gitbook-docs/","managingEditor":"writer@smoothies.com.cn (Zong Xun)","webMaster":"webmaster@smoothies.com.cn (Zong Xun)"},"musicxml":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":"assets/imgs/1_girl.ico","pageview-count":{},"prism-themes":{},"github-buttons":{"buttons":[{"user":"Ghostwritten","repo":"gitbook-docs","type":"star","count":true,"size":"small"}]},"custom-favicon":{},"3-ba":{"configuration":"auto","token":"9ffc0dce8d7079aceab6b0bc18eb626b"},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Danger"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"}},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper"],"douban":false,"facebook":true,"weibo":false,"twitter":true,"pocket":false,"google":false,"qzone":false},"simple-mind-map":{"autoFit":true,"linkShape":"diagonal","preset":"default","style":{},"type":"markdown"},"edit-link":{"label":"Edit","base":"https://github.com/Ghostwritten/gitbook-docs/edit/master/"},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"insert-logo":{"style":"background: none; max-height: 100px; min-height: 100px","url":"https://www.bizhishe.com/d/file/2019-07-14/1563116649268975.jpg"},"search-plus":{}},"theme":"default","author":"宗勋 - zongxun","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Gitbook Docs","language":"zh-hans","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"Docker":"https://smoothies.com.cn/docker-docs/Overview.html","Blog":"https://smoothies.com.cn","Kubernetes":"https://smoothies.com.cn/kubernetes-docs/Overview.html","Go":"https://smoothies.com.cn/go-docs/Overview.html","Prometheus":"https://smoothies.com.cn/prometheus-docs/Overview.html","Command":"https://smoothies.com.cn/linux-command-docs/Overview.html","Shell":"https://smoothies.com.cn/shell-docs/Overview.html","Linux":"https://smoothies.com.cn/linux-docs/","Gitbook":"https://smoothies.com.cn/gitbook-docs/Overview.html","Python":"https://smoothies.com.cn/python-docs/Overview.html","Exam":"https://ghostwritten.gitbook.io/kubernetes-exam-in-action/"}},"gitbook":"*","description":"这是一本关于Git、Github、Gitlab、Gitbook的书籍"},"file":{"path":"Gitlab/6_Gitlab_Create_CI_Pipeline.md","mtime":"2022-06-06T07:25:08.946Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-02-22T09:46:37.898Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-3-ba/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-accordion/accordionSelector.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-baidu-tongji/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-change_girls/girls.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-musicxml/osmd.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-musicxml/musicxml.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-musicxml/promise.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-rss/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sidebar-style/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-simple-mind-map/bundle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

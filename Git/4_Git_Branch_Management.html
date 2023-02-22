@@ -1,0 +1,1781 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>4 Git Branch Management · Gitbook Docs</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="宗勋 - zongxun">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-accordion/accordion.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-change_girls/girls.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-flexible-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-holi-theme.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-sidebar-style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="5_Git_View_Commit_History.html" />
+    
+    
+    <link rel="prev" href="3_Git_Concept.html" />
+    
+
+    <link href="http://smoothies.com.cn/rss" title="Gitbook Docs" rel="alternate" type="application/rss+xml" />
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"Ghostwritten","repo":"gitbook-docs","type":"star","count":true,"size":"small"}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://smoothies.com.cn/docker-docs/Overview.html" target="_blank" class="custom-link">Docker</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://smoothies.com.cn" target="_blank" class="custom-link">Blog</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://smoothies.com.cn/kubernetes-docs/Overview.html" target="_blank" class="custom-link">Kubernetes</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://smoothies.com.cn/go-docs/Overview.html" target="_blank" class="custom-link">Go</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://smoothies.com.cn/prometheus-docs/Overview.html" target="_blank" class="custom-link">Prometheus</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://smoothies.com.cn/linux-command-docs/Overview.html" target="_blank" class="custom-link">Command</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://smoothies.com.cn/shell-docs/Overview.html" target="_blank" class="custom-link">Shell</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://smoothies.com.cn/linux-docs/" target="_blank" class="custom-link">Linux</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://smoothies.com.cn/gitbook-docs/Overview.html" target="_blank" class="custom-link">Gitbook</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://smoothies.com.cn/python-docs/Overview.html" target="_blank" class="custom-link">Python</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://ghostwritten.gitbook.io/kubernetes-exam-in-action/" target="_blank" class="custom-link">Exam</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    Git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="1_Git_Install.html">
+            
+                <a href="1_Git_Install.html">
+            
+                    
+                        <b>1.2.1.</b>
+                    
+                    1 Git Install
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="10_Git_Skill.html">
+            
+                <a href="10_Git_Skill.html">
+            
+                    
+                        <b>1.2.2.</b>
+                    
+                    10 Git Skill
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="11_Git_Practice.html">
+            
+                <a href="11_Git_Practice.html">
+            
+                    
+                        <b>1.2.3.</b>
+                    
+                    11 Git Practice
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="12-Git_Set_upstream_branch.html">
+            
+                <a href="12-Git_Set_upstream_branch.html">
+            
+                    
+                        <b>1.2.4.</b>
+                    
+                    12 Git Set Upstream Branch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="13_Git_fetch_and_pull_difference.html">
+            
+                <a href="13_Git_fetch_and_pull_difference.html">
+            
+                    
+                        <b>1.2.5.</b>
+                    
+                    13 Git Fetch And Pull Difference
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="14_Git_fetch_prune.html">
+            
+                <a href="14_Git_fetch_prune.html">
+            
+                    
+                        <b>1.2.6.</b>
+                    
+                    14 Git Fetch Prune
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="2_Git_Process.html">
+            
+                <a href="2_Git_Process.html">
+            
+                    
+                        <b>1.2.7.</b>
+                    
+                    2 Git Process
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="3_Git_Concept.html">
+            
+                <a href="3_Git_Concept.html">
+            
+                    
+                        <b>1.2.8.</b>
+                    
+                    3 Git Concept
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.9" data-path="4_Git_Branch_Management.html">
+            
+                <a href="4_Git_Branch_Management.html">
+            
+                    
+                        <b>1.2.9.</b>
+                    
+                    4 Git Branch Management
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="5_Git_View_Commit_History.html">
+            
+                <a href="5_Git_View_Commit_History.html">
+            
+                    
+                        <b>1.2.10.</b>
+                    
+                    5 Git View Commit History
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="6_Git_Tag.html">
+            
+                <a href="6_Git_Tag.html">
+            
+                    
+                        <b>1.2.11.</b>
+                    
+                    6 Git Tag
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="7_Git_Password-free_Login.html">
+            
+                <a href="7_Git_Password-free_Login.html">
+            
+                    
+                        <b>1.2.12.</b>
+                    
+                    7 Git Password Free Login
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="8_Git_Rollback.html">
+            
+                <a href="8_Git_Rollback.html">
+            
+                    
+                        <b>1.2.13.</b>
+                    
+                    8 Git Rollback
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="9_Git_Command.html">
+            
+                <a href="9_Git_Command.html">
+            
+                    
+                        <b>1.2.14.</b>
+                    
+                    9 Git Command
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Gitbook/">
+            
+                <a href="../Gitbook/">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    Gitbook
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Gitbook/Plugins/">
+            
+                <a href="../Gitbook/Plugins/">
+            
+                    
+                        <b>1.3.1.</b>
+                    
+                    Plugins
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../Gitbook/Plugins/1_Gitbook_Plugin_Summary.html">
+            
+                <a href="../Gitbook/Plugins/1_Gitbook_Plugin_Summary.html">
+            
+                    
+                        <b>1.3.1.1.</b>
+                    
+                    1 Gitbook Plugin Summary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../Gitbook/Plugins/10_Gitbook_Plugin_Search.html">
+            
+                <a href="../Gitbook/Plugins/10_Gitbook_Plugin_Search.html">
+            
+                    
+                        <b>1.3.1.2.</b>
+                    
+                    10 Gitbook Plugin Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../Gitbook/Plugins/11_Gitbook_Plugin_Commment.html">
+            
+                <a href="../Gitbook/Plugins/11_Gitbook_Plugin_Commment.html">
+            
+                    
+                        <b>1.3.1.3.</b>
+                    
+                    11 Gitbook Plugin Commment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.4" data-path="../Gitbook/Plugins/12_Gitbook_Plugin_Copyright_Notice.html">
+            
+                <a href="../Gitbook/Plugins/12_Gitbook_Plugin_Copyright_Notice.html">
+            
+                    
+                        <b>1.3.1.4.</b>
+                    
+                    12 Gitbook Plugin Copyright Notice
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.5" data-path="../Gitbook/Plugins/13_Gitbook_Plugin_Background.html">
+            
+                <a href="../Gitbook/Plugins/13_Gitbook_Plugin_Background.html">
+            
+                    
+                        <b>1.3.1.5.</b>
+                    
+                    13 Gitbook Plugin Background
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.6" data-path="../Gitbook/Plugins/14_Gitbook_Plugin_Image_View.html">
+            
+                <a href="../Gitbook/Plugins/14_Gitbook_Plugin_Image_View.html">
+            
+                    
+                        <b>1.3.1.6.</b>
+                    
+                    14 Gitbook Plugin Image View
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.7" data-path="../Gitbook/Plugins/15_Gitbook_Plugin_Icons_and_Logos.html">
+            
+                <a href="../Gitbook/Plugins/15_Gitbook_Plugin_Icons_and_Logos.html">
+            
+                    
+                        <b>1.3.1.7.</b>
+                    
+                    15 Gitbook Plugin Icons And Logos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.8" data-path="../Gitbook/Plugins/16_Gitbook_Plugin_Github.html">
+            
+                <a href="../Gitbook/Plugins/16_Gitbook_Plugin_Github.html">
+            
+                    
+                        <b>1.3.1.8.</b>
+                    
+                    16 Gitbook Plugin Github
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.9" data-path="../Gitbook/Plugins/17_Gitbook_Plugin_Emoji.html">
+            
+                <a href="../Gitbook/Plugins/17_Gitbook_Plugin_Emoji.html">
+            
+                    
+                        <b>1.3.1.9.</b>
+                    
+                    17 Gitbook Plugin Emoji
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.10" data-path="../Gitbook/Plugins/17_Gitbook_Plugin_Text_Hiding.html">
+            
+                <a href="../Gitbook/Plugins/17_Gitbook_Plugin_Text_Hiding.html">
+            
+                    
+                        <b>1.3.1.10.</b>
+                    
+                    17 Gitbook Plugin Text Hiding
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.11" data-path="../Gitbook/Plugins/18_Gitbook_Plugin_TODO.html">
+            
+                <a href="../Gitbook/Plugins/18_Gitbook_Plugin_TODO.html">
+            
+                    
+                        <b>1.3.1.11.</b>
+                    
+                    18 Gitbook Plugin TODO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.12" data-path="../Gitbook/Plugins/19_Gitbook_Plugin_Page_Editing.html">
+            
+                <a href="../Gitbook/Plugins/19_Gitbook_Plugin_Page_Editing.html">
+            
+                    
+                        <b>1.3.1.12.</b>
+                    
+                    19 Gitbook Plugin Page Editing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.13" data-path="../Gitbook/Plugins/2_Gitbook_Plugin_Title_Summary.html">
+            
+                <a href="../Gitbook/Plugins/2_Gitbook_Plugin_Title_Summary.html">
+            
+                    
+                        <b>1.3.1.13.</b>
+                    
+                    2 Gitbook Plugin Title Summary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.14" data-path="../Gitbook/Plugins/20_Gitbook_Plugin_RSS.html">
+            
+                <a href="../Gitbook/Plugins/20_Gitbook_Plugin_RSS.html">
+            
+                    
+                        <b>1.3.1.14.</b>
+                    
+                    20 Gitbook Plugin RSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.15" data-path="../Gitbook/Plugins/21_Gitbook_Plugin_Video.html">
+            
+                <a href="../Gitbook/Plugins/21_Gitbook_Plugin_Video.html">
+            
+                    
+                        <b>1.3.1.15.</b>
+                    
+                    21 Gitbook Plugin Video
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.16" data-path="../Gitbook/Plugins/22_Gitbook_Plugin_SEO.html">
+            
+                <a href="../Gitbook/Plugins/22_Gitbook_Plugin_SEO.html">
+            
+                    
+                        <b>1.3.1.16.</b>
+                    
+                    22 Gitbook Plugin SEO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.17" data-path="../Gitbook/Plugins/23_Gitbook_Plugin_Statistics.html">
+            
+                <a href="../Gitbook/Plugins/23_Gitbook_Plugin_Statistics.html">
+            
+                    
+                        <b>1.3.1.17.</b>
+                    
+                    23 Gitbook Plugin Statistics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.18" data-path="../Gitbook/Plugins/24_Gitbook_Plugin_navbor.html">
+            
+                <a href="../Gitbook/Plugins/24_Gitbook_Plugin_navbor.html">
+            
+                    
+                        <b>1.3.1.18.</b>
+                    
+                    24 Gitbook Plugin Navbor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.19" data-path="../Gitbook/Plugins/25_Gitbook_Plugin_Theme.html">
+            
+                <a href="../Gitbook/Plugins/25_Gitbook_Plugin_Theme.html">
+            
+                    
+                        <b>1.3.1.19.</b>
+                    
+                    25 Gitbook Plugin Theme
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.20" data-path="../Gitbook/Plugins/26_Gitbook_Plugin_Top_Navigation.html">
+            
+                <a href="../Gitbook/Plugins/26_Gitbook_Plugin_Top_Navigation.html">
+            
+                    
+                        <b>1.3.1.20.</b>
+                    
+                    26 Gitbook Plugin Top Navigation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.21" data-path="../Gitbook/Plugins/27_Gitbook_Plugin_Tags.html">
+            
+                <a href="../Gitbook/Plugins/27_Gitbook_Plugin_Tags.html">
+            
+                    
+                        <b>1.3.1.21.</b>
+                    
+                    27 Gitbook Plugin Tags
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.22" data-path="../Gitbook/Plugins/28_Gitbook_Plugin_pdf.html">
+            
+                <a href="../Gitbook/Plugins/28_Gitbook_Plugin_pdf.html">
+            
+                    
+                        <b>1.3.1.22.</b>
+                    
+                    28 Gitbook Plugin Pdf
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.23" data-path="../Gitbook/Plugins/29_Gitbook_Plugin_readmore.html">
+            
+                <a href="../Gitbook/Plugins/29_Gitbook_Plugin_readmore.html">
+            
+                    
+                        <b>1.3.1.23.</b>
+                    
+                    29 Gitbook Plugin Readmore
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.24" data-path="../Gitbook/Plugins/3_Gitbook_Plugin_Side_Navigation.html">
+            
+                <a href="../Gitbook/Plugins/3_Gitbook_Plugin_Side_Navigation.html">
+            
+                    
+                        <b>1.3.1.24.</b>
+                    
+                    3 Gitbook Plugin Side Navigation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.25" data-path="../Gitbook/Plugins/30_Gitbook_Plugin_music.html">
+            
+                <a href="../Gitbook/Plugins/30_Gitbook_Plugin_music.html">
+            
+                    
+                        <b>1.3.1.25.</b>
+                    
+                    30 Gitbook Plugin Music
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.26" data-path="../Gitbook/Plugins/4_Gitbook_Plugin_Directory_Navigation.html">
+            
+                <a href="../Gitbook/Plugins/4_Gitbook_Plugin_Directory_Navigation.html">
+            
+                    
+                        <b>1.3.1.26.</b>
+                    
+                    4 Gitbook Plugin Directory Navigation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.27" data-path="../Gitbook/Plugins/5_Gitbook_Plugin_Article_TOC.html">
+            
+                <a href="../Gitbook/Plugins/5_Gitbook_Plugin_Article_TOC.html">
+            
+                    
+                        <b>1.3.1.27.</b>
+                    
+                    5 Gitbook Plugin Article TOC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.28" data-path="../Gitbook/Plugins/6_Gitbook_Plugin_Tips_and_Emphasis.html">
+            
+                <a href="../Gitbook/Plugins/6_Gitbook_Plugin_Tips_and_Emphasis.html">
+            
+                    
+                        <b>1.3.1.28.</b>
+                    
+                    6 Gitbook Plugin Tips And Emphasis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.29" data-path="../Gitbook/Plugins/7_Gitbook_Plugin_Code_Block.html">
+            
+                <a href="../Gitbook/Plugins/7_Gitbook_Plugin_Code_Block.html">
+            
+                    
+                        <b>1.3.1.29.</b>
+                    
+                    7 Gitbook Plugin Code Block
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.30" data-path="../Gitbook/Plugins/8_Gitbook_Plugin_Sharing.html">
+            
+                <a href="../Gitbook/Plugins/8_Gitbook_Plugin_Sharing.html">
+            
+                    
+                        <b>1.3.1.30.</b>
+                    
+                    8 Gitbook Plugin Sharing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.31" data-path="../Gitbook/Plugins/9_Gitbook_Plugin_Appreciate.html">
+            
+                <a href="../Gitbook/Plugins/9_Gitbook_Plugin_Appreciate.html">
+            
+                    
+                        <b>1.3.1.31.</b>
+                    
+                    9 Gitbook Plugin Appreciate
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../Gitbook/1_Gitbook_Get_Started.html">
+            
+                <a href="../Gitbook/1_Gitbook_Get_Started.html">
+            
+                    
+                        <b>1.3.2.</b>
+                    
+                    1 Gitbook Get Started
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../Gitbook/2_Gitbook_Install.html">
+            
+                <a href="../Gitbook/2_Gitbook_Install.html">
+            
+                    
+                        <b>1.3.3.</b>
+                    
+                    2 Gitbook Install
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../Gitbook/3_Gitbook_README.html">
+            
+                <a href="../Gitbook/3_Gitbook_README.html">
+            
+                    
+                        <b>1.3.4.</b>
+                    
+                    3 Gitbook README
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../Gitbook/4_Gitbook_SUMMARY.html">
+            
+                <a href="../Gitbook/4_Gitbook_SUMMARY.html">
+            
+                    
+                        <b>1.3.5.</b>
+                    
+                    4 Gitbook SUMMARY
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../Gitbook/5_Gitbook_book.json.html">
+            
+                <a href="../Gitbook/5_Gitbook_book.json.html">
+            
+                    
+                        <b>1.3.6.</b>
+                    
+                    5_Gitbook_book.json
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../Gitbook/6_Gitbook_push_Github_Pages.html">
+            
+                <a href="../Gitbook/6_Gitbook_push_Github_Pages.html">
+            
+                    
+                        <b>1.3.7.</b>
+                    
+                    6 Gitbook Push Github Pages
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../Gitbook/7_Gitbook_Update_Github_Pages.html">
+            
+                <a href="../Gitbook/7_Gitbook_Update_Github_Pages.html">
+            
+                    
+                        <b>1.3.8.</b>
+                    
+                    7 Gitbook Update Github Pages
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../Github/">
+            
+                <a href="../Github/">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    Github
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../Github/1_Github_Create_Depository.html">
+            
+                <a href="../Github/1_Github_Create_Depository.html">
+            
+                    
+                        <b>1.4.1.</b>
+                    
+                    1 Github Create Depository
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../Github/2_Github_Local_Pull_Github.html">
+            
+                <a href="../Github/2_Github_Local_Pull_Github.html">
+            
+                    
+                        <b>1.4.2.</b>
+                    
+                    2 Github Local Pull Github
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../Github/3_Github_Manage_Remote_Repositories.html">
+            
+                <a href="../Github/3_Github_Manage_Remote_Repositories.html">
+            
+                    
+                        <b>1.4.3.</b>
+                    
+                    3 Github Manage Remote Repositories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../Github/4_Github_Delete_folders_remotely.html">
+            
+                <a href="../Github/4_Github_Delete_folders_remotely.html">
+            
+                    
+                        <b>1.4.4.</b>
+                    
+                    4 Github Delete Folders Remotely
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../Github/5_Github_Delete_local_and_remote_branches.html">
+            
+                <a href="../Github/5_Github_Delete_local_and_remote_branches.html">
+            
+                    
+                        <b>1.4.5.</b>
+                    
+                    5 Github Delete Local And Remote Branches
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../Github/6_Github_Custom_Home_Page.html">
+            
+                <a href="../Github/6_Github_Custom_Home_Page.html">
+            
+                    
+                        <b>1.4.6.</b>
+                    
+                    6 Github Custom Home Page
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../Github/7_Github_Action_Automatically_Build_Deploy.html">
+            
+                <a href="../Github/7_Github_Action_Automatically_Build_Deploy.html">
+            
+                    
+                        <b>1.4.7.</b>
+                    
+                    7 Github Action Automatically Build Deploy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../Github/8_Github_Open_source_merge_request.html">
+            
+                <a href="../Github/8_Github_Open_source_merge_request.html">
+            
+                    
+                        <b>1.4.8.</b>
+                    
+                    8 Github Open Source Merge Request
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../Gitlab/">
+            
+                <a href="../Gitlab/">
+            
+                    
+                        <b>1.5.</b>
+                    
+                    Gitlab
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../Gitlab/1_Gitlab_Get_Started.html">
+            
+                <a href="../Gitlab/1_Gitlab_Get_Started.html">
+            
+                    
+                        <b>1.5.1.</b>
+                    
+                    1 Gitlab Get Started
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../Gitlab/2_Gitlab_Install.html">
+            
+                <a href="../Gitlab/2_Gitlab_Install.html">
+            
+                    
+                        <b>1.5.2.</b>
+                    
+                    2 Gitlab Install
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../Gitlab/3_gitlab_config.html">
+            
+                <a href="../Gitlab/3_gitlab_config.html">
+            
+                    
+                        <b>1.5.3.</b>
+                    
+                    3 Gitlab Config
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../Gitlab/4_Gitlab_Runner_Install.html">
+            
+                <a href="../Gitlab/4_Gitlab_Runner_Install.html">
+            
+                    
+                        <b>1.5.4.</b>
+                    
+                    4 Gitlab Runner Install
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../Gitlab/5_Gitlab_Runner_Management.html">
+            
+                <a href="../Gitlab/5_Gitlab_Runner_Management.html">
+            
+                    
+                        <b>1.5.5.</b>
+                    
+                    5 Gitlab Runner Management
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../Gitlab/6_Gitlab_Create_CI_Pipeline.html">
+            
+                <a href="../Gitlab/6_Gitlab_Create_CI_Pipeline.html">
+            
+                    
+                        <b>1.5.6.</b>
+                    
+                    6 Gitlab Create CI Pipeline
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../Gitlab/7_Gitlab_CI_CD.html">
+            
+                <a href="../Gitlab/7_Gitlab_CI_CD.html">
+            
+                    
+                        <b>1.5.7.</b>
+                    
+                    7 Gitlab CI CD
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../Overview.html">
+            
+                <a href="../Overview.html">
+            
+                    
+                        <b>1.6.</b>
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >4 Git Branch Management</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#git-&#x5206;&#x652F;&#x7BA1;&#x7406;"><b></b>Git &#x5206;&#x652F;&#x7BA1;&#x7406;</a></li><ul><li><span class="title-icon "></span><a href="#1-&#x7B80;&#x4ECB;"><b></b>1. &#x7B80;&#x4ECB;</a></li><li><span class="title-icon "></span><a href="#2-git-&#x5206;&#x652F;&#x7BA1;&#x7406;"><b></b>2. Git &#x5206;&#x652F;&#x7BA1;&#x7406;</a></li><ul><li><span class="title-icon "></span><a href="#21-&#x5217;&#x51FA;&#x5206;&#x652F;"><b></b>2.1 &#x5217;&#x51FA;&#x5206;&#x652F;</a></li><li><span class="title-icon "></span><a href="#22-&#x521B;&#x5EFA;&#x5206;&#x652F;"><b></b>2.2 &#x521B;&#x5EFA;&#x5206;&#x652F;</a></li><li><span class="title-icon "></span><a href="#23-&#x5207;&#x6362;&#x5206;&#x652F;"><b></b>2.3 &#x5207;&#x6362;&#x5206;&#x652F;</a></li><li><span class="title-icon "></span><a href="#24-&#x5220;&#x9664;&#x5206;&#x652F;"><b></b>2.4 &#x5220;&#x9664;&#x5206;&#x652F;</a></li><li><span class="title-icon "></span><a href="#25-&#x5206;&#x652F;&#x5408;&#x5E76;"><b></b>2.5 &#x5206;&#x652F;&#x5408;&#x5E76;</a></li><li><span class="title-icon "></span><a href="#26-&#x5408;&#x5E76;&#x51B2;&#x7A81;"><b></b>2.6 &#x5408;&#x5E76;&#x51B2;&#x7A81;</a></li></ul></ul></ul></div><a href="#git-&#x5206;&#x652F;&#x7BA1;&#x7406;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="git-&#x5206;&#x652F;&#x7BA1;&#x7406;"><a name="git-&#x5206;&#x652F;&#x7BA1;&#x7406;" class="anchor-navigation-ex-anchor" href="#git-&#x5206;&#x652F;&#x7BA1;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a>Git &#x5206;&#x652F;&#x7BA1;&#x7406;</h1>
+<h2 id="1-&#x7B80;&#x4ECB;"><a name="1-&#x7B80;&#x4ECB;" class="anchor-navigation-ex-anchor" href="#1-&#x7B80;&#x4ECB;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x7B80;&#x4ECB;</h2>
+<p>&#x51E0;&#x4E4E;&#x6BCF;&#x4E00;&#x79CD;&#x7248;&#x672C;&#x63A7;&#x5236;&#x7CFB;&#x7EDF;&#x90FD;&#x4EE5;&#x67D0;&#x79CD;&#x5F62;&#x5F0F;&#x652F;&#x6301;&#x5206;&#x652F;&#xFF0C;&#x4E00;&#x4E2A;&#x5206;&#x652F;&#x4EE3;&#x8868;&#x4E00;&#x6761;&#x72EC;&#x7ACB;&#x7684;&#x5F00;&#x53D1;&#x7EBF;&#x3002;</p>
+<p>&#x4F7F;&#x7528;&#x5206;&#x652F;&#x610F;&#x5473;&#x7740;&#x4F60;&#x53EF;&#x4EE5;&#x4ECE;&#x5F00;&#x53D1;&#x4E3B;&#x7EBF;&#x4E0A;&#x5206;&#x79BB;&#x5F00;&#x6765;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x4E0D;&#x5F71;&#x54CD;&#x4E3B;&#x7EBF;&#x7684;&#x540C;&#x65F6;&#x7EE7;&#x7EED;&#x5DE5;&#x4F5C;&#x3002;
+<img src="https://img-blog.csdnimg.cn/f67d4f9dadc34d2dae638d9ef7ea0141.png" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;">
+&#x521B;&#x5EFA;&#x5206;&#x652F;&#x547D;&#x4EE4;&#xFF1A;</p>
+<pre class="language-"><code class="lang-bash"><span class="token function">git</span> branch <span class="token punctuation">(</span>branchname<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x5207;&#x6362;&#x5206;&#x652F;&#x547D;&#x4EE4;:</p>
+<pre class="language-"><code class="lang-bash"><span class="token function">git</span> checkout <span class="token punctuation">(</span>branchname<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x5F53;&#x4F60;&#x5207;&#x6362;&#x5206;&#x652F;&#x7684;&#x65F6;&#x5019;&#xFF0C;Git &#x4F1A;&#x7528;&#x8BE5;&#x5206;&#x652F;&#x7684;&#x6700;&#x540E;&#x63D0;&#x4EA4;&#x7684;&#x5FEB;&#x7167;&#x66FF;&#x6362;&#x4F60;&#x7684;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#x7684;&#x5185;&#x5BB9;&#xFF0C; &#x6240;&#x4EE5;&#x591A;&#x4E2A;&#x5206;&#x652F;&#x4E0D;&#x9700;&#x8981;&#x591A;&#x4E2A;&#x76EE;&#x5F55;&#x3002;</p>
+<p>&#x5408;&#x5E76;&#x5206;&#x652F;&#x547D;&#x4EE4;:</p>
+<pre class="language-"><code class="lang-bash"><span class="token function">git</span> merge
+</code></pre>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x591A;&#x6B21;&#x5408;&#x5E76;&#x5230;&#x7EDF;&#x4E00;&#x5206;&#x652F;&#xFF0C; &#x4E5F;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x5728;&#x5408;&#x5E76;&#x4E4B;&#x540E;&#x76F4;&#x63A5;&#x5220;&#x9664;&#x88AB;&#x5E76;&#x5165;&#x7684;&#x5206;&#x652F;&#x3002;</p>
+<p>&#x5F00;&#x59CB;&#x524D;&#x6211;&#x4EEC;&#x5148;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6D4B;&#x8BD5;&#x76EE;&#x5F55;&#xFF1A;</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">mkdir</span> gitdemo
+$ <span class="token builtin class-name">cd</span> gitdemo/
+$ <span class="token function">git</span> init
+Initialized empty Git repository<span class="token punctuation">..</span>.
+$ <span class="token function">touch</span> README
+$ <span class="token function">git</span> <span class="token function">add</span> README
+$ <span class="token function">git</span> commit -m <span class="token string">&apos;&#x7B2C;&#x4E00;&#x6B21;&#x7248;&#x672C;&#x63D0;&#x4EA4;&apos;</span>
+<span class="token punctuation">[</span>master <span class="token punctuation">(</span>root-commit<span class="token punctuation">)</span> 3b58100<span class="token punctuation">]</span> &#x7B2C;&#x4E00;&#x6B21;&#x7248;&#x672C;&#x63D0;&#x4EA4;
+ <span class="token number">1</span> <span class="token function">file</span> changed, <span class="token number">0</span> insertions<span class="token punctuation">(</span>+<span class="token punctuation">)</span>, <span class="token number">0</span> deletions<span class="token punctuation">(</span>-<span class="token punctuation">)</span>
+ create mode <span class="token number">100644</span> README
+</code></pre>
+<h2 id="2-git-&#x5206;&#x652F;&#x7BA1;&#x7406;"><a name="2-git-&#x5206;&#x652F;&#x7BA1;&#x7406;" class="anchor-navigation-ex-anchor" href="#2-git-&#x5206;&#x652F;&#x7BA1;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a>2. Git &#x5206;&#x652F;&#x7BA1;&#x7406;</h2>
+<h3 id="21-&#x5217;&#x51FA;&#x5206;&#x652F;"><a name="21-&#x5217;&#x51FA;&#x5206;&#x652F;" class="anchor-navigation-ex-anchor" href="#21-&#x5217;&#x51FA;&#x5206;&#x652F;"><i class="fa fa-link" aria-hidden="true"></i></a>2.1 &#x5217;&#x51FA;&#x5206;&#x652F;</h3>
+<p>&#x5217;&#x51FA;&#x5206;&#x652F;&#x57FA;&#x672C;&#x547D;&#x4EE4;&#xFF1A;</p>
+<pre class="language-"><code class="lang-bash"><span class="token function">git</span> branch
+</code></pre>
+<p>&#x6CA1;&#x6709;&#x53C2;&#x6570;&#x65F6;&#xFF0C;<code>git branch</code> &#x4F1A;&#x5217;&#x51FA;&#x4F60;&#x5728;&#x672C;&#x5730;&#x7684;&#x5206;&#x652F;&#x3002;</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">git</span> branch
+* master
+</code></pre>
+<p>&#x6B64;&#x4F8B;&#x7684;&#x610F;&#x601D;&#x5C31;&#x662F;&#xFF0C;&#x6211;&#x4EEC;&#x6709;&#x4E00;&#x4E2A;&#x53EB;&#x505A; master &#x7684;&#x5206;&#x652F;&#xFF0C;&#x5E76;&#x4E14;&#x8BE5;&#x5206;&#x652F;&#x662F;&#x5F53;&#x524D;&#x5206;&#x652F;&#x3002;</p>
+<p>&#x5F53;&#x4F60;&#x6267;&#x884C; git init &#x7684;&#x65F6;&#x5019;&#xFF0C;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B; Git &#x5C31;&#x4F1A;&#x4E3A;&#x4F60;&#x521B;&#x5EFA; master &#x5206;&#x652F;&#x3002;</p>
+<h3 id="22-&#x521B;&#x5EFA;&#x5206;&#x652F;"><a name="22-&#x521B;&#x5EFA;&#x5206;&#x652F;" class="anchor-navigation-ex-anchor" href="#22-&#x521B;&#x5EFA;&#x5206;&#x652F;"><i class="fa fa-link" aria-hidden="true"></i></a>2.2 &#x521B;&#x5EFA;&#x5206;&#x652F;</h3>
+<p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x8981;&#x624B;&#x52A8;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5206;&#x652F;&#x3002;&#x6267;&#x884C; <code>git branch (branchname)</code> &#x5373;&#x53EF;&#x3002;</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">git</span> branch testing
+$ <span class="token function">git</span> branch
+* master
+  testing
+</code></pre>
+<p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x6709;&#x4E86;&#x4E00;&#x4E2A;&#x65B0;&#x5206;&#x652F; testing&#x3002;</p>
+<p>&#x5F53;&#x4F60;&#x4EE5;&#x6B64;&#x65B9;&#x5F0F;&#x5728;&#x4E0A;&#x6B21;&#x63D0;&#x4EA4;&#x66F4;&#x65B0;&#x4E4B;&#x540E;&#x521B;&#x5EFA;&#x4E86;&#x65B0;&#x5206;&#x652F;&#xFF0C;&#x5982;&#x679C;&#x540E;&#x6765;&#x53C8;&#x6709;&#x66F4;&#x65B0;&#x63D0;&#x4EA4;&#xFF0C; &#x7136;&#x540E;&#x53C8;&#x5207;&#x6362;&#x5230;&#x4E86; testing &#x5206;&#x652F;&#xFF0C;Git &#x5C06;&#x8FD8;&#x539F;&#x4F60;&#x7684;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#x5230;&#x4F60;&#x521B;&#x5EFA;&#x5206;&#x652F;&#x65F6;&#x5019;&#x7684;&#x6837;&#x5B50;&#x3002;</p>
+<h3 id="23-&#x5207;&#x6362;&#x5206;&#x652F;"><a name="23-&#x5207;&#x6362;&#x5206;&#x652F;" class="anchor-navigation-ex-anchor" href="#23-&#x5207;&#x6362;&#x5206;&#x652F;"><i class="fa fa-link" aria-hidden="true"></i></a>2.3 &#x5207;&#x6362;&#x5206;&#x652F;</h3>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x6211;&#x4EEC;&#x5C06;&#x6F14;&#x793A;&#x5982;&#x4F55;&#x5207;&#x6362;&#x5206;&#x652F;&#xFF0C;&#x6211;&#x4EEC;&#x7528; <code>git checkout (branch)</code> &#x5207;&#x6362;&#x5230;&#x6211;&#x4EEC;&#x8981;&#x4FEE;&#x6539;&#x7684;&#x5206;&#x652F;&#x3002;</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">ls</span>
+README
+$ <span class="token builtin class-name">echo</span> <span class="token string">&apos;runoob.com&apos;</span> <span class="token operator">&gt;</span> test.txt
+$ <span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span>
+$ <span class="token function">git</span> commit -m <span class="token string">&apos;add test.txt&apos;</span>
+<span class="token punctuation">[</span>master 3e92c19<span class="token punctuation">]</span> <span class="token function">add</span> test.txt
+ <span class="token number">1</span> <span class="token function">file</span> changed, <span class="token number">1</span> insertion<span class="token punctuation">(</span>+<span class="token punctuation">)</span>
+ create mode <span class="token number">100644</span> test.txt
+$ <span class="token function">ls</span>
+README        test.txt
+$ <span class="token function">git</span> checkout testing
+Switched to branch <span class="token string">&apos;testing&apos;</span>
+$ <span class="token function">ls</span>
+README
+</code></pre>
+<p>&#x5F53;&#x6211;&#x4EEC;&#x5207;&#x6362;&#x5230; testing &#x5206;&#x652F;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x6DFB;&#x52A0;&#x7684;&#x65B0;&#x6587;&#x4EF6; test.txt &#x88AB;&#x79FB;&#x9664;&#x4E86;&#x3002;&#x5207;&#x6362;&#x56DE; master &#x5206;&#x652F;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5B83;&#x4EEC;&#x53C8;&#x91CD;&#x65B0;&#x51FA;&#x73B0;&#x4E86;&#x3002;</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">git</span> checkout master
+Switched to branch <span class="token string">&apos;master&apos;</span>
+$ <span class="token function">ls</span>
+README        test.txt
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>git checkout -b (branchname)</code> &#x547D;&#x4EE4;&#x6765;&#x521B;&#x5EFA;&#x65B0;&#x5206;&#x652F;&#x5E76;&#x7ACB;&#x5373;&#x5207;&#x6362;&#x5230;&#x8BE5;&#x5206;&#x652F;&#x4E0B;&#xFF0C;&#x4ECE;&#x800C;&#x5728;&#x8BE5;&#x5206;&#x652F;&#x4E2D;&#x64CD;&#x4F5C;&#x3002;</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">git</span> checkout -b newtest
+Switched to a new branch <span class="token string">&apos;newtest&apos;</span>
+$ <span class="token function">git</span> <span class="token function">rm</span> test.txt 
+<span class="token function">rm</span> <span class="token string">&apos;test.txt&apos;</span>
+$ <span class="token function">ls</span>
+README
+$ <span class="token function">touch</span> runoob.php
+$ <span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span>
+$ <span class="token function">git</span> commit -am <span class="token string">&apos;removed test.txt&#x3001;add runoob.php&apos;</span>
+<span class="token punctuation">[</span>newtest c1501a2<span class="token punctuation">]</span> removed test.txt&#x3001;add runoob.php
+ <span class="token number">2</span> files changed, <span class="token number">1</span> deletion<span class="token punctuation">(</span>-<span class="token punctuation">)</span>
+ create mode <span class="token number">100644</span> runoob.php
+ delete mode <span class="token number">100644</span> test.txt
+$ <span class="token function">ls</span>
+README        runoob.php
+$ <span class="token function">git</span> checkout master
+Switched to branch <span class="token string">&apos;master&apos;</span>
+$ <span class="token function">ls</span>
+README        test.txt
+</code></pre>
+<p>&#x4F60;&#x6240;&#x89C1;&#xFF0C;&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x5206;&#x652F;&#xFF0C;&#x5728;&#x8BE5;&#x5206;&#x652F;&#x4E0A;&#x79FB;&#x9664;&#x4E86;&#x4E00;&#x4E9B;&#x6587;&#x4EF6; test.txt&#xFF0C;&#x5E76;&#x6DFB;&#x52A0;&#x4E86; runoob.php &#x6587;&#x4EF6;&#xFF0C;&#x7136;&#x540E;&#x5207;&#x6362;&#x56DE;&#x6211;&#x4EEC;&#x7684;&#x4E3B;&#x5206;&#x652F;&#xFF0C;&#x5220;&#x9664;&#x7684; test.txt &#x6587;&#x4EF6;&#x53C8;&#x56DE;&#x6765;&#x4E86;&#xFF0C;&#x4E14;&#x65B0;&#x589E;&#x52A0;&#x7684; <code>runoob.php</code> &#x4E0D;&#x5B58;&#x5728;&#x4E3B;&#x5206;&#x652F;&#x4E2D;&#x3002;</p>
+<p>&#x4F7F;&#x7528;&#x5206;&#x652F;&#x5C06;&#x5DE5;&#x4F5C;&#x5207;&#x5206;&#x5F00;&#x6765;&#xFF0C;&#x4ECE;&#x800C;&#x8BA9;&#x6211;&#x4EEC;&#x80FD;&#x591F;&#x5728;&#x4E0D;&#x540C;&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x4E2D;&#x505A;&#x4E8B;&#xFF0C;&#x5E76;&#x6765;&#x56DE;&#x5207;&#x6362;&#x3002;</p>
+<h3 id="24-&#x5220;&#x9664;&#x5206;&#x652F;"><a name="24-&#x5220;&#x9664;&#x5206;&#x652F;" class="anchor-navigation-ex-anchor" href="#24-&#x5220;&#x9664;&#x5206;&#x652F;"><i class="fa fa-link" aria-hidden="true"></i></a>2.4 &#x5220;&#x9664;&#x5206;&#x652F;</h3>
+<p>&#x5220;&#x9664;&#x5206;&#x652F;&#x547D;&#x4EE4;&#xFF1A;</p>
+<pre class="language-"><code class="lang-bash"><span class="token function">git</span> branch -d <span class="token punctuation">(</span>branchname<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x4F8B;&#x5982;&#x6211;&#x4EEC;&#x8981;&#x5220;&#x9664; testing &#x5206;&#x652F;&#xFF1A;</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">git</span> branch
+* master
+  testing
+$ <span class="token function">git</span> branch -d testing
+Deleted branch testing <span class="token punctuation">(</span>was 85fc7e7<span class="token punctuation">)</span>.
+$ <span class="token function">git</span> branch
+* master
+</code></pre>
+<h3 id="25-&#x5206;&#x652F;&#x5408;&#x5E76;"><a name="25-&#x5206;&#x652F;&#x5408;&#x5E76;" class="anchor-navigation-ex-anchor" href="#25-&#x5206;&#x652F;&#x5408;&#x5E76;"><i class="fa fa-link" aria-hidden="true"></i></a>2.5 &#x5206;&#x652F;&#x5408;&#x5E76;</h3>
+<p>&#x4E00;&#x65E6;&#x67D0;&#x5206;&#x652F;&#x6709;&#x4E86;&#x72EC;&#x7ACB;&#x5185;&#x5BB9;&#xFF0C;&#x4F60;&#x7EC8;&#x7A76;&#x4F1A;&#x5E0C;&#x671B;&#x5C06;&#x5B83;&#x5408;&#x5E76;&#x56DE;&#x5230;&#x4F60;&#x7684;&#x4E3B;&#x5206;&#x652F;&#x3002; &#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x5C06;&#x4EFB;&#x4F55;&#x5206;&#x652F;&#x5408;&#x5E76;&#x5230;&#x5F53;&#x524D;&#x5206;&#x652F;&#x4E2D;&#x53BB;&#xFF1A;</p>
+<pre class="language-"><code class="lang-bash"><span class="token function">git</span> merge
+
+$ <span class="token function">git</span> branch
+* master
+  newtest
+$ <span class="token function">ls</span>
+README        test.txt
+$ <span class="token function">git</span> merge newtest
+Updating 3e92c19<span class="token punctuation">..</span>c1501a2
+Fast-forward
+ runoob.php <span class="token operator">|</span> <span class="token number">0</span>
+ test.txt   <span class="token operator">|</span> <span class="token number">1</span> -
+ <span class="token number">2</span> files changed, <span class="token number">1</span> deletion<span class="token punctuation">(</span>-<span class="token punctuation">)</span>
+ create mode <span class="token number">100644</span> runoob.php
+ delete mode <span class="token number">100644</span> test.txt
+$ <span class="token function">ls</span>
+README        runoob.php
+</code></pre>
+<p>&#x4EE5;&#x4E0A;&#x5B9E;&#x4F8B;&#x4E2D;&#x6211;&#x4EEC;&#x5C06; newtest &#x5206;&#x652F;&#x5408;&#x5E76;&#x5230;&#x4E3B;&#x5206;&#x652F;&#x53BB;&#xFF0C;test.txt &#x6587;&#x4EF6;&#x88AB;&#x5220;&#x9664;&#x3002;</p>
+<p>&#x5408;&#x5E76;&#x5B8C;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x5220;&#x9664;&#x5206;&#x652F;:</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">git</span> branch -d newtest
+Deleted branch newtest <span class="token punctuation">(</span>was c1501a2<span class="token punctuation">)</span>.
+</code></pre>
+<p>&#x5220;&#x9664;&#x540E;&#xFF0C; &#x5C31;&#x53EA;&#x5269;&#x4E0B; master &#x5206;&#x652F;&#x4E86;&#xFF1A;</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">git</span> branch
+* master
+</code></pre>
+<h3 id="26-&#x5408;&#x5E76;&#x51B2;&#x7A81;"><a name="26-&#x5408;&#x5E76;&#x51B2;&#x7A81;" class="anchor-navigation-ex-anchor" href="#26-&#x5408;&#x5E76;&#x51B2;&#x7A81;"><i class="fa fa-link" aria-hidden="true"></i></a>2.6 &#x5408;&#x5E76;&#x51B2;&#x7A81;</h3>
+<p>&#x5408;&#x5E76;&#x5E76;&#x4E0D;&#x4EC5;&#x4EC5;&#x662F;&#x7B80;&#x5355;&#x7684;&#x6587;&#x4EF6;&#x6DFB;&#x52A0;&#x3001;&#x79FB;&#x9664;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;Git &#x4E5F;&#x4F1A;&#x5408;&#x5E76;&#x4FEE;&#x6539;&#x3002;</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">git</span> branch
+* master
+$ <span class="token function">cat</span> runoob.php
+</code></pre>
+<p>&#x9996;&#x5148;&#xFF0C;&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x53EB;&#x505A; <code>change_site</code> &#x7684;&#x5206;&#x652F;&#xFF0C;&#x5207;&#x6362;&#x8FC7;&#x53BB;&#xFF0C;&#x6211;&#x4EEC;&#x5C06; <code>runoob.php</code> &#x5185;&#x5BB9;&#x6539;&#x4E3A;:</p>
+<pre class="language-"><code class="lang-bash"><span class="token operator">&lt;</span>?php
+<span class="token builtin class-name">echo</span> <span class="token string">&apos;runoob&apos;</span><span class="token punctuation">;</span>
+?<span class="token operator">&gt;</span>
+</code></pre>
+<p>&#x521B;&#x5EFA; <code>change_site</code> &#x5206;&#x652F;&#xFF1A;</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">git</span> checkout -b change_site
+Switched to a new branch <span class="token string">&apos;change_site&apos;</span>
+$ <span class="token function">vim</span> runoob.php
+$ <span class="token function">head</span> -3 runoob.php
+<span class="token operator">&lt;</span>?php
+<span class="token builtin class-name">echo</span> <span class="token string">&apos;runoob&apos;</span><span class="token punctuation">;</span>
+?<span class="token operator">&gt;</span>
+$ <span class="token function">git</span> commit -am <span class="token string">&apos;changed the runoob.php&apos;</span>
+<span class="token punctuation">[</span>change_site <span class="token number">7774248</span><span class="token punctuation">]</span> changed the runoob.php
+ <span class="token number">1</span> <span class="token function">file</span> changed, <span class="token number">3</span> insertions<span class="token punctuation">(</span>+<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x5C06;&#x4FEE;&#x6539;&#x7684;&#x5185;&#x5BB9;&#x63D0;&#x4EA4;&#x5230; <code>change_site</code> &#x5206;&#x652F;&#x4E2D;&#x3002; &#x73B0;&#x5728;&#xFF0C;&#x5047;&#x5982;&#x5207;&#x6362;&#x56DE; master &#x5206;&#x652F;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x5185;&#x5BB9;&#x6062;&#x590D;&#x5230;&#x6211;&#x4EEC;&#x4FEE;&#x6539;&#x524D;&#x7684;(&#x7A7A;&#x6587;&#x4EF6;&#xFF0C;&#x6CA1;&#x6709;&#x4EE3;&#x7801;)&#xFF0C;&#x6211;&#x4EEC;&#x518D;&#x6B21;&#x4FEE;&#x6539; runoob.php &#x6587;&#x4EF6;&#x3002;</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">git</span> checkout master
+Switched to branch <span class="token string">&apos;master&apos;</span>
+$ <span class="token function">cat</span> runoob.php
+$ <span class="token function">vim</span> runoob.php    <span class="token comment"># &#x4FEE;&#x6539;&#x5185;&#x5BB9;&#x5982;&#x4E0B;</span>
+$ <span class="token function">cat</span> runoob.php
+<span class="token operator">&lt;</span>?php
+<span class="token builtin class-name">echo</span> <span class="token number">1</span><span class="token punctuation">;</span>
+?<span class="token operator">&gt;</span>
+$ <span class="token function">git</span> <span class="token function">diff</span>
+<span class="token function">diff</span> --git a/runoob.php b/runoob.php
+index e69de29<span class="token punctuation">..</span>ac60739 <span class="token number">100644</span>
+--- a/runoob.php
++++ b/runoob.php
+@@ -0,0 +1,3 @@
++<span class="token operator">&lt;</span>?php
++echo <span class="token number">1</span><span class="token punctuation">;</span>
++?<span class="token operator">&gt;</span>
+$ <span class="token function">git</span> commit -am <span class="token string">&apos;&#x4FEE;&#x6539;&#x4EE3;&#x7801;&apos;</span>
+<span class="token punctuation">[</span>master c68142b<span class="token punctuation">]</span> &#x4FEE;&#x6539;&#x4EE3;&#x7801;
+ <span class="token number">1</span> <span class="token function">file</span> changed, <span class="token number">3</span> insertions<span class="token punctuation">(</span>+<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x73B0;&#x5728;&#x8FD9;&#x4E9B;&#x6539;&#x53D8;&#x5DF2;&#x7ECF;&#x8BB0;&#x5F55;&#x5230;&#x6211;&#x7684; &quot;master&quot; &#x5206;&#x652F;&#x4E86;&#x3002;&#x63A5;&#x4E0B;&#x6765;&#x6211;&#x4EEC;&#x5C06; &quot;change_site&quot; &#x5206;&#x652F;&#x5408;&#x5E76;&#x8FC7;&#x6765;&#x3002;</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">git</span> merge change_site
+Auto-merging runoob.php
+CONFLICT <span class="token punctuation">(</span>content<span class="token punctuation">)</span>: Merge conflict <span class="token keyword">in</span> runoob.php
+Automatic merge failed<span class="token punctuation">;</span> fix conflicts and <span class="token keyword">then</span> commit the result.
+
+$ <span class="token function">cat</span> runoob.php     <span class="token comment"># &#x6253;&#x5F00;&#x6587;&#x4EF6;&#xFF0C;&#x770B;&#x5230;&#x51B2;&#x7A81;&#x5185;&#x5BB9;</span>
+<span class="token operator">&lt;</span>?php
+<span class="token operator">&lt;&lt;&lt;</span><span class="token operator">&lt;&lt;&lt;</span><span class="token operator">&lt;</span> HEAD
+<span class="token builtin class-name">echo</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&apos;runoob&apos;</span><span class="token punctuation">;</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> change_site
+?<span class="token operator">&gt;</span>
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x5C06;&#x524D;&#x4E00;&#x4E2A;&#x5206;&#x652F;&#x5408;&#x5E76;&#x5230; master &#x5206;&#x652F;&#xFF0C;&#x4E00;&#x4E2A;&#x5408;&#x5E76;&#x51B2;&#x7A81;&#x5C31;&#x51FA;&#x73B0;&#x4E86;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x624B;&#x52A8;&#x53BB;&#x4FEE;&#x6539;&#x5B83;&#x3002;</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">vim</span> runoob.php 
+$ <span class="token function">cat</span> runoob.php
+<span class="token operator">&lt;</span>?php
+<span class="token builtin class-name">echo</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&apos;runoob&apos;</span><span class="token punctuation">;</span>
+?<span class="token operator">&gt;</span>
+$ <span class="token function">git</span> <span class="token function">diff</span>
+<span class="token function">diff</span> --cc runoob.php
+index ac60739,b63d7d7<span class="token punctuation">..</span>0000000
+--- a/runoob.php
++++ b/runoob.php
+@@@ -1,3 -1,3 +1,4 @@@
+  <span class="token operator">&lt;</span>?php
+ +echo <span class="token number">1</span><span class="token punctuation">;</span>
++ <span class="token builtin class-name">echo</span> <span class="token string">&apos;runoob&apos;</span><span class="token punctuation">;</span>
+  ?<span class="token operator">&gt;</span>
+</code></pre>
+<p>&#x5728; Git &#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7528; <code>git add</code> &#x8981;&#x544A;&#x8BC9; Git &#x6587;&#x4EF6;&#x51B2;&#x7A81;&#x5DF2;&#x7ECF;&#x89E3;&#x51B3;</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">git</span> status -s
+UU runoob.php
+$ <span class="token function">git</span> <span class="token function">add</span> runoob.php
+$ <span class="token function">git</span> status -s
+M  runoob.php
+$ <span class="token function">git</span> commit
+<span class="token punctuation">[</span>master 88afe0e<span class="token punctuation">]</span> Merge branch <span class="token string">&apos;change_site&apos;</span>
+</code></pre>
+<hr>
+<p><img src="https://img-blog.csdnimg.cn/00a9cd9ac36d414fb2ad0e16b84291a2.gif#pic_center" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;"></p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; ghostwritten &#x6D59;ICP&#x5907;2020032454&#x53F7; 2022 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2022-06-06 04:47:59
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="3_Git_Concept.html" class="navigation navigation-prev " aria-label="Previous page: 3 Git Concept">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="5_Git_View_Commit_History.html" class="navigation navigation-next " aria-label="Next page: 5 Git View Commit History">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"4 Git Branch Management","level":"1.2.9","depth":2,"next":{"title":"5 Git View Commit History","level":"1.2.10","depth":2,"path":"Git/5_Git_View_Commit_History.md","ref":"Git/5_Git_View_Commit_History.md","articles":[]},"previous":{"title":"3 Git Concept","level":"1.2.8","depth":2,"path":"Git/3_Git_Concept.md","ref":"Git/3_Git_Concept.md","articles":[]},"dir":"ltr"},"config":{"plugins":["3-ba","accordion","advanced-emoji","anchor-navigation-ex","baidu-tongji","code","change_girls","custom-favicon","donate","chapter-fold","edit-link","flexible-alerts","github-buttons","github","insert-logo","musicxml","prism","prism-themes","pageview-count","-highlight","-search","-lunr","rss","search-plus","splitter","-sharing","sharing-plus","sidebar-style","sitemap-general","simple-mind-map","youtube","theme-default","todo","tbfed-pagefooter"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"sidebar-style":{"author":"zongxun","title":"《Gitbook Docs》"},"tbfed-pagefooter":{"copyright":"Copyright &copy ghostwritten 浙ICP备2020032454号 2022","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"prism":{"css":["prism-themes/themes/prism-holi-theme.css"],"lang":{"shell":"bash"}},"youtube":{},"github":{"url":"https://github.com/Ghostwritten"},"baidu-tongji":{"url":"https://hm.baidu.com/hm.js","token":"55e7dfe47f4dc1c018d4042fdfa62565"},"todo":{},"splitter":{},"change_girls":{"time":10,"urls":["https://www.bizhishe.com/d/file/2019-08-26/1566827846505876.jpg","https://www.bizhishe.com/d/file/2020-03-02/1583150452601733.jpg","https://www.bizhishe.com/d/file/2019-07-24/1563977671157231.jpg","https://www.bizhishe.com/d/file/2019-07-14/1563116649970786.jpg","https://www.bizhishe.com/d/file/2019-07-24/1563977671126392.jpg","https://www.bizhishe.com/d/file/2019-07-14/1563116649584541.jpg"]},"accordion":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://github.com/Ghostwritten/gitbook-docs/blob/gh-pages/assets/imgs/aplipay.png?raw=true","alipayText":"支付宝打赏","button":"打赏","title":"","wechat":"https://github.com/Ghostwritten/gitbook-docs/blob/gh-pages/assets/imgs/wechat.png?raw=true","wechatText":"微信打赏"},"sitemap-general":{"prefix":"https://smoothies.com.cn/gitbook-docs/"},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"Gitbook Docs","description":"This is the best book ever.","author":"Zong Xun","feed_url":"http://smoothies.com.cn/rss","site_url":"https://smoothies.com.cn/gitbook-docs/","managingEditor":"writer@smoothies.com.cn (Zong Xun)","webMaster":"webmaster@smoothies.com.cn (Zong Xun)"},"musicxml":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":"assets/imgs/1_girl.ico","pageview-count":{},"prism-themes":{},"github-buttons":{"buttons":[{"user":"Ghostwritten","repo":"gitbook-docs","type":"star","count":true,"size":"small"}]},"custom-favicon":{},"3-ba":{"configuration":"auto","token":"9ffc0dce8d7079aceab6b0bc18eb626b"},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Danger"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"}},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper"],"douban":false,"facebook":true,"weibo":false,"twitter":true,"pocket":false,"google":false,"qzone":false},"simple-mind-map":{"autoFit":true,"linkShape":"diagonal","preset":"default","style":{},"type":"markdown"},"edit-link":{"label":"Edit","base":"https://github.com/Ghostwritten/gitbook-docs/edit/master/"},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"insert-logo":{"style":"background: none; max-height: 100px; min-height: 100px","url":"https://www.bizhishe.com/d/file/2019-07-14/1563116649268975.jpg"},"search-plus":{}},"theme":"default","author":"宗勋 - zongxun","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Gitbook Docs","language":"zh-hans","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"Docker":"https://smoothies.com.cn/docker-docs/Overview.html","Blog":"https://smoothies.com.cn","Kubernetes":"https://smoothies.com.cn/kubernetes-docs/Overview.html","Go":"https://smoothies.com.cn/go-docs/Overview.html","Prometheus":"https://smoothies.com.cn/prometheus-docs/Overview.html","Command":"https://smoothies.com.cn/linux-command-docs/Overview.html","Shell":"https://smoothies.com.cn/shell-docs/Overview.html","Linux":"https://smoothies.com.cn/linux-docs/","Gitbook":"https://smoothies.com.cn/gitbook-docs/Overview.html","Python":"https://smoothies.com.cn/python-docs/Overview.html","Exam":"https://ghostwritten.gitbook.io/kubernetes-exam-in-action/"}},"gitbook":"*","description":"这是一本关于Git、Github、Gitlab、Gitbook的书籍"},"file":{"path":"Git/4_Git_Branch_Management.md","mtime":"2022-06-06T04:47:59.071Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-02-22T09:46:37.898Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-3-ba/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-accordion/accordionSelector.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-baidu-tongji/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-change_girls/girls.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-musicxml/osmd.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-musicxml/musicxml.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-musicxml/promise.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-rss/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sidebar-style/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-simple-mind-map/bundle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

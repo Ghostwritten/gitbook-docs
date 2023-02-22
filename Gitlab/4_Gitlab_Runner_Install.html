@@ -1,0 +1,1729 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>4 Gitlab Runner Install · Gitbook Docs</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="宗勋 - zongxun">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-accordion/accordion.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-change_girls/girls.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-flexible-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-holi-theme.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-sidebar-style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="5_Gitlab_Runner_Management.html" />
+    
+    
+    <link rel="prev" href="3_gitlab_config.html" />
+    
+
+    <link href="http://smoothies.com.cn/rss" title="Gitbook Docs" rel="alternate" type="application/rss+xml" />
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"Ghostwritten","repo":"gitbook-docs","type":"star","count":true,"size":"small"}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://smoothies.com.cn/docker-docs/Overview.html" target="_blank" class="custom-link">Docker</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://smoothies.com.cn" target="_blank" class="custom-link">Blog</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://smoothies.com.cn/kubernetes-docs/Overview.html" target="_blank" class="custom-link">Kubernetes</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://smoothies.com.cn/go-docs/Overview.html" target="_blank" class="custom-link">Go</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://smoothies.com.cn/prometheus-docs/Overview.html" target="_blank" class="custom-link">Prometheus</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://smoothies.com.cn/linux-command-docs/Overview.html" target="_blank" class="custom-link">Command</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://smoothies.com.cn/shell-docs/Overview.html" target="_blank" class="custom-link">Shell</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://smoothies.com.cn/linux-docs/" target="_blank" class="custom-link">Linux</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://smoothies.com.cn/gitbook-docs/Overview.html" target="_blank" class="custom-link">Gitbook</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://smoothies.com.cn/python-docs/Overview.html" target="_blank" class="custom-link">Python</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://ghostwritten.gitbook.io/kubernetes-exam-in-action/" target="_blank" class="custom-link">Exam</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Git/">
+            
+                <a href="../Git/">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    Git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Git/1_Git_Install.html">
+            
+                <a href="../Git/1_Git_Install.html">
+            
+                    
+                        <b>1.2.1.</b>
+                    
+                    1 Git Install
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Git/10_Git_Skill.html">
+            
+                <a href="../Git/10_Git_Skill.html">
+            
+                    
+                        <b>1.2.2.</b>
+                    
+                    10 Git Skill
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../Git/11_Git_Practice.html">
+            
+                <a href="../Git/11_Git_Practice.html">
+            
+                    
+                        <b>1.2.3.</b>
+                    
+                    11 Git Practice
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../Git/12-Git_Set_upstream_branch.html">
+            
+                <a href="../Git/12-Git_Set_upstream_branch.html">
+            
+                    
+                        <b>1.2.4.</b>
+                    
+                    12 Git Set Upstream Branch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../Git/13_Git_fetch_and_pull_difference.html">
+            
+                <a href="../Git/13_Git_fetch_and_pull_difference.html">
+            
+                    
+                        <b>1.2.5.</b>
+                    
+                    13 Git Fetch And Pull Difference
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../Git/14_Git_fetch_prune.html">
+            
+                <a href="../Git/14_Git_fetch_prune.html">
+            
+                    
+                        <b>1.2.6.</b>
+                    
+                    14 Git Fetch Prune
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../Git/2_Git_Process.html">
+            
+                <a href="../Git/2_Git_Process.html">
+            
+                    
+                        <b>1.2.7.</b>
+                    
+                    2 Git Process
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../Git/3_Git_Concept.html">
+            
+                <a href="../Git/3_Git_Concept.html">
+            
+                    
+                        <b>1.2.8.</b>
+                    
+                    3 Git Concept
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../Git/4_Git_Branch_Management.html">
+            
+                <a href="../Git/4_Git_Branch_Management.html">
+            
+                    
+                        <b>1.2.9.</b>
+                    
+                    4 Git Branch Management
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../Git/5_Git_View_Commit_History.html">
+            
+                <a href="../Git/5_Git_View_Commit_History.html">
+            
+                    
+                        <b>1.2.10.</b>
+                    
+                    5 Git View Commit History
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../Git/6_Git_Tag.html">
+            
+                <a href="../Git/6_Git_Tag.html">
+            
+                    
+                        <b>1.2.11.</b>
+                    
+                    6 Git Tag
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="../Git/7_Git_Password-free_Login.html">
+            
+                <a href="../Git/7_Git_Password-free_Login.html">
+            
+                    
+                        <b>1.2.12.</b>
+                    
+                    7 Git Password Free Login
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="../Git/8_Git_Rollback.html">
+            
+                <a href="../Git/8_Git_Rollback.html">
+            
+                    
+                        <b>1.2.13.</b>
+                    
+                    8 Git Rollback
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="../Git/9_Git_Command.html">
+            
+                <a href="../Git/9_Git_Command.html">
+            
+                    
+                        <b>1.2.14.</b>
+                    
+                    9 Git Command
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Gitbook/">
+            
+                <a href="../Gitbook/">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    Gitbook
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Gitbook/Plugins/">
+            
+                <a href="../Gitbook/Plugins/">
+            
+                    
+                        <b>1.3.1.</b>
+                    
+                    Plugins
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../Gitbook/Plugins/1_Gitbook_Plugin_Summary.html">
+            
+                <a href="../Gitbook/Plugins/1_Gitbook_Plugin_Summary.html">
+            
+                    
+                        <b>1.3.1.1.</b>
+                    
+                    1 Gitbook Plugin Summary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../Gitbook/Plugins/10_Gitbook_Plugin_Search.html">
+            
+                <a href="../Gitbook/Plugins/10_Gitbook_Plugin_Search.html">
+            
+                    
+                        <b>1.3.1.2.</b>
+                    
+                    10 Gitbook Plugin Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../Gitbook/Plugins/11_Gitbook_Plugin_Commment.html">
+            
+                <a href="../Gitbook/Plugins/11_Gitbook_Plugin_Commment.html">
+            
+                    
+                        <b>1.3.1.3.</b>
+                    
+                    11 Gitbook Plugin Commment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.4" data-path="../Gitbook/Plugins/12_Gitbook_Plugin_Copyright_Notice.html">
+            
+                <a href="../Gitbook/Plugins/12_Gitbook_Plugin_Copyright_Notice.html">
+            
+                    
+                        <b>1.3.1.4.</b>
+                    
+                    12 Gitbook Plugin Copyright Notice
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.5" data-path="../Gitbook/Plugins/13_Gitbook_Plugin_Background.html">
+            
+                <a href="../Gitbook/Plugins/13_Gitbook_Plugin_Background.html">
+            
+                    
+                        <b>1.3.1.5.</b>
+                    
+                    13 Gitbook Plugin Background
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.6" data-path="../Gitbook/Plugins/14_Gitbook_Plugin_Image_View.html">
+            
+                <a href="../Gitbook/Plugins/14_Gitbook_Plugin_Image_View.html">
+            
+                    
+                        <b>1.3.1.6.</b>
+                    
+                    14 Gitbook Plugin Image View
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.7" data-path="../Gitbook/Plugins/15_Gitbook_Plugin_Icons_and_Logos.html">
+            
+                <a href="../Gitbook/Plugins/15_Gitbook_Plugin_Icons_and_Logos.html">
+            
+                    
+                        <b>1.3.1.7.</b>
+                    
+                    15 Gitbook Plugin Icons And Logos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.8" data-path="../Gitbook/Plugins/16_Gitbook_Plugin_Github.html">
+            
+                <a href="../Gitbook/Plugins/16_Gitbook_Plugin_Github.html">
+            
+                    
+                        <b>1.3.1.8.</b>
+                    
+                    16 Gitbook Plugin Github
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.9" data-path="../Gitbook/Plugins/17_Gitbook_Plugin_Emoji.html">
+            
+                <a href="../Gitbook/Plugins/17_Gitbook_Plugin_Emoji.html">
+            
+                    
+                        <b>1.3.1.9.</b>
+                    
+                    17 Gitbook Plugin Emoji
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.10" data-path="../Gitbook/Plugins/17_Gitbook_Plugin_Text_Hiding.html">
+            
+                <a href="../Gitbook/Plugins/17_Gitbook_Plugin_Text_Hiding.html">
+            
+                    
+                        <b>1.3.1.10.</b>
+                    
+                    17 Gitbook Plugin Text Hiding
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.11" data-path="../Gitbook/Plugins/18_Gitbook_Plugin_TODO.html">
+            
+                <a href="../Gitbook/Plugins/18_Gitbook_Plugin_TODO.html">
+            
+                    
+                        <b>1.3.1.11.</b>
+                    
+                    18 Gitbook Plugin TODO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.12" data-path="../Gitbook/Plugins/19_Gitbook_Plugin_Page_Editing.html">
+            
+                <a href="../Gitbook/Plugins/19_Gitbook_Plugin_Page_Editing.html">
+            
+                    
+                        <b>1.3.1.12.</b>
+                    
+                    19 Gitbook Plugin Page Editing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.13" data-path="../Gitbook/Plugins/2_Gitbook_Plugin_Title_Summary.html">
+            
+                <a href="../Gitbook/Plugins/2_Gitbook_Plugin_Title_Summary.html">
+            
+                    
+                        <b>1.3.1.13.</b>
+                    
+                    2 Gitbook Plugin Title Summary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.14" data-path="../Gitbook/Plugins/20_Gitbook_Plugin_RSS.html">
+            
+                <a href="../Gitbook/Plugins/20_Gitbook_Plugin_RSS.html">
+            
+                    
+                        <b>1.3.1.14.</b>
+                    
+                    20 Gitbook Plugin RSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.15" data-path="../Gitbook/Plugins/21_Gitbook_Plugin_Video.html">
+            
+                <a href="../Gitbook/Plugins/21_Gitbook_Plugin_Video.html">
+            
+                    
+                        <b>1.3.1.15.</b>
+                    
+                    21 Gitbook Plugin Video
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.16" data-path="../Gitbook/Plugins/22_Gitbook_Plugin_SEO.html">
+            
+                <a href="../Gitbook/Plugins/22_Gitbook_Plugin_SEO.html">
+            
+                    
+                        <b>1.3.1.16.</b>
+                    
+                    22 Gitbook Plugin SEO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.17" data-path="../Gitbook/Plugins/23_Gitbook_Plugin_Statistics.html">
+            
+                <a href="../Gitbook/Plugins/23_Gitbook_Plugin_Statistics.html">
+            
+                    
+                        <b>1.3.1.17.</b>
+                    
+                    23 Gitbook Plugin Statistics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.18" data-path="../Gitbook/Plugins/24_Gitbook_Plugin_navbor.html">
+            
+                <a href="../Gitbook/Plugins/24_Gitbook_Plugin_navbor.html">
+            
+                    
+                        <b>1.3.1.18.</b>
+                    
+                    24 Gitbook Plugin Navbor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.19" data-path="../Gitbook/Plugins/25_Gitbook_Plugin_Theme.html">
+            
+                <a href="../Gitbook/Plugins/25_Gitbook_Plugin_Theme.html">
+            
+                    
+                        <b>1.3.1.19.</b>
+                    
+                    25 Gitbook Plugin Theme
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.20" data-path="../Gitbook/Plugins/26_Gitbook_Plugin_Top_Navigation.html">
+            
+                <a href="../Gitbook/Plugins/26_Gitbook_Plugin_Top_Navigation.html">
+            
+                    
+                        <b>1.3.1.20.</b>
+                    
+                    26 Gitbook Plugin Top Navigation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.21" data-path="../Gitbook/Plugins/27_Gitbook_Plugin_Tags.html">
+            
+                <a href="../Gitbook/Plugins/27_Gitbook_Plugin_Tags.html">
+            
+                    
+                        <b>1.3.1.21.</b>
+                    
+                    27 Gitbook Plugin Tags
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.22" data-path="../Gitbook/Plugins/28_Gitbook_Plugin_pdf.html">
+            
+                <a href="../Gitbook/Plugins/28_Gitbook_Plugin_pdf.html">
+            
+                    
+                        <b>1.3.1.22.</b>
+                    
+                    28 Gitbook Plugin Pdf
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.23" data-path="../Gitbook/Plugins/29_Gitbook_Plugin_readmore.html">
+            
+                <a href="../Gitbook/Plugins/29_Gitbook_Plugin_readmore.html">
+            
+                    
+                        <b>1.3.1.23.</b>
+                    
+                    29 Gitbook Plugin Readmore
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.24" data-path="../Gitbook/Plugins/3_Gitbook_Plugin_Side_Navigation.html">
+            
+                <a href="../Gitbook/Plugins/3_Gitbook_Plugin_Side_Navigation.html">
+            
+                    
+                        <b>1.3.1.24.</b>
+                    
+                    3 Gitbook Plugin Side Navigation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.25" data-path="../Gitbook/Plugins/30_Gitbook_Plugin_music.html">
+            
+                <a href="../Gitbook/Plugins/30_Gitbook_Plugin_music.html">
+            
+                    
+                        <b>1.3.1.25.</b>
+                    
+                    30 Gitbook Plugin Music
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.26" data-path="../Gitbook/Plugins/4_Gitbook_Plugin_Directory_Navigation.html">
+            
+                <a href="../Gitbook/Plugins/4_Gitbook_Plugin_Directory_Navigation.html">
+            
+                    
+                        <b>1.3.1.26.</b>
+                    
+                    4 Gitbook Plugin Directory Navigation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.27" data-path="../Gitbook/Plugins/5_Gitbook_Plugin_Article_TOC.html">
+            
+                <a href="../Gitbook/Plugins/5_Gitbook_Plugin_Article_TOC.html">
+            
+                    
+                        <b>1.3.1.27.</b>
+                    
+                    5 Gitbook Plugin Article TOC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.28" data-path="../Gitbook/Plugins/6_Gitbook_Plugin_Tips_and_Emphasis.html">
+            
+                <a href="../Gitbook/Plugins/6_Gitbook_Plugin_Tips_and_Emphasis.html">
+            
+                    
+                        <b>1.3.1.28.</b>
+                    
+                    6 Gitbook Plugin Tips And Emphasis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.29" data-path="../Gitbook/Plugins/7_Gitbook_Plugin_Code_Block.html">
+            
+                <a href="../Gitbook/Plugins/7_Gitbook_Plugin_Code_Block.html">
+            
+                    
+                        <b>1.3.1.29.</b>
+                    
+                    7 Gitbook Plugin Code Block
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.30" data-path="../Gitbook/Plugins/8_Gitbook_Plugin_Sharing.html">
+            
+                <a href="../Gitbook/Plugins/8_Gitbook_Plugin_Sharing.html">
+            
+                    
+                        <b>1.3.1.30.</b>
+                    
+                    8 Gitbook Plugin Sharing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.31" data-path="../Gitbook/Plugins/9_Gitbook_Plugin_Appreciate.html">
+            
+                <a href="../Gitbook/Plugins/9_Gitbook_Plugin_Appreciate.html">
+            
+                    
+                        <b>1.3.1.31.</b>
+                    
+                    9 Gitbook Plugin Appreciate
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../Gitbook/1_Gitbook_Get_Started.html">
+            
+                <a href="../Gitbook/1_Gitbook_Get_Started.html">
+            
+                    
+                        <b>1.3.2.</b>
+                    
+                    1 Gitbook Get Started
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../Gitbook/2_Gitbook_Install.html">
+            
+                <a href="../Gitbook/2_Gitbook_Install.html">
+            
+                    
+                        <b>1.3.3.</b>
+                    
+                    2 Gitbook Install
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../Gitbook/3_Gitbook_README.html">
+            
+                <a href="../Gitbook/3_Gitbook_README.html">
+            
+                    
+                        <b>1.3.4.</b>
+                    
+                    3 Gitbook README
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../Gitbook/4_Gitbook_SUMMARY.html">
+            
+                <a href="../Gitbook/4_Gitbook_SUMMARY.html">
+            
+                    
+                        <b>1.3.5.</b>
+                    
+                    4 Gitbook SUMMARY
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../Gitbook/5_Gitbook_book.json.html">
+            
+                <a href="../Gitbook/5_Gitbook_book.json.html">
+            
+                    
+                        <b>1.3.6.</b>
+                    
+                    5_Gitbook_book.json
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../Gitbook/6_Gitbook_push_Github_Pages.html">
+            
+                <a href="../Gitbook/6_Gitbook_push_Github_Pages.html">
+            
+                    
+                        <b>1.3.7.</b>
+                    
+                    6 Gitbook Push Github Pages
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../Gitbook/7_Gitbook_Update_Github_Pages.html">
+            
+                <a href="../Gitbook/7_Gitbook_Update_Github_Pages.html">
+            
+                    
+                        <b>1.3.8.</b>
+                    
+                    7 Gitbook Update Github Pages
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../Github/">
+            
+                <a href="../Github/">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    Github
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../Github/1_Github_Create_Depository.html">
+            
+                <a href="../Github/1_Github_Create_Depository.html">
+            
+                    
+                        <b>1.4.1.</b>
+                    
+                    1 Github Create Depository
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../Github/2_Github_Local_Pull_Github.html">
+            
+                <a href="../Github/2_Github_Local_Pull_Github.html">
+            
+                    
+                        <b>1.4.2.</b>
+                    
+                    2 Github Local Pull Github
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../Github/3_Github_Manage_Remote_Repositories.html">
+            
+                <a href="../Github/3_Github_Manage_Remote_Repositories.html">
+            
+                    
+                        <b>1.4.3.</b>
+                    
+                    3 Github Manage Remote Repositories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../Github/4_Github_Delete_folders_remotely.html">
+            
+                <a href="../Github/4_Github_Delete_folders_remotely.html">
+            
+                    
+                        <b>1.4.4.</b>
+                    
+                    4 Github Delete Folders Remotely
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../Github/5_Github_Delete_local_and_remote_branches.html">
+            
+                <a href="../Github/5_Github_Delete_local_and_remote_branches.html">
+            
+                    
+                        <b>1.4.5.</b>
+                    
+                    5 Github Delete Local And Remote Branches
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../Github/6_Github_Custom_Home_Page.html">
+            
+                <a href="../Github/6_Github_Custom_Home_Page.html">
+            
+                    
+                        <b>1.4.6.</b>
+                    
+                    6 Github Custom Home Page
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../Github/7_Github_Action_Automatically_Build_Deploy.html">
+            
+                <a href="../Github/7_Github_Action_Automatically_Build_Deploy.html">
+            
+                    
+                        <b>1.4.7.</b>
+                    
+                    7 Github Action Automatically Build Deploy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../Github/8_Github_Open_source_merge_request.html">
+            
+                <a href="../Github/8_Github_Open_source_merge_request.html">
+            
+                    
+                        <b>1.4.8.</b>
+                    
+                    8 Github Open Source Merge Request
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="./">
+            
+                <a href="./">
+            
+                    
+                        <b>1.5.</b>
+                    
+                    Gitlab
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="1_Gitlab_Get_Started.html">
+            
+                <a href="1_Gitlab_Get_Started.html">
+            
+                    
+                        <b>1.5.1.</b>
+                    
+                    1 Gitlab Get Started
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="2_Gitlab_Install.html">
+            
+                <a href="2_Gitlab_Install.html">
+            
+                    
+                        <b>1.5.2.</b>
+                    
+                    2 Gitlab Install
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="3_gitlab_config.html">
+            
+                <a href="3_gitlab_config.html">
+            
+                    
+                        <b>1.5.3.</b>
+                    
+                    3 Gitlab Config
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.4" data-path="4_Gitlab_Runner_Install.html">
+            
+                <a href="4_Gitlab_Runner_Install.html">
+            
+                    
+                        <b>1.5.4.</b>
+                    
+                    4 Gitlab Runner Install
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="5_Gitlab_Runner_Management.html">
+            
+                <a href="5_Gitlab_Runner_Management.html">
+            
+                    
+                        <b>1.5.5.</b>
+                    
+                    5 Gitlab Runner Management
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="6_Gitlab_Create_CI_Pipeline.html">
+            
+                <a href="6_Gitlab_Create_CI_Pipeline.html">
+            
+                    
+                        <b>1.5.6.</b>
+                    
+                    6 Gitlab Create CI Pipeline
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="7_Gitlab_CI_CD.html">
+            
+                <a href="7_Gitlab_CI_CD.html">
+            
+                    
+                        <b>1.5.7.</b>
+                    
+                    7 Gitlab CI CD
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../Overview.html">
+            
+                <a href="../Overview.html">
+            
+                    
+                        <b>1.6.</b>
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >4 Gitlab Runner Install</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#gitlab-runner-&#x90E8;&#x7F72;"><b></b>Gitlab Runner &#x90E8;&#x7F72;</a></li><ul><li><span class="title-icon "></span><a href="#1-&#x672C;&#x5730;&#x5B89;&#x88C5;gitlab-runner"><b></b>1. &#x672C;&#x5730;&#x5B89;&#x88C5;gitlab-runner</a></li><li><span class="title-icon "></span><a href="#2-&#x9879;&#x76EE;&#x901A;&#x8FC7;&#x672C;&#x5730;&#x547D;&#x4EE4;&#x6CE8;&#x518C;runner"><b></b>2. &#x9879;&#x76EE;&#x901A;&#x8FC7;&#x672C;&#x5730;&#x547D;&#x4EE4;&#x6CE8;&#x518C;runner</a></li><li><span class="title-icon "></span><a href="#3-docker&#x5B89;&#x88C5;gitlab-runner"><b></b>3. docker&#x5B89;&#x88C5;gitlab-runner</a></li><li><span class="title-icon "></span><a href="#4-&#x9879;&#x76EE;&#x901A;&#x8FC7;docker&#x6CE8;&#x518C;runner"><b></b>4. &#x9879;&#x76EE;&#x901A;&#x8FC7;docker&#x6CE8;&#x518C;runner</a></li><li><span class="title-icon "></span><a href="#5-&#x6CE8;&#x610F;"><b></b>5. &#x6CE8;&#x610F;</a></li></ul></ul></div><a href="#gitlab-runner-&#x90E8;&#x7F72;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="gitlab-runner-&#x90E8;&#x7F72;"><a name="gitlab-runner-&#x90E8;&#x7F72;" class="anchor-navigation-ex-anchor" href="#gitlab-runner-&#x90E8;&#x7F72;"><i class="fa fa-link" aria-hidden="true"></i></a>Gitlab Runner &#x90E8;&#x7F72;</h1>
+<h2 id="1-&#x672C;&#x5730;&#x5B89;&#x88C5;gitlab-runner"><a name="1-&#x672C;&#x5730;&#x5B89;&#x88C5;gitlab-runner" class="anchor-navigation-ex-anchor" href="#1-&#x672C;&#x5730;&#x5B89;&#x88C5;gitlab-runner"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x672C;&#x5730;&#x5B89;&#x88C5;gitlab-runner</h2>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">wget</span> -O /usr/local/bin/gitlab-runner https://gitlab-runner-downloads.s3.amazonaws.com/latest/binaries/gitlab-runner-linux-amd64
+
+$ <span class="token function">curl</span> -L https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.rpm.sh <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">bash</span>
+$ yum <span class="token function">install</span> gitlab-runner
+$ systemctl status gitlab-runner
+$ <span class="token function">sudo</span> <span class="token function">chown</span> -R gitlab-runner:gitlab-runner /var/run/docker.sock
+$ <span class="token function">sudo</span> <span class="token function">su</span> - gitlab-runner
+</code></pre>
+<p>&#x5F53;&#x7136;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5B89;&#x88C5;&#x5B98;&#x65B9;&#x7684;&#x65B9;&#x6CD5;&#x5B89;&#x88C5;&#xFF0C;&#x4ECE;gitlab&#x5C31;&#x53EF;&#x4EE5;&#x627E;&#x5230;&#x7B80;&#x6D01;&#x7684;&#x5B89;&#x88C5;&#x65B9;&#x5F0F;&#xFF1A;
+<img src="https://img-blog.csdnimg.cn/3902d2228eed4ecdaf460b91f3342e45.png" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;">
+<img src="https://img-blog.csdnimg.cn/4a60626a209743b390999096ea3ceeec.png" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;"></p>
+<h2 id="2-&#x9879;&#x76EE;&#x901A;&#x8FC7;&#x672C;&#x5730;&#x547D;&#x4EE4;&#x6CE8;&#x518C;runner"><a name="2-&#x9879;&#x76EE;&#x901A;&#x8FC7;&#x672C;&#x5730;&#x547D;&#x4EE4;&#x6CE8;&#x518C;runner" class="anchor-navigation-ex-anchor" href="#2-&#x9879;&#x76EE;&#x901A;&#x8FC7;&#x672C;&#x5730;&#x547D;&#x4EE4;&#x6CE8;&#x518C;runner"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x9879;&#x76EE;&#x901A;&#x8FC7;&#x672C;&#x5730;&#x547D;&#x4EE4;&#x6CE8;&#x518C;runner</h2>
+<p>1 &#x8F93;&#x5165;&#x5982;&#x4E0B;&#x547D;&#x4EE4;</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">sudo</span> gitlab-runner register
+</code></pre>
+<p>2 &#x8F93;&#x5165;gitlab&#x5730;&#x5740;
+&#x5730;&#x5740;&#x53EF;&#x4EE5;&#x4ECE;&#x9879;&#x76EE;&#x4E2D;&#x83B7;&#x53D6;&#x5230;
+&#x8FD9;&#x4E2A;&#x9875;&#x9762;&#x4F1A;&#x83B7;&#x53D6;&#x5230;&#x5730;&#x5740;&#x548C;token&#xFF0C;&#x4E0B;&#x9762;&#x7528;&#x5230;
+3 &#x8F93;&#x5165;token&#xFF0C;&#x5C31;&#x662F;&#x622A;&#x56FE;&#x91CC;&#x7684;token
+4 &#x8F93;&#x5165;&#x5BF9;Runner&#x7684;&#x63CF;&#x8FF0;&#xFF0C;&#x8FD9;&#x4E2A;&#x5728;GitLab&#x2019;s UI&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#xFF0C;&#x6BD4;&#x5982;my-runner
+5 &#x7ED9;Runner&#x6253;&#x4E2A;&#x6807;&#x7B7E;&#xFF0C;&#x8FD9;&#x4E2A;&#x5728;GitLab&#x2019;s UI&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#xFF0C;&#x6BD4;&#x5982;java
+6 &#x662F;&#x5426;Runner&#x6267;&#x884C;&#x6CA1;&#x6709;&#x6807;&#x7B7E;&#x7684;&#x6784;&#x5EFA;&#x4EFB;&#x52A1;&#xFF0C;&#x8F93;&#x5165;true
+7 &#x662F;&#x5426;&#x5C06;Runner&#x9501;&#x5B9A;&#x5230;&#x5F53;&#x524D;&#x9879;&#x76EE;&#xFF0C;&#x8FD9;&#x4E2A;&#x5728;GitLab&#x2019;s UI&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#xFF0C;&#x8F93;&#x5165;true
+8 &#x8F93;&#x5165;Runner&#x7684;&#x6267;&#x884C;&#x8005;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x9009;&#x62E9;shell
+&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x5C31;&#x914D;&#x7F6E;&#x597D;&#x4E86;Runner
+&#x5F53;&#x6211;&#x4EEC;&#x6709;&#x4EE3;&#x7801;&#x63D0;&#x4EA4;&#x7684;&#x65F6;&#x5019;&#xFF0C;Runner&#x5C31;&#x4F1A;&#x6267;&#x884C;.gitlab-ci.yml&#x7684;&#x6784;&#x5EFA;&#x4EFB;&#x52A1;</p>
+<p><img src="https://img-blog.csdnimg.cn/20200803015419937.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpeGloYWhhbGVsZWhlaGU=,size_16,color_FFFFFF,t_70" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;"></p>
+<h2 id="3-docker&#x5B89;&#x88C5;gitlab-runner"><a name="3-docker&#x5B89;&#x88C5;gitlab-runner" class="anchor-navigation-ex-anchor" href="#3-docker&#x5B89;&#x88C5;gitlab-runner"><i class="fa fa-link" aria-hidden="true"></i></a>3. docker&#x5B89;&#x88C5;gitlab-runner</h2>
+<pre class="language-"><code class="lang-bash"><span class="token function">docker</span> run -d --name gitlab-runner --restart always --net<span class="token operator">=</span>host <span class="token punctuation">\</span>
+     -v /srv/gitlab-runner/config:/etc/gitlab-runner <span class="token punctuation">\</span>
+     -v /var/run/docker.sock:/var/run/docker.sock <span class="token punctuation">\</span>
+     gitlab/gitlab-runner:latest
+</code></pre>
+<p>&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x914D;&#x7F6E;&#x5BB9;&#x5668;&#x6765;&#x6302;&#x8F7D;&#x60A8;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x636E;&#x5377;</p>
+<pre class="language-"><code class="lang-bash"><span class="token function">docker</span> volume create gitlab-runner-config
+<span class="token function">docker</span> run -d --name gitlab-runner --restart always --net<span class="token operator">=</span>host <span class="token punctuation">\</span>
+    -v /var/run/docker.sock:/var/run/docker.sock <span class="token punctuation">\</span>
+    -v gitlab-runner-config:/etc/gitlab-runner <span class="token punctuation">\</span>
+    gitlab/gitlab-runner:latest
+</code></pre>
+<h2 id="4-&#x9879;&#x76EE;&#x901A;&#x8FC7;docker&#x6CE8;&#x518C;runner"><a name="4-&#x9879;&#x76EE;&#x901A;&#x8FC7;docker&#x6CE8;&#x518C;runner" class="anchor-navigation-ex-anchor" href="#4-&#x9879;&#x76EE;&#x901A;&#x8FC7;docker&#x6CE8;&#x518C;runner"><i class="fa fa-link" aria-hidden="true"></i></a>4. &#x9879;&#x76EE;&#x901A;&#x8FC7;docker&#x6CE8;&#x518C;runner</h2>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">docker</span> run --rm --net<span class="token operator">=</span>host -it -v /srv/gitlab-runner/config:/etc/gitlab-runner gitlab/gitlab-runner:alpine-v14.4.2 register
+Runtime platform                                    <span class="token assign-left variable">arch</span><span class="token operator">=</span>amd64 <span class="token assign-left variable">os</span><span class="token operator">=</span>linux <span class="token assign-left variable">pid</span><span class="token operator">=</span><span class="token number">7</span> <span class="token assign-left variable">revision</span><span class="token operator">=</span>50fc80a6 <span class="token assign-left variable">version</span><span class="token operator">=</span><span class="token number">14.4</span>.2
+Running <span class="token keyword">in</span> system-mode.                            
+
+Enter the GitLab instance URL <span class="token punctuation">(</span>for example, https://gitlab.com/<span class="token punctuation">)</span>:
+http://192.168.211.70:8081
+Enter the registration token:
+6D5mo8iWCLBaVdqcaqjN
+Enter a description <span class="token keyword">for</span> the runner:
+<span class="token punctuation">[</span>329b671ffa00<span class="token punctuation">]</span>: gitlab-example
+Enter tags <span class="token keyword">for</span> the runner <span class="token punctuation">(</span>comma-separated<span class="token punctuation">)</span>:
+
+Registering runner<span class="token punctuation">..</span>. succeeded                     <span class="token assign-left variable">runner</span><span class="token operator">=</span>6D5mo8iW
+Enter an executor: ssh, virtualbox, docker+machine, shell, docker-ssh+machine, kubernetes, custom, docker, docker-ssh, parallels:
+<span class="token function">docker</span>
+Enter the default Docker image <span class="token punctuation">(</span>for example, ruby:2.6<span class="token punctuation">)</span>:
+ubuntu:20.04
+Runner registered successfully. Feel <span class="token function">free</span> to start it, but <span class="token keyword">if</span> it&apos;s running already the config should be automatically reloaded<span class="token operator">!</span>
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x9009;&#x62E9;&#x7684;&#x6267;&#x884C;&#x5668;&#x662F;docker&#xFF0C;&#x90A3;&#x4E48;&#x5173;&#x4E8E;&#x8FD9;&#x4E2A;&#x9879;&#x76EE;&#xFF0C;&#x7F16;&#x5199;<code>.gitlab-ci.yml</code>&#x5C31;&#x8981;&#x4E00;&#x5B9A;docker&#x6267;&#x884C;&#x7684;&#x89C4;&#x5219;&#x53BB;&#x6267;&#x884C;&#x3002;
+&#x6CE8;&#x518C;&#x914D;&#x7F6E;&#x5185;&#x5BB9;&#x6211;&#x53EF;&#x4EE5;&#x5728;&#x8FD9;&#x91CC;&#x770B;&#x5230;&#x3002;&#x5E76;&#x6839;&#x636E;&#x9700;&#x6C42;&#x505A;&#x4E00;&#x4E9B;&#x5C0F;&#x7684;&#x53D8;&#x52A8;&#x3002;</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">docker</span> <span class="token builtin class-name">exec</span> -ti gitlab-runner <span class="token function">bash</span>
+$ <span class="token function">cat</span> /etc/gitlab-runner/config.toml 
+concurrent <span class="token operator">=</span> <span class="token number">1</span>
+check_interval <span class="token operator">=</span> <span class="token number">0</span>
+
+<span class="token punctuation">[</span>session_server<span class="token punctuation">]</span>
+  session_timeout <span class="token operator">=</span> <span class="token number">1800</span>
+
+<span class="token punctuation">[</span><span class="token punctuation">[</span>runners<span class="token punctuation">]</span><span class="token punctuation">]</span>
+
+<span class="token punctuation">[</span><span class="token punctuation">[</span>runners<span class="token punctuation">]</span><span class="token punctuation">]</span>
+  name <span class="token operator">=</span> <span class="token string">&quot;demo&quot;</span>
+  url <span class="token operator">=</span> <span class="token string">&quot;http://gitlab.example.com:8081/&quot;</span>
+  token <span class="token operator">=</span> <span class="token string">&quot;PF41kT9ZV_1DoT6VzcCu&quot;</span>    <span class="token comment">#&#x8FD9;&#x91CC;&#x7684;token&#xFF0C;&#x5E76;&#x4E0D;&#x662F;registration token&#x7684;token&#x3002;</span>
+  executor <span class="token operator">=</span> <span class="token string">&quot;docker&quot;</span>
+  <span class="token punctuation">[</span>runners.custom_build_dir<span class="token punctuation">]</span>
+  <span class="token punctuation">[</span>runners.cache<span class="token punctuation">]</span>
+    <span class="token punctuation">[</span>runners.cache.s3<span class="token punctuation">]</span>
+    <span class="token punctuation">[</span>runners.cache.gcs<span class="token punctuation">]</span>
+    <span class="token punctuation">[</span>runners.cache.azure<span class="token punctuation">]</span>
+  <span class="token punctuation">[</span>runners.docker<span class="token punctuation">]</span>
+    extra_hosts <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&quot;gitlab.example.com:192.168.211.70&quot;</span><span class="token punctuation">]</span>
+    tls_verify <span class="token operator">=</span> <span class="token boolean">false</span>
+    image <span class="token operator">=</span> <span class="token string">&quot;ubuntu:20.04&quot;</span>
+    privileged <span class="token operator">=</span> <span class="token boolean">false</span>
+    disable_entrypoint_overwrite <span class="token operator">=</span> <span class="token boolean">false</span>
+    oom_kill_disable <span class="token operator">=</span> <span class="token boolean">false</span>
+    disable_cache <span class="token operator">=</span> <span class="token boolean">false</span>
+    volumes <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&quot;/cache&quot;</span><span class="token punctuation">]</span>
+    shm_size <span class="token operator">=</span> <span class="token number">0</span>
+    dns <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&quot;8.8.8.8&quot;</span>, <span class="token string">&quot;1.1.1.1&quot;</span><span class="token punctuation">]</span>
+</code></pre>
+<p>&#x6267;&#x884C;&#x5668;&#x9009;&#x62E9;&#x662F;&#x591A;&#x79CD;&#x6837;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x5F53;&#x7136;&#x4E5F;&#x53EF;&#x4EE5;&#x591A;&#x4E2A;&#x9009;&#x62E9;&#x3002;&#x901A;&#x8FC7;&#x591A;&#x6B21;&#x6CE8;&#x518C;&#x7684;&#x65B9;&#x5F0F;&#x3002;
+&#x6211;&#x5C1D;&#x8BD5;&#x518D;&#x6B21;&#x6CE8;&#x518C;&#x4E00;&#x6B21;&#x3002;</p>
+<pre class="language-"><code class="lang-bash"><span class="token function">docker</span> run  --net<span class="token operator">=</span>host --rm -it -v /srv/gitlab-runner/config:/etc/gitlab-runner gitlab/gitlab-runner:alpine-v14.4.2 register
+Runtime platform                                    <span class="token assign-left variable">arch</span><span class="token operator">=</span>amd64 <span class="token assign-left variable">os</span><span class="token operator">=</span>linux <span class="token assign-left variable">pid</span><span class="token operator">=</span><span class="token number">11</span> <span class="token assign-left variable">revision</span><span class="token operator">=</span>50fc80a6 <span class="token assign-left variable">version</span><span class="token operator">=</span><span class="token number">14.4</span>.2
+Running <span class="token keyword">in</span> system-mode.                            
+
+Enter the GitLab instance URL <span class="token punctuation">(</span>for example, https://gitlab.com/<span class="token punctuation">)</span>:
+http://gitlab.example.com:8081
+Enter the registration token:
+6D5mo8iWCLBaVdqcaqjN
+Enter a description <span class="token keyword">for</span> the runner:
+<span class="token punctuation">[</span>yourdomain.com<span class="token punctuation">]</span>: gitlab-demo
+Enter tags <span class="token keyword">for</span> the runner <span class="token punctuation">(</span>comma-separated<span class="token punctuation">)</span>:
+gitlab-demo-shell
+Registering runner<span class="token punctuation">..</span>. succeeded                     <span class="token assign-left variable">runner</span><span class="token operator">=</span>6D5mo8iW
+Enter an executor: docker, docker-ssh, shell, docker+machine, custom, parallels, ssh, virtualbox, docker-ssh+machine, kubernetes:
+shell
+Runner registered successfully. Feel <span class="token function">free</span> to start it, but <span class="token keyword">if</span> it&apos;s running already the config should be automatically reloaded<span class="token operator">!</span>
+</code></pre>
+<p>&#x8FD9;&#x6B21;&#x7684;&#x6267;&#x884C;&#x5668;&#x662F;shell&#x3002;</p>
+<p><img src="https://img-blog.csdnimg.cn/9756f2cbe01a4007ae0def9ee277d403.png" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;"></p>
+<p>&#x767B;&#x9646;gitlab&#x67E5;&#x770B;runner&#x7684;&#x5217;&#x8868;&#xFF0C;&#x591A;&#x51FA;&#x4E00;&#x4E2A;runner
+<img src="https://img-blog.csdnimg.cn/fd208ec809c841aba064067dd9d56057.png" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;">
+&#x67E5;&#x770B;<code>runner</code>&#x914D;&#x7F6E;</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">docker</span> <span class="token builtin class-name">exec</span> -ti gitlab-runner <span class="token function">bash</span>
+$ <span class="token function">cat</span> /etc/gitlab-runner/config.toml 
+concurrent <span class="token operator">=</span> <span class="token number">1</span>
+check_interval <span class="token operator">=</span> <span class="token number">0</span>
+
+<span class="token punctuation">[</span>session_server<span class="token punctuation">]</span>
+  session_timeout <span class="token operator">=</span> <span class="token number">1800</span>
+
+<span class="token punctuation">[</span><span class="token punctuation">[</span>runners<span class="token punctuation">]</span><span class="token punctuation">]</span>
+  name <span class="token operator">=</span> <span class="token string">&quot;&quot;</span>
+  url <span class="token operator">=</span> <span class="token string">&quot;&quot;</span>
+  token <span class="token operator">=</span> <span class="token string">&quot;&quot;</span>
+  executor <span class="token operator">=</span> <span class="token string">&quot;&quot;</span>
+
+<span class="token punctuation">[</span><span class="token punctuation">[</span>runners<span class="token punctuation">]</span><span class="token punctuation">]</span>
+  name <span class="token operator">=</span> <span class="token string">&quot;demo&quot;</span>
+  url <span class="token operator">=</span> <span class="token string">&quot;http://gitlab.example.com:8081/&quot;</span>
+  token <span class="token operator">=</span> <span class="token string">&quot;PF41kT9ZV_1DoT6VzcCu&quot;</span>
+  executor <span class="token operator">=</span> <span class="token string">&quot;docker&quot;</span>
+  <span class="token punctuation">[</span>runners.custom_build_dir<span class="token punctuation">]</span>
+  <span class="token punctuation">[</span>runners.cache<span class="token punctuation">]</span>
+    <span class="token punctuation">[</span>runners.cache.s3<span class="token punctuation">]</span>
+    <span class="token punctuation">[</span>runners.cache.gcs<span class="token punctuation">]</span>
+    <span class="token punctuation">[</span>runners.cache.azure<span class="token punctuation">]</span>
+  <span class="token punctuation">[</span>runners.docker<span class="token punctuation">]</span>
+    tls_verify <span class="token operator">=</span> <span class="token boolean">false</span>
+    image <span class="token operator">=</span> <span class="token string">&quot;ubuntu:20.04&quot;</span>
+    dns <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&quot;8.8.8.8&quot;</span>, <span class="token string">&quot;1.1.1.1&quot;</span><span class="token punctuation">]</span>
+    privileged <span class="token operator">=</span> <span class="token boolean">false</span>
+    disable_entrypoint_overwrite <span class="token operator">=</span> <span class="token boolean">false</span>
+    oom_kill_disable <span class="token operator">=</span> <span class="token boolean">false</span>
+    disable_cache <span class="token operator">=</span> <span class="token boolean">false</span>
+    volumes <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&quot;/cache&quot;</span><span class="token punctuation">]</span>
+    extra_hosts <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&quot;gitlab.example.com:192.168.211.70&quot;</span><span class="token punctuation">]</span>
+    shm_size <span class="token operator">=</span> <span class="token number">0</span>
+
+<span class="token punctuation">[</span><span class="token punctuation">[</span>runners<span class="token punctuation">]</span><span class="token punctuation">]</span>
+  name <span class="token operator">=</span> <span class="token string">&quot;gitlab-demo&quot;</span>
+  url <span class="token operator">=</span> <span class="token string">&quot;http://gitlab.example.com:8081&quot;</span>
+  token <span class="token operator">=</span> <span class="token string">&quot;TX1s_ZQ1RnNj5xaVW-y9&quot;</span>
+  executor <span class="token operator">=</span> <span class="token string">&quot;shell&quot;</span>
+  <span class="token punctuation">[</span>runners.custom_build_dir<span class="token punctuation">]</span>
+  <span class="token punctuation">[</span>runners.cache<span class="token punctuation">]</span>
+    <span class="token punctuation">[</span>runners.cache.s3<span class="token punctuation">]</span>
+    <span class="token punctuation">[</span>runners.cache.gcs<span class="token punctuation">]</span>
+    <span class="token punctuation">[</span>runners.cache.azure<span class="token punctuation">]</span>
+</code></pre>
+<p>&#x5173;&#x4E8E;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x591A;&#x6B21;&#x6CE8;&#x518C;&#x7F16;&#x6392;&#xFF0C;&#x9009;&#x62E9;&#x4E0D;&#x540C;&#x6267;&#x884C;&#x5668;&#x7F16;&#x6392;<code>.gitlab-ci.yml</code>,&#x6BD4;&#x5982;&#xFF0C;&#x4F60;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x8FD9;&#x4E2A;&#x5E94;&#x7528;&#x6682;&#x65F6;&#x672C;&#x5730;&#x8FD0;&#x884C;&#xFF0C;&#x540E;&#x6765;docker&#x8FD0;&#x884C;&#xFF0C;&#x518D;&#x540E;&#x6765;kubernets&#x8FD0;&#x884C;&#x7B49;&#x7B49;&#x3002;</p>
+<h2 id="5-&#x6CE8;&#x610F;"><a name="5-&#x6CE8;&#x610F;" class="anchor-navigation-ex-anchor" href="#5-&#x6CE8;&#x610F;"><i class="fa fa-link" aria-hidden="true"></i></a>5. &#x6CE8;&#x610F;</h2>
+<p>&#x4E0D;&#x540C;&#x7684;&#x9879;&#x76EE;&#x5411;runner&#x6CE8;&#x518C;&#x7684;token&#x662F;&#x4E0D;&#x4E00;&#x6837;&#x7684;&#x3002;
+<img src="https://img-blog.csdnimg.cn/278c067b20a44a53a6162d3125b74ccd.png" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;">
+<img src="https://img-blog.csdnimg.cn/c6f01e1fbfac4906a8f16681392cb103.png" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;">
+&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;&#x6839;&#x636E;&#x81EA;&#x5DF1;&#x7684;&#x4E1A;&#x52A1;&#x5E94;&#x7528;&#x9700;&#x6C42;&#x5728;&#x591A;&#x4E2A;&#x673A;&#x5668;&#x8FD0;&#x884C;&#x591A;&#x4E2A;<code>gitlab-runner</code>&#x3002;</p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; ghostwritten &#x6D59;ICP&#x5907;2020032454&#x53F7; 2022 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2022-06-06 04:47:59
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="3_gitlab_config.html" class="navigation navigation-prev " aria-label="Previous page: 3 Gitlab Config">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="5_Gitlab_Runner_Management.html" class="navigation navigation-next " aria-label="Next page: 5 Gitlab Runner Management">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"4 Gitlab Runner Install","level":"1.5.4","depth":2,"next":{"title":"5 Gitlab Runner Management","level":"1.5.5","depth":2,"path":"Gitlab/5_Gitlab_Runner_Management.md","ref":"Gitlab/5_Gitlab_Runner_Management.md","articles":[]},"previous":{"title":"3 Gitlab Config","level":"1.5.3","depth":2,"path":"Gitlab/3_gitlab_config.md","ref":"Gitlab/3_gitlab_config.md","articles":[]},"dir":"ltr"},"config":{"plugins":["3-ba","accordion","advanced-emoji","anchor-navigation-ex","baidu-tongji","code","change_girls","custom-favicon","donate","chapter-fold","edit-link","flexible-alerts","github-buttons","github","insert-logo","musicxml","prism","prism-themes","pageview-count","-highlight","-search","-lunr","rss","search-plus","splitter","-sharing","sharing-plus","sidebar-style","sitemap-general","simple-mind-map","youtube","theme-default","todo","tbfed-pagefooter"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"sidebar-style":{"author":"zongxun","title":"《Gitbook Docs》"},"tbfed-pagefooter":{"copyright":"Copyright &copy ghostwritten 浙ICP备2020032454号 2022","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"prism":{"css":["prism-themes/themes/prism-holi-theme.css"],"lang":{"shell":"bash"}},"youtube":{},"github":{"url":"https://github.com/Ghostwritten"},"baidu-tongji":{"url":"https://hm.baidu.com/hm.js","token":"55e7dfe47f4dc1c018d4042fdfa62565"},"todo":{},"splitter":{},"change_girls":{"time":10,"urls":["https://www.bizhishe.com/d/file/2019-08-26/1566827846505876.jpg","https://www.bizhishe.com/d/file/2020-03-02/1583150452601733.jpg","https://www.bizhishe.com/d/file/2019-07-24/1563977671157231.jpg","https://www.bizhishe.com/d/file/2019-07-14/1563116649970786.jpg","https://www.bizhishe.com/d/file/2019-07-24/1563977671126392.jpg","https://www.bizhishe.com/d/file/2019-07-14/1563116649584541.jpg"]},"accordion":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://github.com/Ghostwritten/gitbook-docs/blob/gh-pages/assets/imgs/aplipay.png?raw=true","alipayText":"支付宝打赏","button":"打赏","title":"","wechat":"https://github.com/Ghostwritten/gitbook-docs/blob/gh-pages/assets/imgs/wechat.png?raw=true","wechatText":"微信打赏"},"sitemap-general":{"prefix":"https://smoothies.com.cn/gitbook-docs/"},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"Gitbook Docs","description":"This is the best book ever.","author":"Zong Xun","feed_url":"http://smoothies.com.cn/rss","site_url":"https://smoothies.com.cn/gitbook-docs/","managingEditor":"writer@smoothies.com.cn (Zong Xun)","webMaster":"webmaster@smoothies.com.cn (Zong Xun)"},"musicxml":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":"assets/imgs/1_girl.ico","pageview-count":{},"prism-themes":{},"github-buttons":{"buttons":[{"user":"Ghostwritten","repo":"gitbook-docs","type":"star","count":true,"size":"small"}]},"custom-favicon":{},"3-ba":{"configuration":"auto","token":"9ffc0dce8d7079aceab6b0bc18eb626b"},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Danger"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"}},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper"],"douban":false,"facebook":true,"weibo":false,"twitter":true,"pocket":false,"google":false,"qzone":false},"simple-mind-map":{"autoFit":true,"linkShape":"diagonal","preset":"default","style":{},"type":"markdown"},"edit-link":{"label":"Edit","base":"https://github.com/Ghostwritten/gitbook-docs/edit/master/"},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"insert-logo":{"style":"background: none; max-height: 100px; min-height: 100px","url":"https://www.bizhishe.com/d/file/2019-07-14/1563116649268975.jpg"},"search-plus":{}},"theme":"default","author":"宗勋 - zongxun","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Gitbook Docs","language":"zh-hans","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"Docker":"https://smoothies.com.cn/docker-docs/Overview.html","Blog":"https://smoothies.com.cn","Kubernetes":"https://smoothies.com.cn/kubernetes-docs/Overview.html","Go":"https://smoothies.com.cn/go-docs/Overview.html","Prometheus":"https://smoothies.com.cn/prometheus-docs/Overview.html","Command":"https://smoothies.com.cn/linux-command-docs/Overview.html","Shell":"https://smoothies.com.cn/shell-docs/Overview.html","Linux":"https://smoothies.com.cn/linux-docs/","Gitbook":"https://smoothies.com.cn/gitbook-docs/Overview.html","Python":"https://smoothies.com.cn/python-docs/Overview.html","Exam":"https://ghostwritten.gitbook.io/kubernetes-exam-in-action/"}},"gitbook":"*","description":"这是一本关于Git、Github、Gitlab、Gitbook的书籍"},"file":{"path":"Gitlab/4_Gitlab_Runner_Install.md","mtime":"2022-06-06T04:47:59.075Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-02-22T09:46:37.898Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-3-ba/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-accordion/accordionSelector.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-baidu-tongji/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-change_girls/girls.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-musicxml/osmd.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-musicxml/musicxml.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-musicxml/promise.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-rss/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sidebar-style/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-simple-mind-map/bundle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

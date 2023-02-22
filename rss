@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[Gitbook Docs]]></title>
+        <description><![CDATA[This is the best book ever.]]></description>
+        <link>https://smoothies.com.cn/gitbook-docs/</link>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Wed, 22 Feb 2023 09:46:59 GMT</lastBuildDate>
+        <atom:link href="http://smoothies.com.cn/rss" rel="self" type="application/rss+xml"/>
+        <author><![CDATA[Zong Xun]]></author>
+        <managingEditor><![CDATA[writer@smoothies.com.cn (Zong Xun)]]></managingEditor>
+        <webMaster><![CDATA[webmaster@smoothies.com.cn (Zong Xun)]]></webMaster>
+        <category><![CDATA[gitbook]]></category>
+        <item>
+            <title><![CDATA[序言]]></title>
+            <description><![CDATA[这是一本关于集合 Git、Github、Gitlab、Gitbook、gitOps 的书。]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Git 介绍]]></title>
+            <description><![CDATA[同生活中的许多伟大事物一样，Git 诞生于一个极富纷争大举创新的年代。]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Git/README.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Git/README.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Git 安装]]></title>
+            <description><![CDATA[Git 目前支持 Linux/Unix、Solaris、Mac和 Windows 平台上运行。
+下载地址为：http://git-scm.com/downloads]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Git/1_Git_Install.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Git/1_Git_Install.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Git 技巧]]></title>
+            <description><![CDATA[1、git log -p FILE]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Git/10_Git_Skill.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Git/10_Git_Skill.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[git 实践]]></title>
+            <description><![CDATA[初始化存储库后，会创建一个名为.git的新隐藏子目录。该子目录包含 Git 用于存储其信息的元数据。]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Git/11_Git_Practice.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Git/11_Git_Practice.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Git 如何设置上游分支 upstream？]]></title>
+            <description><![CDATA[当您想要克隆一个新的存储库或使用各种功能分支时，您需要知道如何使用上游分支以及如何设置它们。本文将告诉您如何设置上游分支，它还会告诉您哪个 git 本地分支正在跟踪哪个上游远程分支。]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Git/12-Git_Set_upstream_branch.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Git/12-Git_Set_upstream_branch.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Git Fetch 和 Git Pull 的区别]]></title>
+            <description><![CDATA[Git Fetch 是一个命令，它告诉本地存储库远程存储库中有可用的更改，而不会将更改带入本地存储库。另一方面，Git Pull 将远 程目录更改的副本带入本地存储库。让我们借助示例分别查看 Git Fetch 和 Git Pull。]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Git/13_Git_fetch_and_pull_difference.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Git/13_Git_fetch_and_pull_difference.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Git remote prune、Git prune 和 Git fetch –prune 的区别]]></title>
+            <description><![CDATA[Git 的一大优点是它在删除数据时非常小心。这使得 Git 中的提交或其他有价值的数据很难丢失！这样做的一个小缺点是您有时可能 会看到实际上不再需要的陈旧数据。最好的例子之一是对已删除的远程分支的引用：假设您的一位队友删除了共享远程存储库中的一个分支；该分支仍会为您显示，除非您明确指示 Git 进行清理。]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Git/14_Git_fetch_prune.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Git/14_Git_fetch_prune.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Git 流程]]></title>
+            <description><![CDATA[一般工作流程如下：]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Git/2_Git_Process.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Git/2_Git_Process.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Git 概念]]></title>
+            <description><![CDATA[我们先来理解下 Git 工作区、暂存区和版本库概念：]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Git/3_Git_Concept.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Git/3_Git_Concept.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Git 分支管理]]></title>
+            <description><![CDATA[几乎每一种版本控制系统都以某种形式支持分支，一个分支代表一条独立的开发线。]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Git/4_Git_Branch_Management.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Git/4_Git_Branch_Management.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Git 查看提交历史]]></title>
+            <description><![CDATA[Git 提交历史一般常用两个命令：]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Git/5_Git_View_Commit_History.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Git/5_Git_View_Commit_History.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Git 标签]]></title>
+            <description><![CDATA[如果你达到一个重要的阶段，并希望永远记住那个特别的提交快照，你可以使用 git tag 给它打上标签。]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Git/6_Git_Tag.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Git/6_Git_Tag.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Git 免密登录]]></title>
+            <description><![CDATA[许多Git服务器都支持使用SSH公钥进行认证，当然也包括github。
+首先你需要确认一下自己是否已经拥有密钥了，默认情况下，用户的 SSH 密钥存储在其 ~/.ssh 目录下。进入该目录并列出其中内容，你便可以快速确认自己是否已经拥有密钥：]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Git/7_Git_Password-free_Login.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Git/7_Git_Password-free_Login.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[git 回滚]]></title>
+            <description><![CDATA[查看所有commits记录]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Git/8_Git_Rollback.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Git/8_Git_Rollback.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Git 命令]]></title>
+            <description><![CDATA[在这里插入图片描述]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Git/9_Git_Command.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Git/9_Git_Command.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Gitbook]]></title>
+            <description><![CDATA[{% youtube %}
+https://www.youtube.com/watch?v=-MdyiRH6OAc&t
+{% endyoutube %}]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitbook/README.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitbook/README.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[插件]]></title>
+            <description><![CDATA[Gitbook默认带有7个插件（功能性5个，搜索有两个，主题一个）：]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/README.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/README.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[文章名字自动生成 SUMMARY.md]]></title>
+            <description><![CDATA[Gitbook 插件：自动生成 summary.md 文件内容，如果有很多md文件，这个插件可以帮助你生成初始版本。]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/1_Gitbook_Plugin_Summary.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/1_Gitbook_Plugin_Summary.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[查询]]></title>
+            <description><![CDATA[search 插件：查找内容, 不支持中文
+这个插件是 GitBook 的默认插件，它为你的书添加了一个交互式搜索栏。]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/10_Gitbook_Plugin_Search.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/10_Gitbook_Plugin_Search.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[评论]]></title>
+            <description><![CDATA[Disqus 是一个非常流行的为网站集成评论系统的工具，同样，gitbook 也可以集成 disqus 以便可以和读者交流。]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/11_Gitbook_Plugin_Commment.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/11_Gitbook_Plugin_Commment.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[gitbook 插件: 版权声明]]></title>
+            <description><![CDATA[页面添加页脚]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/12_Gitbook_Plugin_Copyright_Notice.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/12_Gitbook_Plugin_Copyright_Notice.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[gitbook 插件：背景设置]]></title>
+            <description><![CDATA[change_girls插件功能是设置背景，并可自动切换的背景图片]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/13_Gitbook_Plugin_Background.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/13_Gitbook_Plugin_Background.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[gitbook 插件：图片查看]]></title>
+            <description><![CDATA[lightbox 插件：单击查看图片]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/14_Gitbook_Plugin_Image_View.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/14_Gitbook_Plugin_Image_View.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[gitbook 插件：图标与LOGO]]></title>
+            <description><![CDATA[custom-favicon 插件: 修改网页标题图标 favicon]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/15_Gitbook_Plugin_Icons_and_Logos.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/15_Gitbook_Plugin_Icons_and_Logos.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[gitbook 插件：github]]></title>
+            <description><![CDATA[在右上角添加 github 图标。]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/16_Gitbook_Plugin_Github.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/16_Gitbook_Plugin_Github.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Emoji 表情包]]></title>
+            <description><![CDATA[advanced-emoji  插件：支持显示 emoji 表情。]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/17_Gitbook_Plugin_Emoji.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/17_Gitbook_Plugin_Emoji.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[文本隐藏]]></title>
+            <description><![CDATA[折叠模块, 别名叫accordion。可以实现将内容隐藏起来，外部显示模块标题和显示箭头，点击箭头可显示里面的内容。]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/17_Gitbook_Plugin_Text_Hiding.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/17_Gitbook_Plugin_Text_Hiding.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Gitbook 插件：TODO]]></title>
+            <description><![CDATA[插件地址：https://www.npmjs.com/package/gitbook-plugin-todo]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/18_Gitbook_Plugin_TODO.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/18_Gitbook_Plugin_TODO.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Gitbook 插件：页面编辑]]></title>
+            <description><![CDATA[edit-link 插件：添加编辑按钮]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/19_Gitbook_Plugin_Page_Editing.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/19_Gitbook_Plugin_Page_Editing.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[文件标题自动生成 SUMMARY.md]]></title>
+            <description><![CDATA[我们了解 gitbook plugin summary 自动生成 summary.md 文件内容
+这是book sm命令依赖markdown文章名字组成目录结构的样子。]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/2_Gitbook_Plugin_Title_Summary.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/2_Gitbook_Plugin_Title_Summary.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[RSS]]></title>
+            <description><![CDATA[RSS 插件：添加 rss 订阅功能。]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/20_Gitbook_Plugin_RSS.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/20_Gitbook_Plugin_RSS.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[视频]]></title>
+            <description><![CDATA[local-video 插件添加链接描述：使用Video.js 播放本地视频]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/21_Gitbook_Plugin_Video.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/21_Gitbook_Plugin_Video.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[SEO]]></title>
+            <description><![CDATA[sitemap 插件：生成sitemap]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/22_Gitbook_Plugin_SEO.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/22_Gitbook_Plugin_SEO.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[gitbook 插件: 访问统计]]></title>
+            <description><![CDATA[book.json 中的插件配置设置 Google Analytics 跟踪 ID]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/23_Gitbook_Plugin_Statistics.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/23_Gitbook_Plugin_Statistics.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Gtibook 插件 顶部导航]]></title>
+            <description><![CDATA[从源码GitHub地址中下载，放到 node_modules 文件夹里（GitHub地址在进入插件地址右侧的GitHub链接）.]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/24_Gitbook_Plugin_navbor.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/24_Gitbook_Plugin_navbor.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Gitbook 插件 主题]]></title>
+            <description><![CDATA[在这里插入图片描述]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/25_Gitbook_Plugin_Theme.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/25_Gitbook_Plugin_Theme.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Gtibook 插件 顶部导航]]></title>
+            <description><![CDATA[从源码GitHub地址中下载，放到 node_modules 文件夹里（GitHub地址在进入插件地址右侧的GitHub链接）.]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/26_Gitbook_Plugin_Top_Navigation.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/26_Gitbook_Plugin_Top_Navigation.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[gitbook 插件 标签]]></title>
+            <description><![CDATA[tags 插件 给文章带上标签]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/27_Gitbook_Plugin_Tags.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/27_Gitbook_Plugin_Tags.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[gitbook 插件 pdf]]></title>
+            <description><![CDATA[pdf-multi-link 插件在每个页面上添加一个链接以下载 PDF。]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/28_Gitbook_Plugin_pdf.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/28_Gitbook_Plugin_pdf.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[gitbook 插件 阅读更多]]></title>
+            <description><![CDATA[Gitbook 整合 OpenWrite 平台的 readmore 插件,实现博客的每一篇文章自动增加阅读更多效果,关注公众号后方可解锁全站文章,从而实现博客流量导流到微信公众号粉丝目的.]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/29_Gitbook_Plugin_readmore.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/29_Gitbook_Plugin_readmore.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[侧边导航]]></title>
+            <description><![CDATA[Gitbook 提供的书籍默认都会在左侧提供书籍目录索引导航的功能。]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/3_Gitbook_Plugin_Side_Navigation.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/3_Gitbook_Plugin_Side_Navigation.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[gitbook 插件：音乐]]></title>
+            <description><![CDATA[@[toc]]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/30_Gitbook_Plugin_music.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/30_Gitbook_Plugin_music.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[文章目录导航]]></title>
+            <description><![CDATA[anchor-navigation-ex插件功能是：悬浮目录和回到顶部
+安装：]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/4_Gitbook_Plugin_Directory_Navigation.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/4_Gitbook_Plugin_Directory_Navigation.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[TOC 目录]]></title>
+            <description><![CDATA[page-treeview 插件是生成页内目录]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/5_Gitbook_Plugin_Article_TOC.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/5_Gitbook_Plugin_Article_TOC.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[提示与强调]]></title>
+            <description><![CDATA[alerts 插件功能是告警级别信息提示。这个GitBook插件将块引用转换为漂亮的警报。]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/6_Gitbook_Plugin_Tips_and_Emphasis.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/6_Gitbook_Plugin_Tips_and_Emphasis.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[代码块]]></title>
+            <description><![CDATA[在这里插入图片描述]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/7_Gitbook_Plugin_Code_Block.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/7_Gitbook_Plugin_Code_Block.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[分享]]></title>
+            <description><![CDATA[sharing-plus 插件：分享当前页面，比默认的 sharing 插件多了一些分享方式。]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/8_Gitbook_Plugin_Sharing.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/8_Gitbook_Plugin_Sharing.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[gitbook 插件 赞赏]]></title>
+            <description><![CDATA[@[toc]]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/9_Gitbook_Plugin_Appreciate.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitbook/Plugins/9_Gitbook_Plugin_Appreciate.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Gitbook 快速入门]]></title>
+            <description><![CDATA[Gitbook 是一款优秀的 基于 Node.js 的开源文档管理工具，具有丰富的开源插件。]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitbook/1_Gitbook_Get_Started.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitbook/1_Gitbook_Get_Started.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Gitbook 安装]]></title>
+            <description><![CDATA[效果
+在这里插入图片描述
+图中侧栏Introduction的内容正是README.md的内容，SUMMARY.md 是编写界面侧栏的目录结构。]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitbook/2_Gitbook_Install.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitbook/2_Gitbook_Install.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Gitbook README.md]]></title>
+            <description><![CDATA[书本的首页内容默认是从文件 README.md 中提取的。]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitbook/3_Gitbook_README.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitbook/3_Gitbook_README.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Gitbook SUMMARY.md]]></title>
+            <description><![CDATA[GitBook默认使用SUMMARY.md文件实现目录结构的设定，在该文件中，可以通过缩进实现多级目录的效果，如：]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitbook/4_Gitbook_SUMMARY.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitbook/4_Gitbook_SUMMARY.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Gitbook book.json]]></title>
+            <description><![CDATA[配置 GitBook 允许您使用灵活的配置自定义您的书。这些选项在book.json文件中指定。]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitbook/5_Gitbook_book.json.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitbook/5_Gitbook_book.json.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Gitbook 发布 Github Pages]]></title>
+            <description><![CDATA[例如：git-handbook]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitbook/6_Gitbook_push_Github_Pages.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitbook/6_Gitbook_push_Github_Pages.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Gitbook 持续更新 Github Pages]]></title>
+            <description><![CDATA[或许偶尔你会手动更新book.json,比如：新增插件、分享链接等等。]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitbook/7_Gitbook_Update_Github_Pages.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitbook/7_Gitbook_Update_Github_Pages.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[github 介绍]]></title>
+            <description><![CDATA[GitHub 是一个共享虚拟主机服务，用于存放使用Git版本控制的软件代码和内容项目。它由GitHub公司（曾称Logical
+Awesome）的开发者Chris Wanstrath、PJ Hyett和Tom Preston-Werner使用Ruby on Rails编写而成。]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Github/README.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Github/README.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Github 创建仓库]]></title>
+            <description><![CDATA[您可以在 GitHub 仓库中存储各种项目，包括开源项目。 通过开源项目，您可以共享代码以开发更好、更可靠的软件。 您可以使用仓库与他人协作并跟踪您的工作。]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Github/1_Github_Create_Depository.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Github/1_Github_Create_Depository.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Github 托管]]></title>
+            <description><![CDATA[1.win下载git工具：git bash 、git gui 、git cmd
+https://git-scm.com/downloads
+linux环境下如果yum源有git包，]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Github/2_Github_Local_Pull_Github.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Github/2_Github_Local_Pull_Github.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[github 管理远程仓库]]></title>
+            <description><![CDATA[GitHub 的协作开发方法取决于将提交从本地存储库发布到 GitHub 以供其他人查看、获取和更新]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Github/3_Github_Manage_Remote_Repositories.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Github/3_Github_Manage_Remote_Repositories.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[GitHub 远程删除文件夹]]></title>
+            <description><![CDATA[这里以删除 .setting 文件夹为案例]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Github/4_Github_Delete_folders_remotely.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Github/4_Github_Delete_folders_remotely.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Github 删除本地与远程分支]]></title>
+            <description><![CDATA[删除远程分支gh-pages]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Github/5_Github_Delete_local_and_remote_branches.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Github/5_Github_Delete_local_and_remote_branches.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[No title]]></title>
+            <description><![CDATA[效果图：]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Github/6_Github_Custom_Home_Page.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Github/6_Github_Custom_Home_Page.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Github Action 自动部署构建]]></title>
+            <description><![CDATA[GitHub Actions 是 GitHub 的持续集成服务，于2018年10月推出。]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Github/7_Github_Action_Automatically_Build_Deploy.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Github/7_Github_Action_Automatically_Build_Deploy.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Github | 制作您的第一个开源合并请求]]></title>
+            <link>https://smoothies.com.cn/gitbook-docs/Github/8_Github_Open_source_merge_request.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Github/8_Github_Open_source_merge_request.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Gitlab]]></title>
+            <description><![CDATA[Gitlab 是一个开源的Git代码仓库系统，可以实现自托管的Github项目，即用于构建私有的代码托管平台和项目管理系统。系统基于Ruby on Rails开发，速度快、安全稳定。它拥有与Github类似的功能，能够浏览源代码，管理缺陷和注释。可以管理团队对仓库的访问，它非常易于浏览提交过的版本并提供一个文件历史库。团队成员可以利用内置的简单聊天程序(Wall)进行交流。它还提供一个代码片段收集功能可以轻松实现代码复用，便于日后有需要的时候进行查找。]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitlab/README.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitlab/README.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[gitlab 开始]]></title>
+            <description><![CDATA[jenkins插件地址： http://updates.jenkins-ci.org/download/plugins/]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitlab/1_Gitlab_Get_Started.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitlab/1_Gitlab_Get_Started.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Gitlab 安装]]></title>
+            <description><![CDATA[Gitlab是一个开源的Git代码仓库系统，可以实现自托管的Github项目，即用于构建私有的代码托管平台和项目管理系统。系统基于Ruby on Rails开发，速度快、安全稳定。它拥有与Github类似的功能，能够浏览源代码，管理缺陷和注释。可以管理团队对仓库的访问，它非常易于浏览提交过的版本并提供一个文件历史库。团队成员可以利用内置的简单聊天程序(Wall)进行交流。它还提供一个代码片段收集功能可以轻松实现代码复用，便于日后有需要的时候进行查找。
+在这里插入图片描述]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitlab/2_Gitlab_Install.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitlab/2_Gitlab_Install.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[gitlab 配置]]></title>
+            <description><![CDATA[相关阅读：]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitlab/3_gitlab_config.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitlab/3_gitlab_config.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Gitlab Runner 部署]]></title>
+            <description><![CDATA[当然，我们可以安装官方的方法安装，从gitlab就可以找到简洁的安装方式：
+在这里插入图片描述
+在这里插入图片描述]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitlab/4_Gitlab_Runner_Install.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitlab/4_Gitlab_Runner_Install.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Gitlab 基础配置]]></title>
+            <description><![CDATA[保存退出修改，执行命令gitlab-ctl reconfigure重新配置gitlab]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitlab/5_Gitlab_Runner_Management.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitlab/5_Gitlab_Runner_Management.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Gitlab 创建持续集成 (CI) Pipeline]]></title>
+            <description><![CDATA[在这里插入图片描述
+在这里插入图片描述
+在这里插入图片描述
+在这里插入图片描述
+在这里插入图片描述]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitlab/6_Gitlab_Create_CI_Pipeline.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitlab/6_Gitlab_Create_CI_Pipeline.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Gitlab 编排 .gitlab-ci.yaml]]></title>
+            <description><![CDATA[创建一个项目
+.gitlab-ci.yaml
+创建一个模板.gitlab-ci.yaml
+在这里插入图片描述
+在这里插入图片描述
+选择Getting-started模板
+在这里插入图片描述]]></description>
+            <link>https://smoothies.com.cn/gitbook-docs/Gitlab/7_Gitlab_CI_CD.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Gitlab/7_Gitlab_CI_CD.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Gitbook Docs]]></title>
+            <link>https://smoothies.com.cn/gitbook-docs/Overview.html</link>
+            <guid isPermaLink="true">https://smoothies.com.cn/gitbook-docs/Overview.html</guid>
+            <dc:creator><![CDATA[Zong Xun]]></dc:creator>
+        </item>
+    </channel>
+</rss>
